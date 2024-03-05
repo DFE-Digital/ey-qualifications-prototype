@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search for a qualification – {{ serviceName }} – GOV.UK Prototype
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/post-search-results" method="post">
+
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="qualification-search">
+                Search for an early years qualification
+              </label>
+            </h1>
+            <div id="qualification-search-hint" class="govuk-hint">
+                For example, Level 3 Early Years
+              </div>
+            {{ govukInput({
+              name: 'qualification-search',
+              value: data['qualification-search']
+            })}}
+          </div>
+
+        {{ govukButton({
+          text: "Search",
+          type: "Submit"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

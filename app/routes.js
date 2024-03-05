@@ -19,6 +19,27 @@ router.post('/route-qual-answer', function(request, response) {
   }
 })
 
+var data = require('./data/qualifications.json');
+
+// Route search results
+router.post('/post-search-results', function(request, response) {
+
+  console.log('here');
+  var searchTerm = request.session.data['qualification-search']
+  var searchResults = data.qualifications.filter(x => x.name.includes(searchTerm));
+  request.session.data['result-count'] = searchResults.length;
+  request.session.data['search-results'] = searchResults;
+  response.redirect("/current/r3/search-results");
+})
+
+router.get('/current/r3/qualification-detail/:qualificationId', function(request, response){
+  console.log('qualid')
+  var qualificationId = request.params.qualificationId;
+  var qualification = data.qualifications.filter(x => x.id == qualificationId);
+  request.session.data['qualification'] = qualification[0];
+  response.redirect("/current/r3/qualification-detail?qualificationId="+qualificationId);
+})
+
 module.exports = router
 
 
