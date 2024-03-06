@@ -23,17 +23,16 @@ var data = require('./data/qualifications.json');
 
 // Route search results
 router.post('/post-search-results', function(request, response) {
-
-  console.log('here');
+  console.log('post-search-results');
   var searchTerm = request.session.data['qualification-search']
-  var searchResults = data.qualifications.filter(x => x.name.includes(searchTerm));
+  var searchResults = data.qualifications.filter(x => x.name.toLowerCase().includes(searchTerm.toLowerCase()));
   request.session.data['result-count'] = searchResults.length;
   request.session.data['search-results'] = searchResults;
   response.redirect("/current/r3/search-results");
 })
 
 router.get('/current/r3/qualification-detail/:qualificationId', function(request, response){
-  console.log('qualid')
+  console.log('qualification-id')
   var qualificationId = request.params.qualificationId;
   var qualification = data.qualifications.filter(x => x.id == qualificationId);
   request.session.data['qualification'] = qualification[0];
