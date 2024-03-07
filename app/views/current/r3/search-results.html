@@ -14,9 +14,10 @@
 {% block content %}
 
   <div class="govuk-grid-row">
+    <form class="form" action="/post-search-results" method="post">
     <div class="govuk-grid-column-one-third">
 
-      <form class="form" action="#" method="post">
+      <!-- <form class="form" action="#" method="post"> -->
         <!-- Filters -->
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -24,6 +25,7 @@
         {{ govukRadios({
           classes: "govuk-radios--small",
           name: "qualification-year",
+          value: data['qualification-year'],
           fieldset: {
             legend: {
               text: "Year of qualification",
@@ -57,25 +59,34 @@
           },
           items: [
             {
-              value: "L2",
-              text: "Level 2"
+              value: "2",
+              text: "Level 2",
+              checked: data['level-2-checked']
             },
             {
-              value: "L3",
+              value: "3",
               text: "Level 3",
-              checked: "Yes"
+              checked: data['level-3-checked']
             },
             {
-              value: "L4",
-              text: "Level 4"
+              value: "4",
+              text: "Level 4",
+              checked: data['level-4-checked']
             },
             {
-              value: "L5",
-              text: "Level 5"
+              value: "5",
+              text: "Level 5",
+              checked: data['level-5-checked']
             },
             {
-              value: "L6",
-              text: "Level 6"
+              value: "6",
+              text: "Level 6",
+              checked: data['level-6-checked']
+            },
+            {
+              value: "7",
+              text: "Level 7",
+              checked: data['level-7-checked']
             }
           ]
         }) }}
@@ -217,168 +228,11 @@
             }
           ]
         }) }}
-
-        <!-- <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-          <div class="govuk-accordion__section">
-            <div class="govuk-accordion__section-header">
-              <h2 class="govuk-accordion__section-heading">
-                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                  Writing well for the web
-                </span>
-              </h2>
-            </div>
-            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-
-              {{ govukCheckboxes({
-                name: "awarding-body",
-                classes: "govuk-checkboxes--small",
-                fieldset: {
-                  legend: {
-                    text: "Awarding body",
-                    isPageHeading: true,
-                    classes: "govuk-fieldset__legend--m"
-                  }
-                },
-                items: [
-                  {
-                    value: "ab1",
-                    text: "Anglia Ruskin University / University Centre Peterborough"
-                  },
-                  {
-                    value: "ab2",
-                    text: "Bath Spa University"
-                  },
-                  {
-                    value: "ab3",
-                    text: "BIIAB"
-                  },
-                  {
-                    value: "ab4",
-                    text: "City and Guilds"
-                  },
-                  {
-                    value: "ab5",
-                    text: "Crossfields Institute"
-                  },
-                  {
-                    value: "ab6",
-                    text: "FutureQuals"
-                  },
-                  {
-                    value: "ab7",
-                    text: "Focus Awards Limited"
-                  },
-                  {
-                    value: "ab8",
-                    text: "Highfield Qualifications"
-                  },
-                  {
-                    value: "ab9",
-                    text: "iCan Qualifications Limited (iCQ)"
-                  },
-                  {
-                    value: "ab10",
-                    text: "iFATE"
-                  },
-                  {
-                    value: "ab11",
-                    text: "Innovate Awarding"
-                  },
-                  {
-                    value: "ab12",
-                    text: "Kingston University"
-                  },
-                  {
-                    value: "ab13",
-                    text: "London Metropolitan University"
-                  },
-                  {
-                    value: "ab14",
-                    text: "NCFE"
-                  },
-                  {
-                    value: "ab15",
-                    text: "Newcastle College Group (NCG)"
-                  },
-                  {
-                    value: "ab16",
-                    text: "Newman University"
-                  },
-                  {
-                    value: "ab17",
-                    text: "Nottingham Trent University"
-                  },
-                  {
-                    value: "ab18",
-                    text: "Open University / University Centre Peterborough"
-                  },
-                  {
-                    value: "ab19",
-                    text: "Pearson"
-                  },
-                  {
-                    value: "ab20",
-                    text: "Sheffield Hallam University"
-                  },
-                  {
-                    value: "ab21",
-                    text: "Skillsfirst"
-                  },
-                  {
-                    value: "ab22",
-                    text: "Training Qualifications UK (TQUK)"
-                  },
-                  {
-                    value: "ab23",
-                    text: "University of Bedfordshire"
-                  },
-                  {
-                    value: "ab23",
-                    text: "University of Derby and Collaborative Provision"
-                  },
-                  {
-                    value: "ab23",
-                    text: "University of East Anglia"
-                  },
-                  {
-                    value: "ab23",
-                    text: "University of Greenwich"
-                  },
-                  {
-                    value: "ab23",
-                    text: "University of Hertfordshire"
-                  },
-                  {
-                    value: "ab23",
-                    text: "University of Hull"
-                  },
-                  {
-                    value: "ab23",
-                    text: "University of Plymouth"
-                  },
-                  {
-                    value: "ab23",
-                    text: "University of Worcester"
-                  },
-                  {
-                    value: "ab23",
-                    text: "Warwickshire College Group (WCG)"
-                  }
-                ]
-              }) }}
-
-
-
-            </div>
-          </div>
-        </div> -->
-
-      </form>
-
+      <!-- </form> -->
     </div>
     <div class="govuk-grid-column-two-thirds">
-
-        <form class="form" action="/post-search-results" method="post">
+        {{ data['qualification-year'] }}
+        <!-- <form class="form" action="/post-search-results" method="post"> -->
 
             <div class="govuk-form-group">
                 <h1 class="govuk-label-wrapper">
@@ -394,10 +248,10 @@
               </div>
 
             {{ govukButton({
-              text: "Search"
+              text: "Update results"
             }) }}
 
-          </form>
+          <!-- </form> -->
 
       <p class="govuk-body-l"><strong>{{ data['result-count'] }} {{ ' results' if data['result-count'] > 1 else ' result' }}</strong></p>
 
@@ -409,6 +263,7 @@
       </ul>
 
     </div>
+    </form>
   </div>
 
 {% endblock %}

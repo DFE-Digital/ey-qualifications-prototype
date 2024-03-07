@@ -23,20 +23,42 @@ var data = require('./data/qualifications.json');
 
 // Route search results
 router.post('/post-search-results', function(request, response) {
-  console.log('post-search-results');
   var searchTerm = request.session.data['qualification-search']
   var searchResults = data.qualifications.filter(x => x.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  searchResults = filterLevels(searchResults, request);
   request.session.data['result-count'] = searchResults.length;
   request.session.data['search-results'] = searchResults;
   response.redirect("/current/r3/search-results");
 })
+
+function filterLevels(qualifications, request) {
+  // reset level checked to false
+  for (var i = 2; i <= 7; i++) {
+    var levelChecked = `level-${i}-checked`;
+    request.session.data[levelChecked] = false;
+  }
+
+  if (request.session.data['qualification-level'] == undefined || request.session.data['qualification-level'].length == 0) return qualifications;
+
+  // User has selected qualification levels. Iterate through the selected levels and filter out the qualifications that match
+  var filteredLevelQualifications = [];
+  for (var i = 0; i < request.session.data['qualification-level'].length; i++) {
+    var level = request.session.data['qualification-level'][i];
+    var levelChecked = `level-${level}-checked`;
+    // Used to show the level is checked when the page reloads
+    request.session.data[levelChecked] = true;
+    var levelQualifications = qualifications.filter(x => x.level == level);
+    filteredLevelQualifications = filteredLevelQualifications.concat(levelQualifications);
+  }
+  return filteredLevelQualifications;
+}
 
 router.get('/current/r3/qualification-detail/:qualificationId', function(request, response){
   console.log('qualification-id')
   var qualificationId = request.params.qualificationId;
   var qualification = data.qualifications.filter(x => x.id == qualificationId);
   request.session.data['qualification'] = qualification[0];
-  response.redirect("/current/r3/qualification-detail?qualificationId="+qualificationId);
+  response.redirect(`/current/r3/qualification-detail?qualificationId=${qualificationId}`);
 })
 
 module.exports = router
