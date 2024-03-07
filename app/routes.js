@@ -24,12 +24,20 @@ var data = require('./data/qualifications.json');
 // Route search results
 router.post('/post-search-results', function(request, response) {
   var searchTerm = request.session.data['qualification-search']
-  var searchResults = data.qualifications.filter(x => x.name.toLowerCase().includes(searchTerm.toLowerCase()));
-  searchResults = filterLevels(searchResults, request);
-  request.session.data['result-count'] = searchResults.length;
-  request.session.data['search-results'] = searchResults;
+  var qualifications = data.qualifications.filter(x => x.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  qualifications = filterQualificationYear(qualifications, request);
+  qualifications = filterLevels(qualifications, request);
+  request.session.data['result-count'] = qualifications.length;
+  request.session.data['search-results'] = qualifications;
   response.redirect("/current/r3/search-results");
 })
+
+function filterQualificationYear(qualifications, request) {
+  // if the data doesn't include the qualification year then just return the list of qualifications as nothing to filter out.
+  if (request.session.data['qualification-year'] == undefined || request.session.data['qualification-year'].length == 0) return qualifications;
+
+  return qualifications.filter(x => x.beforeOrAfter2014 == request.session.data['qualification-year']);
+}
 
 function filterLevels(qualifications, request) {
   // reset level checked to false
@@ -38,6 +46,7 @@ function filterLevels(qualifications, request) {
     request.session.data[levelChecked] = false;
   }
 
+  // if the data doesn't include the qualification level then just return the list of qualifications as nothing to filter out.
   if (request.session.data['qualification-level'] == undefined || request.session.data['qualification-level'].length == 0) return qualifications;
 
   // User has selected qualification levels. Iterate through the selected levels and filter out the qualifications that match
