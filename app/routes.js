@@ -25,10 +25,13 @@ var data = require('./data/qualifications.json');
 router.post('/post-search-results', function(request, response) {
   var searchTerm = request.session.data['qualification-search']
   var qualifications = data.qualifications.filter(x => x.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  request.session.data['awarding-organisations'] = setAwardingOrganisations(qualifications, request);
   qualifications = filterQualificationYear(qualifications, request);
   qualifications = filterLevels(qualifications, request);
+  qualifications = filterAwardingOrganisations(qualifications, request);
   request.session.data['result-count'] = qualifications.length;
   request.session.data['search-results'] = qualifications;
+  //request.session.data['awarding-organisations'] = [{"value": "1", "text": "abc"}, {"value": "2", "text": "xyz"}];
   response.redirect("/current/r3/search-results");
 })
 
@@ -60,6 +63,27 @@ function filterLevels(qualifications, request) {
     filteredLevelQualifications = filteredLevelQualifications.concat(levelQualifications);
   }
   return filteredLevelQualifications;
+}
+
+function filterAwardingOrganisations(qualifications, request) {
+  // if the data doesn't include the awarding organisation filter, then return the lot
+  if (request.session.data['awarding-organisation'] == undefined || request.session.data['awarding-organisation'] == 'none') return qualifications;
+
+  return qualifications.filter(x => x.awardingOrganisation == request.session.data['awarding-organisation']); 
+}
+
+function setAwardingOrganisations(qualifications, request) {
+  var awardingOrganisations = qualifications.map(x => x.awardingOrganisation);
+  let uniqueAwardingOrganisations = [...new Set(awardingOrganisations)];
+  var formattedAwardingOrganisations = [{"value": "none", text: "--Select--"}];
+  uniqueAwardingOrganisations.forEach(element => {
+    if (request.session.data['awarding-organisation'] != undefined && element == request.session.data['awarding-organisation']) {
+      formattedAwardingOrganisations.push({"value": element, "text": element, "selected": true});
+    } else {
+      formattedAwardingOrganisations.push({"value": element, "text": element});
+    }
+  });
+  return formattedAwardingOrganisations.sort();
 }
 
 router.get('/current/r3/qualification-detail/:qualificationId', function(request, response){

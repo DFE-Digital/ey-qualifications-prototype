@@ -91,142 +91,17 @@
           ]
         }) }}
 
-        {{ govukCheckboxes({
-          name: "awarding-body",
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-            legend: {
-              text: "Awarding body",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "awarding-organisation",
+          name: "awarding-organisation",
+          label: {
+            text: "Awarding body",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
           },
-          items: [
-            {
-              value: "ab1",
-              text: "Anglia Ruskin University / University Centre Peterborough"
-            },
-            {
-              value: "ab2",
-              text: "Bath Spa University"
-            },
-            {
-              value: "ab3",
-              text: "BIIAB"
-            },
-            {
-              value: "ab4",
-              text: "City and Guilds"
-            },
-            {
-              value: "ab5",
-              text: "Crossfields Institute"
-            },
-            {
-              value: "ab6",
-              text: "FutureQuals"
-            },
-            {
-              value: "ab7",
-              text: "Focus Awards Limited"
-            },
-            {
-              value: "ab8",
-              text: "Highfield Qualifications"
-            },
-            {
-              value: "ab9",
-              text: "iCan Qualifications Limited (iCQ)"
-            },
-            {
-              value: "ab10",
-              text: "iFATE"
-            },
-            {
-              value: "ab11",
-              text: "Innovate Awarding"
-            },
-            {
-              value: "ab12",
-              text: "Kingston University"
-            },
-            {
-              value: "ab13",
-              text: "London Metropolitan University"
-            },
-            {
-              value: "ab14",
-              text: "NCFE"
-            },
-            {
-              value: "ab15",
-              text: "Newcastle College Group (NCG)"
-            },
-            {
-              value: "ab16",
-              text: "Newman University"
-            },
-            {
-              value: "ab17",
-              text: "Nottingham Trent University"
-            },
-            {
-              value: "ab18",
-              text: "Open University / University Centre Peterborough"
-            },
-            {
-              value: "ab19",
-              text: "Pearson"
-            },
-            {
-              value: "ab20",
-              text: "Sheffield Hallam University"
-            },
-            {
-              value: "ab21",
-              text: "Skillsfirst"
-            },
-            {
-              value: "ab22",
-              text: "Training Qualifications UK (TQUK)"
-            },
-            {
-              value: "ab23",
-              text: "University of Bedfordshire"
-            },
-            {
-              value: "ab23",
-              text: "University of Derby and Collaborative Provision"
-            },
-            {
-              value: "ab23",
-              text: "University of East Anglia"
-            },
-            {
-              value: "ab23",
-              text: "University of Greenwich"
-            },
-            {
-              value: "ab23",
-              text: "University of Hertfordshire"
-            },
-            {
-              value: "ab23",
-              text: "University of Hull"
-            },
-            {
-              value: "ab23",
-              text: "University of Plymouth"
-            },
-            {
-              value: "ab23",
-              text: "University of Worcester"
-            },
-            {
-              value: "ab23",
-              text: "Warwickshire College Group (WCG)"
-            }
-          ]
+          items: data['awarding-organisations']
         }) }}
       <!-- </form> -->
     </div>
