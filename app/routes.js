@@ -72,6 +72,10 @@ function filterAwardingOrganisations(qualifications, request) {
   return qualifications.filter(x => x.awardingOrganisation == request.session.data['awarding-organisation']); 
 }
 
+function compareByText(a, b){
+  return a.text.localeCompare(b.text);
+}
+
 function setAwardingOrganisations(qualifications, request) {
   var awardingOrganisations = qualifications.map(x => x.awardingOrganisation);
   let uniqueAwardingOrganisations = [...new Set(awardingOrganisations)];
@@ -83,7 +87,7 @@ function setAwardingOrganisations(qualifications, request) {
       formattedAwardingOrganisations.push({"value": element, "text": element});
     }
   });
-  return formattedAwardingOrganisations.sort();
+  return formattedAwardingOrganisations.sort(compareByText);
 }
 
 router.get('/current/r3/qualification-detail/:qualificationId', function(request, response){
