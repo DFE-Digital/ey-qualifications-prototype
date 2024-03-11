@@ -21,6 +21,22 @@ router.post('/route-qual-answer', function(request, response) {
 
 var data = require('./data/qualifications.json');
 
+router.get('/reset-filters', function(request, response) {
+  var resetData = {};
+  // reset level checked to false
+  for (var i = 2; i <= 7; i++) {
+    var levelChecked = `level-${i}-checked`;
+    resetData[levelChecked] = false;
+  }
+  request.session.data = resetData;
+  var qualifications = data.qualifications;
+  request.session.data['result-count'] = qualifications.length;
+  request.session.data['search-results'] = qualifications;
+  request.session.data['awarding-organisations'] = setAwardingOrganisations(qualifications, request);
+
+  response.redirect("/current/r3/search-results");
+})
+
 // Route search results
 router.post('/post-search-results', function(request, response) {
   var searchTerm = request.session.data['qualification-search']
@@ -31,7 +47,6 @@ router.post('/post-search-results', function(request, response) {
   qualifications = filterAwardingOrganisations(qualifications, request);
   request.session.data['result-count'] = qualifications.length;
   request.session.data['search-results'] = qualifications;
-  //request.session.data['awarding-organisations'] = [{"value": "1", "text": "abc"}, {"value": "2", "text": "xyz"}];
   response.redirect("/current/r3/search-results");
 })
 
