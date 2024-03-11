@@ -1,0 +1,97 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start – {{ serviceName }} – GOV.UK Prototype
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Education, training and skills",
+        href: "#"
+      },
+      {
+        text: "Check an early years qualification"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+      <p>Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>check if an early years qualification is approved by the Department for Education as full and relevant</li>
+        <li>confirm if someone who holds this qualification can count in staff:child ratios, as set out in the early years foundation stage (EYFS)</li>
+      </ul>
+
+      <p>
+        You will need the certificate for the qualification you want to check.
+      </p>
+
+      <p>
+        You must make sure that the qualification you check exactly matches the qualification on the certificate, including any wording in brackets.
+      </p>
+      <p>
+        The qualification must exactly match the one on the early years qualifications list (EYQL) to be approved as full and relevant by the Department for Education.
+      </p>
+
+      <!-- <p>Registering takes around 5 minutes.</p> -->
+
+      {{ govukButton({
+        text: "Start now",
+        href: "start-search",
+        isStartButton: true
+      }) }}
+
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Early years qualifications: pre-September 2014 criteria
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Early years qualifications and ratios
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}
