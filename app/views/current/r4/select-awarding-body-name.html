@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    Select the awarding organisation – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Select the awarding organisation
+      </h1>
+
+      <form class="form" action="qualification-name" method="post">
+        <p>
+        <div class="govuk-radios" data-module="govuk-radios">
+
+          <div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-fieldset__legend--m" for="awarding-organisation">
+      Awarding body
+    </label>
+    </h1>
+
+
+  <select class="govuk-select" id="awarding-organisation" name="awarding-organisation">
+      <option value="none">--Select--</option>
+      <option value="Anglia Ruskin University">Anglia Ruskin University</option>
+      <option value="Bath Spa University">Bath Spa University</option>
+      <option value="BIIAB">BIIAB</option>
+      <option value="Bournemouth Montessori Examination Board">Bournemouth Montessori Examination Board</option>
+      <option value="CACHE Council for Awards in Care Health and Education">CACHE Council for Awards in Care Health and Education</option>
+      <option value="City and Guilds">City and Guilds</option>
+      <option value="CITYGUILDS">CITYGUILDS</option>
+      <option value="Crossfields Institute">Crossfields Institute</option>
+      <option value="Edexcel (now Pearson)">Edexcel (now Pearson)</option>
+      <option value="iCan Qualifications Limited (iCQ)">iCan Qualifications Limited (iCQ)</option>
+      <option value="Innovate Awarding">Innovate Awarding</option>
+      <option value="Kingston University">Kingston University</option>
+      <option value="Middlesex University">Middlesex University</option>
+      <option value="NCFE">NCFE</option>
+      <option value="Nottingham Trent University">Nottingham Trent University</option>
+      <option value="Open University OU">Open University OU</option>
+      <option value="Oxford Brookes University">Oxford Brookes University</option>
+      <option value="Pearson">Pearson</option>
+      <option value="Skillsfirst">Skillsfirst</option>
+      <option value="TQUK">TQUK</option>
+      <option value="University Campus Suffolk">University Campus Suffolk</option>
+      <option value="University College Northampton">University College Northampton</option>
+      <option value="University of Bedfordshire">University of Bedfordshire</option>
+      <option value="University of Gloucester">University of Gloucester</option>
+      <option value="University of Huddersfield">University of Huddersfield</option>
+      <option value="University of the West of England">University of the West of England</option>
+      <option value="University of Worcester">University of Worcester</option>
+      <option value="Various">Various</option>
+      <option value="Various Awarding Organisation's">Various Awarding Organisation's</option>
+  </select>
+</div>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+<!-- For future: add link to help if awarding organisation isn't shown -->
+
+    </div>
+  </div>
+
+{% endblock %}
