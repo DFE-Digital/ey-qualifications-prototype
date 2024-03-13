@@ -1,0 +1,144 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check an Early Years qualification – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-xl gem-c-title__context">
+       Early Years Qualification List
+      </span>
+
+      <h1 class="govuk-heading-xl">
+        NCFE CACHE Level 3 Diploma in Early Years Education and Care (Early Years Educator)
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+
+        {
+            key: {
+              text: "Awarding organisation"
+            },
+            value: {
+              text: "NCFE"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Level"
+            },
+            value: {
+              text: "Level 3"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Date added to Early Years Qualification List"
+            },
+            value: {
+              text: "1 September 2014"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Date of check"
+            },
+            value: {
+              text: "21 February 2024"
+            },
+            actions: {
+
+            }
+          }
+        ]
+      }) }}
+
+      <p>
+        This qualification is approved by the Department for Education (DfE) as full and relevant, subject to the following notes:
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Where the qualification certificate shows NCFE CACHE Level 3 Diploma in Early Years Education and Care (Knowledge only pathway) the holder cannot count in the ratios.</li>
+        </ul>
+      </p>
+
+      <p>
+        This is a level 3 qualification which was started after 1 September 2014. Someone who holds this qualification can be included in staff:child ratios at level 3, as long as they meet all other requirements as set out in the <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2" class="govuk-link">early years foundation stage (EYFS)</a> statutory framework and the <a href="https://www.gov.uk/government/publications/early-years-qualification-requirements-and-standards" class="govuk-link">early years qualification requirements and standards</a> statutory guidance document.
+      </p>
+
+      <p>
+        If they do not meet all other requirements to be included in the level 3 staff:child ratios, they may be able to work in the level 2 ratios.
+      </p>
+
+
+      <h2 class="govuk-heading-m">
+        Bookmark a link to this qualification check
+      </h2>
+
+      <p>
+        A permanent link to this qualification check is available at:
+        <br />
+        <br />
+        <a href="#">https://check-early-years-qualification.service.gov.uk/qualification-check/601-4000-8</a>
+      </p>
+
+      <form action="#" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Bookmark this qualification check",
+          classes: "govuk-button--secondary"
+        }) }}
+
+      </form>
+
+      <h2 class="govuk-heading-m">
+        Check another qualification
+      </h2>
+      <p>Return to the start of the <a href="start.html">Check an early years qualification</a> service to check another qualification.</p>
+
+      <h2 class="govuk-heading-m">
+        Further information about the Early Years Qualification List
+      </h2>
+
+      <p>
+        For more information on qualification requirements, see the <a href="https://www.gov.uk/government/publications/early-years-qualification-requirements-and-standards" class="govuk-link">early years qualification requirements and standards</a> statutory guidance and the <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2" class="govuk-link">EYFS statutory framework</a>. Ensure that you refer to the correct version of the EYFS (group and school-based providers, or childminders).
+      </p>
+
+      <p>For information on non-UK qualifications, refer to the <a href="https://www.gov.uk/government/publications/early-years-qualifications-achieved-outside-england" class="govuk-link">early years qualifications achieved outside the United Kingdom</a> guidance.</p>
+
+      <div class="govuk-inset-text">
+        <p>
+          If you have further queries, contact Ecctis. Information on the <a rel="external" href="https://ecctis.com/Qualifications/eys/Default.aspx" class="govuk-link">guidance Ecctis is able to provide</a> can be found on its website.
+        </p>
+
+        <p>
+          If you contacted the DfE early years workforce team prior to 5 September 2022, you do not need to contact Ecctis.
+        </p>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

@@ -17,6 +17,8 @@
     <form class="form" action="/post-search-results" method="post">
     <div class="govuk-grid-column-one-third">
 
+
+
       <!-- <form class="form" action="#" method="post"> -->
         <!-- Filters -->
 
@@ -132,6 +134,8 @@
           <!-- </form> -->
 
       <p class="govuk-body-l"><strong>{{ data['result-count'] }} {{ ' results' if data['result-count'] > 1 else ' result' }}</strong></p>
+
+      <p class="govuk-body-l">Click the qualification name to see any conditions which may affect whether the qualification is full and relevant.</p>
 
       <ul class="govuk-list govuk-list--spaced">
         {% for qualification in data['search-results'] %}
