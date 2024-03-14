@@ -139,7 +139,7 @@
 
       <ul class="govuk-list govuk-list--spaced">
         {% for qualification in data['search-results'] %}
-          <li><a href='/current/r3/qualification-detail/{{qualification.id}}'>{{qualification.name}}</a></li>
+          <li><a href={{qualification.href}}>{{qualification.name}}</a></li>
         {% endfor %}
         <li><a href="#">The qualification I am looking for is not on this list</a></li>
       </ul>
