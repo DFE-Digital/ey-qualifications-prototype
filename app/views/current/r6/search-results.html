@@ -7,14 +7,14 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "/current/r3/start-search"
+  href: "/current/r6/start-search"
 }) }}
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
-    <form class="form" action="/current/r3/post-search-results" method="post">
+    <form class="form" action="/current/r6/post-search-results" method="post">
     <div class="govuk-grid-column-one-third">
 
 
@@ -107,7 +107,7 @@
         }) }}
 
         <p class="govuk-body">
-          <a href="/current/r3/reset-filters" class="govuk-link">Reset filters</a>
+          <a href="/current/r6/reset-filters" class="govuk-link">Reset filters</a>
         </p>
       <!-- </form> -->
     </div>
@@ -139,7 +139,16 @@
 
       <ul class="govuk-list govuk-list--spaced">
         {% for qualification in data['search-results'] %}
-          <li><a href={{qualification.href}}>{{qualification.name}}</a></li>
+          <li>
+            <div>
+              <h2><a href={{qualification.href}}>{{qualification.name}}</a></h2>
+              <p>This is a level 3 qualification which was started after 1 September ...</p>
+              <p><strong>Awarding organisation:</strong> {{qualification.awardingOrganisation}}</p>
+              <p><strong>Level:</strong> {{qualification.level}}</p>
+              <p><strong>Date added to Early Years Qualification List:</strong> {{qualification.dateStarted}}</p>
+            </div>
+            <hr/>
+          </li>
         {% endfor %}
         <li><a href="#">The qualification I am looking for is not on this list</a></li>
       </ul>
