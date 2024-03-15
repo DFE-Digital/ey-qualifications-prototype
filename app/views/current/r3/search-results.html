@@ -139,7 +139,16 @@
 
       <ul class="govuk-list govuk-list--spaced">
         {% for qualification in data['search-results'] %}
-          <li><a href={{qualification.href}}>{{qualification.name}}</a></li>
+          <li>
+            <div>
+              <h2><a href={{qualification.href}}>{{qualification.name}}</a></h2>
+              <p>This is a level 3 qualification which was started after 1 September ...</p>
+              <p><strong>Awarding organisation:</strong> {{qualification.awardingOrganisation}}</p>
+              <p><strong>Level:</strong> {{qualification.level}}</p>
+              <p><strong>Date added to Early Years Qualification List:</strong> {{qualification.dateStarted}}</p>
+            </div>
+            <hr/>
+          </li>
         {% endfor %}
         <li><a href="#">The qualification I am looking for is not on this list</a></li>
       </ul>
