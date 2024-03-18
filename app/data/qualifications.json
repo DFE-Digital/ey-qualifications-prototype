@@ -623,6 +623,19 @@
             "additionalRequirements": "",
             "beforeOrAfter2014": "after",
             "href": "eyq-300"
+          },
+          {
+            "id": "EYQ-301",
+            "level": 3,
+            "dateStarted": 2005,
+            "dateEnd": "",
+            "name": "Diploma for the Children and Young People’s Workforce (Early Learning and Childcare)",
+            "awardingOrganisation": "CACHE",
+            "qualificationNumber": "Not required",
+            "notes": "None",
+            "additionalRequirements": "",
+            "beforeOrAfter2014": "before",
+            "href": "eyq-301"
           }
     ]
 }
