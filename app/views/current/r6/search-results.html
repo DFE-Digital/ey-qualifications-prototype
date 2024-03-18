@@ -49,6 +49,29 @@
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="event-name">
+            Edit search
+          </label>
+        </h1>
+
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="event-name">
+                Qualification name
+              </label>
+            </h1>
+
+            <div id="qualification-search-hint" class="govuk-hint">
+                Use the full qualification name from the certificate, if you have it.
+              </div>
+            <!-- <input class="govuk-input" id="event-name" name="eventName" type="text" value="NCFE CACHE Level 3 Diploma in Early Years Education and Care"> -->
+            {{ govukInput({
+              name: 'qualification-search',
+              value: data['qualification-search']
+            })}}
+          </div>
+
         {{ govukCheckboxes({
           name: "qualification-level",
           classes: "govuk-checkboxes--small",
@@ -99,39 +122,45 @@
           id: "awarding-organisation",
           name: "awarding-organisation",
           label: {
-            text: "Awarding body",
+            text: "Awarding organisation",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           },
           items: data['awarding-organisations']
         }) }}
 
+        {{ govukButton({
+          text: "Update results"
+        }) }}
+
         <p class="govuk-body">
-          <a href="/current/r6/reset-filters" class="govuk-link">Reset filters</a>
+          <a href="/current/r6/reset-filters" class="govuk-link">Reset search options</a>
         </p>
       <!-- </form> -->
     </div>
     <div class="govuk-grid-column-two-thirds">
         <!-- <form class="form" action="/post-search-results" method="post"> -->
 
-            <div class="govuk-form-group">
+            <!-- <div class="govuk-form-group">
                 <h1 class="govuk-label-wrapper">
                   <label class="govuk-label govuk-label--l" for="event-name">
-                    Search
+                    Qualification name
                   </label>
-                </h1>
+                </h1> -->
                 <!-- <input class="govuk-input" id="event-name" name="eventName" type="text" value="NCFE CACHE Level 3 Diploma in Early Years Education and Care"> -->
-                {{ govukInput({
+                <!-- {{ govukInput({
                   name: 'qualification-search',
                   value: data['qualification-search']
                 })}}
-              </div>
+              </div> -->
 
-            {{ govukButton({
+            <!-- {{ govukButton({
               text: "Update results"
-            }) }}
+            }) }} -->
 
           <!-- </form> -->
+
+          <h1 class="govuk-heading-xl">Search results</h1>
 
       <p class="govuk-body-l"><strong>{{ data['result-count'] }} {{ ' results' if data['result-count'] > 1 else ' result' }}</strong></p>
 
@@ -142,10 +171,10 @@
           <li>
             <div>
               <h2><a href={{qualification.href}}>{{qualification.name}}</a></h2>
-              <p>This is a level 3 qualification which was started after 1 September ...</p>
+              <!-- <p>This is a level 3 qualification which was started after 1 September ...</p> -->
               <p><strong>Awarding organisation:</strong> {{qualification.awardingOrganisation}}</p>
               <p><strong>Level:</strong> {{qualification.level}}</p>
-              <p><strong>Date added to Early Years Qualification List:</strong> {{qualification.dateStarted}}</p>
+              <!-- <p><strong>Date added to Early Years Qualification List:</strong> {{qualification.dateStarted}}</p> -->
             </div>
             <hr/>
           </li>
