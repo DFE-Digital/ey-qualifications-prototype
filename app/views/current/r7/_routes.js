@@ -14,7 +14,6 @@ router.post('/set-default-data', function(request, response) {
   // Resets the selected data
   setInitialData(request, response);
   response.redirect("/current/r7/search-results");
-  console.log('post route');
 })
 
 // Route search results
