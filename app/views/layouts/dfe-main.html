@@ -1,0 +1,27 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {% from 'node_modules/dfe-frontend-alpha/packages/components/header/macro.njk' import header %}
+
+  {{ header({
+      "showNav": "false",
+      "showSearch": "false",
+      "showUserName": "false",
+      "userName": "",
+      "userNameURL": "",
+      "logoPath": "public/images",
+      "service": {
+        "name": "Check an early years qualification"
+      }
+    })
+  }}
+{% endblock %}
+{% block scripts %}
+  {{ super() }}
+  <script src="/node_modules/dfe-frontend-alpha/dist/dfefrontend.min.js"></script>
+{% endblock %}
