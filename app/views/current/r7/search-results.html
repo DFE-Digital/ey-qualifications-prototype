@@ -1,0 +1,189 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "/current/r7/start"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <form class="form" action="/current/r7/post-search-results" method="post">
+    <div class="govuk-grid-column-one-third">
+
+
+
+      <!-- <form class="form" action="#" method="post"> -->
+        <!-- Filters -->
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        <!-- {{ govukRadios({
+          classes: "govuk-radios--small",
+          name: "qualification-year",
+          value: data['qualification-year'],
+          fieldset: {
+            legend: {
+              text: "Year of qualification",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "before",
+              text: "Before September 2014"
+            },
+            {
+              value: "after",
+              text: "After September 2014"
+            }
+          ]
+        }) }} -->
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="event-name">
+            Edit search
+          </label>
+        </h1>
+
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="event-name">
+                Qualification name
+              </label>
+            </h1>
+
+            <div id="qualification-search-hint" class="govuk-hint">
+                Use the full qualification name from the certificate, if you have it.
+              </div>
+            <!-- <input class="govuk-input" id="event-name" name="eventName" type="text" value="NCFE CACHE Level 3 Diploma in Early Years Education and Care"> -->
+            {{ govukInput({
+              name: 'qualification-search',
+              value: data['qualification-search']
+            })}}
+          </div>
+
+        {{ govukCheckboxes({
+          name: "qualification-level",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "Qualification level",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "2",
+              text: "Level 2",
+              checked: data['level-2-checked']
+            },
+            {
+              value: "3",
+              text: "Level 3",
+              checked: data['level-3-checked']
+            },
+            {
+              value: "4",
+              text: "Level 4",
+              checked: data['level-4-checked']
+            },
+            {
+              value: "5",
+              text: "Level 5",
+              checked: data['level-5-checked']
+            },
+            {
+              value: "6",
+              text: "Level 6",
+              checked: data['level-6-checked']
+            },
+            {
+              value: "7",
+              text: "Level 7",
+              checked: data['level-7-checked']
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "awarding-organisation",
+          name: "awarding-organisation",
+          label: {
+            text: "Awarding organisation",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          },
+          items: data['awarding-organisations']
+        }) }}
+
+        {{ govukButton({
+          text: "Update results"
+        }) }}
+
+        <p class="govuk-body">
+          <a href="/current/r7/reset-filters" class="govuk-link">Reset search options</a>
+        </p>
+      <!-- </form> -->
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <!-- <form class="form" action="/post-search-results" method="post"> -->
+
+            <!-- <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="event-name">
+                    Qualification name
+                  </label>
+                </h1> -->
+                <!-- <input class="govuk-input" id="event-name" name="eventName" type="text" value="NCFE CACHE Level 3 Diploma in Early Years Education and Care"> -->
+                <!-- {{ govukInput({
+                  name: 'qualification-search',
+                  value: data['qualification-search']
+                })}}
+              </div> -->
+
+            <!-- {{ govukButton({
+              text: "Update results"
+            }) }} -->
+
+          <!-- </form> -->
+
+          <h1 class="govuk-heading-xl">Search results</h1>
+
+      <p class="govuk-body-l"><strong>{{ data['result-count'] }} {{ ' results' if data['result-count'] > 1 else ' result' }}</strong></p>
+
+      <!-- <p class="govuk-body-l">Click the qualification name to see any conditions which may affect whether the qualification is full and relevant.</p> -->
+
+      <ul class="govuk-list govuk-list--spaced">
+        {% for qualification in data['search-results'] %}
+          <li>
+            <div>
+              <h2><a href={{qualification.href}}>{{qualification.name}}</a></h2>
+              <!-- <p>This is a level 3 qualification which was started after 1 September ...</p> -->
+              <p><strong>Awarding organisation:</strong> {{qualification.awardingOrganisation}}</p>
+              <p><strong>Level:</strong> {{qualification.level}}</p>
+              <!-- <p><strong>Date added to Early Years Qualification List:</strong> {{qualification.dateStarted}}</p> -->
+            </div>
+            <hr/>
+          </li>
+        {% endfor %}
+        <li><a href="#">The qualification I am looking for is not on this list</a></li>
+      </ul>
+
+    </div>
+    </form>
+  </div>
+
+{% endblock %}
