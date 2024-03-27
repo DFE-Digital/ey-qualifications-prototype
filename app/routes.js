@@ -54,4 +54,7 @@ router.use('/current/r3', require('./views/current/r3/_routes'));
 // r6
 router.use('/current/r6', require('./views/current/r6/_routes'));
 
+// r7
+router.use('/current/r7', require('./views/current/r7/_routes'));
+
 module.exports = router
