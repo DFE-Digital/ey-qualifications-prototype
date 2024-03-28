@@ -52,19 +52,23 @@
             Enter a qualification name
           </label>
         </h1>
+      </div>
+      <div class="govuk-form-group">
         <div id="qualification-search-hint" class="govuk-hint">
           Use the full qualification name, including anything in brackets.
         </div>
-
         {{ govukInput({
           name: 'qualification-search',
           value: data['qualification-search']
         })}}
-
+      </div>
+      <div class="govuk-form-group">
         {{ govukButton({
-          text: "Update results"
+          text: "Search"
         }) }}
       </div>
+      
+      
 
     <div class="govuk-grid-column-one-third">
 
