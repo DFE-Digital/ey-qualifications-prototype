@@ -14,7 +14,58 @@
 {% block content %}
 
   <div class="govuk-grid-row">
+<!--
+            <form class="form" action="#" method="post">
+
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="event-name">
+                    Enter a qualification name
+                  </label>
+                </h1>
+                <div id="qualification-search-hint" class="govuk-hint">
+                  Use the full qualification name, including anything in brackets.
+                </div>
+
+                {{ govukInput({
+                  name: 'qualification-search',
+                  value: data['qualification-search']
+                })}}
+
+              </div>
+
+
+                {{ govukButton({
+                  text: "Update results"
+                }) }}
+
+
+
+
+          </form>
+-->
     <form class="form" action="/current/r7/post-search-results" method="post">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="event-name">
+            Enter a qualification name
+          </label>
+        </h1>
+        <div id="qualification-search-hint" class="govuk-hint">
+          Use the full qualification name, including anything in brackets.
+        </div>
+
+        {{ govukInput({
+          name: 'qualification-search',
+          value: data['qualification-search']
+        })}}
+
+        {{ govukButton({
+          text: "Update results"
+        }) }}
+      </div>
+
     <div class="govuk-grid-column-one-third">
 
 
@@ -55,6 +106,8 @@
           </label>
         </h1>
 
+
+<!--
         <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
               <label class="govuk-label govuk-label--m" for="event-name">
@@ -65,12 +118,15 @@
             <div id="qualification-search-hint" class="govuk-hint">
                 Use the full qualification name from the certificate, if you have it.
               </div>
-            <!-- <input class="govuk-input" id="event-name" name="eventName" type="text" value="NCFE CACHE Level 3 Diploma in Early Years Education and Care"> -->
+
             {{ govukInput({
               name: 'qualification-search',
               value: data['qualification-search']
             })}}
+
           </div>
+        -->
+
 
         {{ govukCheckboxes({
           name: "qualification-level",
@@ -129,9 +185,13 @@
           items: data['awarding-organisations']
         }) }}
 
+
+
         {{ govukButton({
           text: "Update results"
         }) }}
+
+
 
         <p class="govuk-body">
           <a href="/current/r7/reset-filters" class="govuk-link">Reset search options</a>
