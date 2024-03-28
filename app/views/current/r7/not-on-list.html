@@ -1,0 +1,148 @@
+{% extends "layouts/dfe-main.html" %}
+
+{% block pageTitle %}
+  Check an Early Years qualification – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-xl gem-c-title__context">
+       Early years qualifications list
+      </span>
+
+      <h1 class="govuk-heading-xl">
+        The qualification I am looking for is not on the list
+      </h1>
+
+      <p>
+        If a qualification is not on the early years qualifications list (EYQL), it cannot be considered approved as full and relevant by the Department for Education (DfE).
+      </p>
+
+      <h2 class="govuk-heading-m">
+        Tips for searching the EYQL
+      </h2>
+
+      <p>
+        If you cannot find a qualification that you think should appear on the EYQL, try:
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>checking your spelling</li>
+          <li>using fewer words from the qualification title</li>
+          <li>checking the qualification name and awarding organisation with the candidate</li>
+          <li>asking the candidate to provide a copy of their certificate</li>
+          <li>adding or removing filters on the search page</a>
+        </ul>
+      </p>
+
+
+
+      <p>
+        This qualification is approved by the Department for Education (DfE) as full and relevant, if:
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>The qualification was started after 1 September 2014.</li>
+          <li>The qualification certificate shows Early Years Educator in the qualification name. Where the qualification certificate shows Knowledge only pathway the holder cannot count in the ratios.</li>
+        </ul>
+      </p>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          You must make sure that the qualification name exactly matches the qualification on the certificate, including any wording in brackets.
+        </strong>
+      </div>
+
+      <p>
+        Someone who holds this qualification can be included in staff to child ratios at level 3 as long as they meet all the other level 3 requirements.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        Other requirements to work in the staff to child ratios at level 3
+      </h2>
+
+      <p>
+        For someone who holds this qualification to be included in the staff to child ratios at level 3, they must:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>hold a suitable level 2 English qualification, as specified in the <a href="#">early years qualification requirements and standards document</a></li>
+        <li>hold a current paediatric first aid qualification which meets the criteria in the <a href="#">early years foundation stage (EYFS) statutory framework</a></li>
+        <li>meet all other requirements as set out in the <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2" class="govuk-link">EYFS</a> and the <a href="https://www.gov.uk/government/publications/early-years-qualification-requirements-and-standards" class="govuk-link">early years qualification requirements and standards document</a></li>
+      </ul>
+
+      <p>
+        A person who holds a full and relevant level 3 qualification started after September 2014, but who does not hold a suitable level 2 qualification in English can be counted in the staff to child ratios at level 2.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        Get more help and advice
+      </h2>
+
+      <p>
+        If you need more help, contact Ecctis Early Years Service. Ecctis provides qualification checking guidance on behalf of DfE. Information on the <a rel="external" href="https://ecctis.com/Qualifications/eys/Default.aspx" class="govuk-link">guidance Ecctis is able to provide</a> can be found on their website.
+      </p>
+
+      <button class="govuk-link govuk-body-s gem-c-print-link__button">Print this page</button>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Check another qualification
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Early years foundation stage statutory framework (EYFS)
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Early years qualification requirements and standards
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Pathway into early years education
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Early years qualifications achieved outside the United Kingdom
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Early years qualifications that do not meet the criteria
+              </a>
+            </li>
+            <!-- <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li> -->
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
