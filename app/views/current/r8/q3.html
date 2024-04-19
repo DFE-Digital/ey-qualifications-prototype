@@ -35,10 +35,11 @@
       </details>
 
 <form class="form" action="q4" method="post">
-
+      <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
+      <input type="hidden" name="awarding-date" value="{{data['awarding-date']}}" />
       {{ govukRadios({
-          name: "QualLevel",
-          value: data['QualLevel'],
+          name: "qualification-level",
+          value: data['qualification-level'],
           fieldset: {
             legend: {
               text: "",
@@ -48,35 +49,35 @@
           },
           items: [
             {
-              value: "L2",
+              value: "2",
               text: "Level 2"
             },
             {
-              value: "L3",
+              value: "3",
               text: "Level 3"
             },
             {
-              value: "L4",
+              value: "4",
               text: "Level 4"
             },
             {
-              value: "L5",
+              value: "5",
               text: "Level 5"
             },
             {
-              value: "L6",
+              value: "6",
               text: "Level 6"
             },
             {
-              value: "L7",
+              value: "7",
               text: "Level 7"
             },
             {
-              value: "L8",
+              value: "8",
               text: "Level 8"
             },
             {
-              value: "any level",
+              value: "any",
               text: "It doesn't say on the certificate"
             }
           ]
