@@ -76,7 +76,10 @@ href: "/current/r8/q4"
       <div class="govuk-form-group">
         {{ govukInput({
         name: 'qualification-search',
-        value: data['qualification-search']
+        value: data['qualification-search'],
+        suffix: {
+          text: "Search"
+        }
         })}}
       </div>
 
