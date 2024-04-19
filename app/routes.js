@@ -19,17 +19,17 @@ router.post('/route-qual-answer', function(request, response) {
   }
 })
 
-// Logging session data 
- 
-router.use((req, res, next) => { 
-    const log = { 
-    method: req.method, 
-    url: req.originalUrl, 
-    data: req.session.data 
-    } 
-    console.log(JSON.stringify(log, null, 2)) 
-   
-    next() 
+// Logging session data
+
+router.use((req, res, next) => {
+    const log = {
+    method: req.method,
+    url: req.originalUrl,
+    data: req.session.data
+    }
+    console.log(JSON.stringify(log, null, 2))
+
+    next()
     })
 
 // GET SPRINT NAME - useful for relative templates
@@ -56,5 +56,8 @@ router.use('/current/r6', require('./views/current/r6/_routes'));
 
 // r7
 router.use('/current/r7', require('./views/current/r7/_routes'));
+
+// r8
+router.use('/current/r8', require('./views/current/r8/_routes'));
 
 module.exports = router

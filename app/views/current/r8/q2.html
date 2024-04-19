@@ -1,0 +1,52 @@
+{% extends "layouts/dfe-main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "/current/r8/q1"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="q3" method="post">
+
+      {{ govukRadios({
+          name: "QualLevel",
+          value: data['QualLevel'],
+          fieldset: {
+            legend: {
+              text: "When was the qualification awarded?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Before September 2014",
+              text: "Before September 2014"
+            },
+            {
+              value: "During or after September 2014",
+              text: "During or after September 2014"
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
