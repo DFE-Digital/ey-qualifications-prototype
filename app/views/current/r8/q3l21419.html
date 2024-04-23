@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "/current/r8/q1"
+  href: "/current/r8/start"
 }) }}
 {% endblock %}
 
@@ -16,35 +16,14 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="q3" method="post">
+    <h1 class="govuk-heading-xl">Level 2 qualifications started between 1 September 2014 and 31 August 2019</h1>
 
-      {{ govukRadios({
-          name: "QualLevel",
-          value: data['QualLevel'],
-          fieldset: {
-            legend: {
-              text: "When was the qualification awarded?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            {
-              value: "Before September 2014",
-              text: "Before September 2014"
-            },
-            {
-              value: "During or after September 2014",
-              text: "During or after September 2014"
-            }
-          ]
-        }) }}
-
-      {{ govukButton({
-        text: "Continue"
-      }) }}
-
-    </form>
+    <p class="govuk-body">Level 2 qualifications started between 1 September 2014 and 31 August 2019 are not shown in this service.</p>
+    <p class="govuk-body">All level 2 early years qualifications are full and relevant if they are:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>early years (0 to 5 years) related and appropriate to early years practice</li>
+      <li><a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Ofqual-approved and included on their list of regulated qualifications</li>
+    </ul>
 
   </div>
 </div>
