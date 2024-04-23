@@ -1,0 +1,60 @@
+{% extends "layouts/dfe-main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "/current/r8/start"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="q2" method="post">
+
+      {{ govukRadios({
+          name: "awarding-location",
+          value: data['awarding-location'],
+          fieldset: {
+            legend: {
+              text: "Where was the qualification awarded?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "England",
+              text: "England"
+            },
+            {
+              value: "Scotland, Wales or Northern Ireland",
+              text: "Scotland, Wales or Northern Ireland"
+            },
+            {
+              value: "Outside the United Kingdom",
+              text: "Outside the United Kingdom"
+            },
+            {
+              value: "Not sure",
+              text: "Not sure"
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

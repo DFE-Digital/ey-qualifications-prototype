@@ -1,0 +1,31 @@
+{% extends "layouts/dfe-main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "/current/r8/start"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Level 2 qualifications started between 1 September 2014 and 31 August 2019</h1>
+
+    <p class="govuk-body">Level 2 qualifications started between 1 September 2014 and 31 August 2019 are not shown in this service.</p>
+    <p class="govuk-body">All level 2 early years qualifications are full and relevant if they are:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>early years (0 to 5 years) related and appropriate to early years practice</li>
+      <li><a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Ofqual-approved and included on their list of regulated qualifications</li>
+    </ul>
+
+  </div>
+</div>
+
+{% endblock %}

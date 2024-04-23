@@ -1,0 +1,365 @@
+{% extends "layouts/dfe-main.html" %}
+
+{% block pageTitle %}
+  Check an Early Years qualification – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/current/r8/search-results"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<!-- <p id="date"></p>
+<script>
+document.getElementById("date").innerHTML = Date();
+</script> -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <!-- <span class="govuk-caption-xl gem-c-title__context">
+       Early years qualifications list
+      </span> -->
+
+      <h1 class="govuk-heading-xl">
+        Your result
+      </h1>
+
+              <!-- <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Qualification</th>
+              <td class="govuk-table__cell">BA (Hons) in Early Childhood Studies</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Qualification Level</th>
+              <td class="govuk-table__cell">6</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Awarding oranisation</th>
+              <td class="govuk-table__cell">University of Buxton</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Date checked</th>
+              <td id="date" class="govuk-table__cell">14th April 2024</td>
+            </tr>
+          </tbody>
+        </table> -->
+
+
+      {{ govukSummaryList({
+        rows: [
+
+              {
+            key: {
+              text: "Qualification"
+            },
+            value: {
+              text: "BA (Hons) in Early Childhood Studies"
+            }
+          },
+
+        {
+            key: {
+              text: "Qualification Level"
+            },
+            value: {
+              text: "6"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+              key: {
+                text: "Awarding oranisation"
+              },
+              value: {
+                text: "University of Buxton"
+              },
+              actions: {
+
+              }
+            }
+            ,
+          {
+            key: {
+              text: "Date checked"
+            },
+            value: {
+              text: data['todays-date']
+            },
+            actions: {
+
+            }
+          }
+        ]
+      }) }}
+
+
+    </div>
+  </div>
+
+  <div style="margin-left:-5px;" class="govuk-grid-row">
+    <div class="full-width-container">
+
+
+
+      <p class="govuk-body-l"><strong>Your answers</strong></p>
+
+
+
+      <div style="margin-top:40px;" class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <p style="max-width:35em; margin-bottom:20px;" class=class="govuk-body-m">
+        Was the qualification registered for or started after September 2014?
+      </p>
+    </legend>
+    <p style="padding-left:900px; margin-top:-60px;" class=class="govuk-body-m">
+      Yes
+    </p>
+  </fieldset>
+</div>
+<hr style="margin-top:-20px;">
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<p style="max-width:35em; margin-top:30px;" class="govuk-body-m">
+  Did the qualification include an element of assessed practice in an early years setting?
+</p>
+</legend>
+  <p style="padding-left:900px; margin-top:-75px;" class=class="govuk-body-m">
+    Yes
+  </p>
+</fieldset>
+</div>
+<hr style="margin-top:-30px;">
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<p style="max-width:35em; margin-top:30px;" class="govuk-body-m">
+  Was the course fully consistent with the QAA subject benchmark statement for Early Childhood Studies?
+</p>
+</legend>
+<p style="padding-left:900px; margin-top:-75px;" class=class="govuk-body-m">
+  Yes
+</p>
+</fieldset>
+</div>
+<hr style="margin-top:-30px;">
+
+
+
+      <!-- <p>
+        This qualification is approved by the Department for Education (DfE) as full and relevant, if:
+      </p>
+
+      <p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>The qualification was started between 1 September 2014 and 31 August 2023</li>
+          <li>The course is fully consistent with the <a href="#">QAA subject benchmark statement for Early Childhood Studies</a></li>
+          <li>The qualification included an <a href="#">element of assessed practice in an early years setting</a>.</li>
+        </ul>
+
+      </p>
+
+      <p>
+        The training provider, for example the university, college or awarding organisation, should be able to help you confirm whether the qualification meets these requirements.
+      </p>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          You must make sure that the qualification name exactly matches the qualification on the certificate, including any wording in brackets.
+        </strong>
+      </div>
+
+      <p>
+        This is a level 6 qualification which was started after 1 September 2014. Someone who holds this qualification can be included in staff to child ratios at level 3 as long as they meet all the other level 3 requirements.</p>
+
+      <h2 class="govuk-heading-m">
+        Other requirements to work in the staff to child ratios at level 3
+      </h2>
+
+      <p>
+        For someone who holds this qualification to be included in the staff to child ratios at level 3, they must:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>hold a suitable level 2 English qualification, as specified in the <a href="#">early years qualification requirements and standards document</a></li>
+        <li>hold a current paediatric first aid qualification which meets the criteria in the <a href="#">early years foundation stage (EYFS) statutory framework</a></li>
+        <li>meet all other requirements as set out in the <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2" class="govuk-link">EYFS</a> and the <a href="https://www.gov.uk/government/publications/early-years-qualification-requirements-and-standards" class="govuk-link">early years qualification requirements and standards document</a></li>
+      </ul>
+
+      <p>
+        A person who holds a full and relevant level 3 qualification started after September 2014, but who does not hold a suitable level 2 qualification in English can be counted in the staff to child ratios at level 2.
+      </p>
+
+      <h2 class="govuk-heading-m">
+      Requirements to work in the staff to child ratios at level 6
+      </h2>
+
+      <p>
+        To be included in the staff to child ratios at level 6, staff must hold one of the following or another approved level 6 qualification:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Qualified Teacher Status (QTS)</li>
+        <li>Early Years Teacher Status (EYTS)</li>
+        <li>Early Years Professional Status (EYPS)</li>
+      </ul>
+
+
+      <h2 class="govuk-heading-m">
+        Get more help and advice
+      </h2>
+
+      <p>
+          If you need more help, contact Ecctis Early Years Service. Ecctis provides qualification checking guidance on behalf of DfE. Information on the <a rel="external" href="https://ecctis.com/Qualifications/eys/Default.aspx" class="govuk-link">guidance Ecctis is able to provide</a> can be found on their website.
+      </p> -->
+
+            <p class="govuk-body">
+        <a href="eyq-300" class="govuk-link">Change my answers</a>
+      </p>
+
+      <br>
+      <!-- <button onclick="window.print();" class="govuk-link govuk-body-s gem-c-print-link__button">Print this page</button>
+      <br><br> -->
+
+      <div style="max-width:35em;" class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          Your result is dependent on the accuracy of the answers you have provided.
+        </strong>
+      </div>
+
+      <p style="max-width:35em;" class="govuk-body-m"><strong>Given the answers you have provided, this qualification is approved by the Department for Education as full and relevant for the following staff to child ratios.</strong></p>
+
+      <p style="max-width:35em;" class="govuk-body-m"><strong>This is a level 6 qualification which was started after 1 September 2014. Someone who holds this qualification can be included in staff to child ratios at level 3 as long as they meet all the other level 3 requirements.</strong></p>
+
+                  <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <p style="padding-top:30px; margin-bottom:-30px;"  class="govuk-body-m"><strong>
+                    Level 3</strong>
+                  </p>
+                </legend>
+                <p style="margin-left:885px; margin-top:-60px; background-color:#008A0D; color: white;" class="govuk-tag govuk-tag--green">
+                  Approved
+                </p>
+                <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Other requirements to work at level 3
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  For someone who holds this qualification to be included in the staff to child ratios at level 3, they must:
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>hold a suitable level 2 English qualification, as specified in the <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">early years qualification requirements and standards document</a></li>
+                    <li>hold a current paediatric first aid qualification which meets the criteria in the  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">early years foundation stage (EYFS) statutory framework</a></li>
+                    <li>meet all other requirements as set out in the  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">EYFS</a> and the <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">early years qualification requirements and standards document</a></li>
+                  </ul>
+                  <p class="govuk-body-m">A person who holds a full and relevant level 3 qualification started after September 2014, but who does not hold a suitable level 2 qualification in English can be counted in the staff to child ratios at level 2.
+                    </p>
+                </div>
+              </details>
+                <p style="max-width:35em;" class="govuk-body-m"><strong>Someone who holds this qualification can also work in the following staff to child ratios.</strong></p>
+              </fieldset>
+            </div>
+            <hr>
+
+            <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <p style="padding-top:30px; margin-bottom:-30px;"  class="govuk-body-m"><strong>
+              Level 2</strong>
+            </p>
+          </legend>
+          <p style="margin-left:885px; margin-top:-60px; background-color:#008A0D; color: white;" class="govuk-tag govuk-tag--green">
+            Approved
+          </p>
+          <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Other requirements to work at level 2
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Placeholder text
+          </div>
+        </details>
+        </fieldset>
+      </div>
+      <hr>
+
+      <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <p style="padding-top:30px; margin-bottom:-30px;"  class="govuk-body-m"><strong>
+       Unqualified</strong>
+      </p>
+    </legend>
+    <p style="margin-left:885px; margin-top:-60px; background-color:#008A0D; color: white;" class="govuk-tag govuk-tag--green">
+      Approved
+    </p>
+    <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Other requirements to work as an unqualified member of staff
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      Placeholder text
+    </div>
+  </details>
+  </fieldset>
+</div>
+<hr>
+
+            <div class="govuk-form-group">
+              <p style="max-width:35em;" class="govuk-body-m"><strong>They cannot work at the following staff to child ratios.</strong></p>
+            <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <p style="padding-top:30px; margin-bottom:-30px;"  class="govuk-body-m"><strong>
+             Level 6</strong>
+            </p>
+            </legend>
+            <p style="margin-left:850px; margin-top:-60px; background-color:red; color: white;" class="govuk-tag govuk-tag--green">
+            Not approved
+            </p>
+            <details class="govuk-details">
+            <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Other requirements to work at level 6
+            </span>
+            </summary>
+            <div class="govuk-details__text">
+            Placeholder text
+            </div>
+            </details>
+            </fieldset>
+            </div>
+            <hr>
+
+
+<br><br>
+<p class="govuk-body">
+<a href="q1" class="govuk-link">Check another qualification</a>
+</p>
+
+    </div>
+  </div>
+
+
+{% endblock %}

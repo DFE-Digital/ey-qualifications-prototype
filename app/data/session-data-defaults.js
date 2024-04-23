@@ -5,5 +5,6 @@ module.exports = {
   "level-4-checked": false,
   "level-5-checked": false,
   "level-6-checked": false,
-  "level-7-checked": false
+  "level-7-checked": false,
+  "level-8-checked": false,
 }
