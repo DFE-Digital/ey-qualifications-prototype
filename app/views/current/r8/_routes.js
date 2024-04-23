@@ -19,7 +19,22 @@ router.post('/post-search-results', function(request, response) {
   request.session.data['result-count'] = qualifications.length;
   request.session.data['search-results'] = qualifications;
   response.redirect("/current/r8/search-results");
+
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var date = new Date(Date.now());
+  var dateString = date.getDate() + nth(date.getDate()) + " " + months[date.getMonth()] + " " + date.getFullYear();
+  request.session.data['todays-date'] = dateString;
 })
+
+const nth = (d) => {
+  const last = +String(d).slice(-2);
+  if (last > 3 && last < 21) return 'th';
+  const remainder = last % 10;
+  if (remainder === 1) return "st";
+  if (remainder === 2) return "nd";
+  if (remainder === 3) return "rd";
+  return "th";
+};
 
 function filterQualificationYear(qualifications, request) {
   // if the data doesn't include the qualification year then just return the list of qualifications as nothing to filter out.
