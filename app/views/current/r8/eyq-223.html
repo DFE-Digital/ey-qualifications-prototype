@@ -7,26 +7,53 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "/current/r8/search-results"
   }) }}
 {% endblock %}
 
 {% block content %}
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <span class="govuk-caption-xl gem-c-title__context">
+      <!-- <span class="govuk-caption-xl gem-c-title__context">
        Early years qualifications list
-      </span>
+      </span> -->
 
       <h1 class="govuk-heading-xl">
-        NCFE CACHE Level 3 Diploma in Early Years Education and Care (Early Years Educator)
+        Check the additional requirements
       </h1>
+
 
       {{ govukSummaryList({
         rows: [
 
         {
+            key: {
+              text: "Qualification"
+            },
+            value: {
+              text: "NCFE CACHE Level 3 Diploma in Early Years Education and Care (Early Years Educator)"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Qualification level"
+            },
+            value: {
+              text: "3"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
             key: {
               text: "Awarding organisation"
             },
@@ -40,10 +67,10 @@
           ,
           {
             key: {
-              text: "Level"
+              text: "Date added to early years qualifications list"
             },
             value: {
-              text: "Level 3"
+              text: "1 September 2014"
             },
             actions: {
 
@@ -52,13 +79,190 @@
         ]
       }) }}
 
-      <p>
-        This qualification is approved by the Department for Education (DfE) as full and relevant, if:
 
+            <div style="margin-top:50px;" class="govuk-inset-text">
+        You can bookmark this page if you need to return to it later
+      </div>
+
+    </div>
+  </div>
+
+  <div style="margin-left:-5px;" class="govuk-grid-row">
+    <div class="full-width-container">
+
+
+
+      <p style="margin-top:25px;" class="govuk-body-l"><strong>Please answer the following questions</strong></p>
+
+
+
+      <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <p style="max-width:35em; margin-bottom:20px; margin-top:20px;" class=class="govuk-body-m">
+        Was the qualification registered for or started after September 2014?
+      </p>
+    </legend>
+    <div style="padding-left:740px; margin-top:-70px;" class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sep2014" name="sep2014" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="sep2014">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sep2014-2" name="sep2014" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="sep2014-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<hr style="margin-top:-20px;">
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<p style="max-width:35em; margin-bottom:20px; margin-top:20px;" class="govuk-body-m">
+  Does the qualification name include Early Years Educator?
+</p>
+</legend>
+<div style="padding-left:740px; margin-top:-70px;" class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="earlyyears" name="earlyyears" type="radio" value="yes">
+  <label class="govuk-label govuk-radios__label" for="earlyyears">
+    Yes
+  </label>
+</div>
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="earlyyears-2" name="earlyyears" type="radio" value="no">
+  <label class="govuk-label govuk-radios__label" for="earlyyears-2">
+    No
+  </label>
+</div>
+</div>
+</fieldset>
+</div>
+<hr style="margin-top:-20px;">
+<!--
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<p style="max-width:35em; margin-bottom:20px; margin-top:20px;" class="govuk-body-m">
+  Does the qualification name include Knowledge Only Pathway?
+</p>
+</legend>
+<div style="padding-left:740px; margin-top:-70px;" class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="KOP" name="KOP" type="radio" value="yes">
+  <label class="govuk-label govuk-radios__label" for="KOP">
+    Yes
+  </label>
+</div>
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="KOP-2" name="KOP" type="radio" value="no">
+  <label class="govuk-label govuk-radios__label" for="KOP-2">
+    No
+  </label>
+</div>
+</div>
+</fieldset>
+</div>
+<hr style="margin-top:-20px;">
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<p style="max-width:35em; margin-bottom:20px; margin-top:20px;" class="govuk-body-m">
+  Does the qualification holder also have a qualification in Paediatric First Aid?
+</p>
+</legend>
+<div style="padding-left:740px; margin-top:-70px;" class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="FRST" name="FRST" type="radio" value="yes">
+  <label class="govuk-label govuk-radios__label" for="FRST">
+    Yes
+  </label>
+</div>
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="FRST-4" name="FRST" type="radio" value="no">
+  <label class="govuk-label govuk-radios__label" for="FRST-4">
+    No
+  </label>
+</div>
+</div>
+</fieldset>
+</div>
+<hr style="margin-top:-20px;">
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<p style="max-width:35em; margin-bottom:20px; margin-top:20px;" class="govuk-body-m">
+  Does the qualification holder also have a qualification in GCSE English or equivalent?
+</p>
+</legend>
+<div style="padding-left:740px; margin-top:-90px;" class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="GCSE" name="GCSE" type="radio" value="yes">
+  <label class="govuk-label govuk-radios__label" for="GCSE">
+    Yes
+  </label>
+</div>
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="GCSE-6" name="GCSE" type="radio" value="no">
+  <label class="govuk-label govuk-radios__label" for="GCSE-6">
+    No
+  </label>
+</div>
+</div>
+</fieldset>
+</div>
+<hr style="margin-top:-20px;">
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<p style="max-width:35em; margin-bottom:20px; margin-top:20px;" class="govuk-body-m">
+  Does the qualification holder also have an up-to-date DBS check?
+</p>
+</legend>
+<div style="padding-left:740px; margin-top:-70px;" class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="DBS" name="DBS" type="radio" value="yes">
+  <label class="govuk-label govuk-radios__label" for="DBS">
+    Yes
+  </label>
+</div>
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="DBS-8" name="DBS" type="radio" value="no">
+  <label class="govuk-label govuk-radios__label" for="DBS-8">
+    No
+  </label>
+</div>
+</div>
+</fieldset>
+</div>
+<hr style="margin-top:-20px;"> -->
+
+
+
+      <!-- <p>
+        This qualification is approved by the Department for Education (DfE) as full and relevant, if:
+      </p>
+
+      <p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>The qualification was started after 1 September 2014.</li>
-          <li>The qualification certificate shows Early Years Educator in the qualification name. Where the qualification certificate shows Knowledge only pathway the holder cannot count in the ratios.</li>
+          <li>The qualification was started between 1 September 2014 and 31 August 2023</li>
+          <li>The course is fully consistent with the <a href="#">QAA subject benchmark statement for Early Childhood Studies</a></li>
+          <li>The qualification included an <a href="#">element of assessed practice in an early years setting</a>.</li>
         </ul>
+
+      </p>
+
+      <p>
+        The training provider, for example the university, college or awarding organisation, should be able to help you confirm whether the qualification meets these requirements.
       </p>
 
       <div class="govuk-warning-text">
@@ -70,8 +274,7 @@
       </div>
 
       <p>
-        Someone who holds this qualification can be included in staff to child ratios at level 3 as long as they meet all the other level 3 requirements.
-      </p>
+        This is a level 6 qualification which was started after 1 September 2014. Someone who holds this qualification can be included in staff to child ratios at level 3 as long as they meet all the other level 3 requirements.</p>
 
       <h2 class="govuk-heading-m">
         Other requirements to work in the staff to child ratios at level 3
@@ -92,64 +295,54 @@
       </p>
 
       <h2 class="govuk-heading-m">
+      Requirements to work in the staff to child ratios at level 6
+      </h2>
+
+      <p>
+        To be included in the staff to child ratios at level 6, staff must hold one of the following or another approved level 6 qualification:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Qualified Teacher Status (QTS)</li>
+        <li>Early Years Teacher Status (EYTS)</li>
+        <li>Early Years Professional Status (EYPS)</li>
+      </ul>
+
+
+      <h2 class="govuk-heading-m">
         Get more help and advice
       </h2>
 
       <p>
-        If you need more help, contact Ecctis Early Years Service. Ecctis provides qualification checking guidance on behalf of DfE. Information on the <a rel="external" href="https://ecctis.com/Qualifications/eys/Default.aspx" class="govuk-link">guidance Ecctis is able to provide</a> can be found on their website.
-      </p>
+          If you need more help, contact Ecctis Early Years Service. Ecctis provides qualification checking guidance on behalf of DfE. Information on the <a rel="external" href="https://ecctis.com/Qualifications/eys/Default.aspx" class="govuk-link">guidance Ecctis is able to provide</a> can be found on their website.
+      </p> -->
 
-      <button class="govuk-link govuk-body-s gem-c-print-link__button">Print this page</button>
+      <!--<br>
+      <button onclick="window.print();" class="govuk-link govuk-body-s gem-c-print-link__button">Print this page</button>
+      <br><br> -->
 
-    </div>
+      <div style="max-width:35em;" class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          Your result is dependent on the accuracy of the answers you have provided. You must ensure all checks are carried out thoroughly.
+        </strong>
+      </div>
 
-    <div class="govuk-grid-column-one-third">
+      <form class="form" action="/current/r8/eyq-223-checked" method="post">
+            {{ govukButton({
+        text: "Get result"
+      }) }}
+      </form>
 
-      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Related content
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="#">
-                Check another qualification
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Early years foundation stage statutory framework (EYFS)
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Early years qualification requirements and standards
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Pathway into early years education
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Early years qualifications achieved outside the United Kingdom
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Early years qualifications that do not meet the criteria
-              </a>
-            </li>
-            <!-- <li>
-              <a href="#" class="govuk-!-font-weight-bold">
-                More <span class="govuk-visually-hidden">in Subsection</span>
-              </a>
-            </li> -->
-          </ul>
-        </nav>
-      </aside>
+
+
+
+
+
 
     </div>
   </div>
+
+
 {% endblock %}
