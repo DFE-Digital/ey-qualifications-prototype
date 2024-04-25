@@ -12,7 +12,7 @@ router.post('/post-search-results', function(request, response) {
     var searchTerm = request.session.data['qualification-search'];
     qualifications = data.qualifications.filter(x => x.name.toLowerCase().includes(searchTerm.toLowerCase()));
   }
- 
+
   qualifications = filterQualificationYear(qualifications, request);
   qualifications = filterLevels(qualifications, request);
   qualifications = filterAwardingOrganisations(qualifications, request);
@@ -70,7 +70,7 @@ function filterAwardingOrganisations(qualifications, request) {
   // if the data doesn't include the awarding organisation filter, then return the lot
   if (request.session.data['awarding-organisation'] == undefined || request.session.data['awarding-organisation'] == 'none' || request.session.data['awarding-organisation'] == 'any') return qualifications;
 
-  return qualifications.filter(x => x.awardingOrganisation == request.session.data['awarding-organisation']); 
+  return qualifications.filter(x => x.awardingOrganisation == request.session.data['awarding-organisation']);
 }
 
 module.exports = router
