@@ -1,0 +1,89 @@
+{% extends "layouts/dfe-main.html" %}
+
+{% block pageTitle %}
+Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "/current/r9/q4"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--m" for="event-name">
+        Your search
+      </label>
+    </h1>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>{{ 'Any level' if data['qualification-level'] == 'any' else 'Level ' + data['qualification-level'] }}</li>
+      <li>{{ 'Any organisation' if data['awarding-organisation'] == 'any' else data['awarding-organisation']}}</li>
+      <li>{{ 'Before September 2014' if data['awarding-date'] == 'before' else 'On or after 1 September 2014' }}</li>
+    </ul>
+
+    <p class="govuk-body">
+      <a href="q1" class="govuk-link">Change my search</a>
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/current/r9/post-search-results" method="post">
+      <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
+      <input type="hidden" name="awarding-date" value="{{data['awarding-date']}}" />
+      <input type="hidden" name="qualification-level" value="{{data['qualification-level']}}" />
+      <input type="hidden" name="awarding-organisation" value="{{data['awarding-organisation']}}" />
+
+      <h1 class="govuk-heading-xl">Select the qualification</h1>
+
+      <p class="govuk-body-l"><strong>{{ data['result-count'] }} matching {{ ' qualifications' if data['result-count']
+          > 1 else ' qualification' }} </strong></p>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          To be full and relevant, the qualification name must exactly match the qualification on the certificate, including any wording in brackets.
+          </strong>
+      </div>
+
+      <div class="govuk-form-group">
+        <label style="margin-bottom:-20px;" class="govuk-label" for="search">
+          Refine your search by entering keywords from the qualification name
+        </label>
+      </div>
+      <div class="govuk-form-group">
+        <input class="govuk-input govuk-!-width-three-quarters" id="" name="qualification-search" type="text" value="{{data['qualification-search']}}">
+        {{govukButton({
+          text: "Search",
+          type: "Submit",
+          classes: "govuk-button--secondary"
+          })}}       
+      </div>
+
+      <ul class="govuk-list govuk-list--spaced">
+        {% for qualification in data['search-results'] %}
+        <li>
+          <div>
+            <h2><a href={{qualification.href}}>{{qualification.name}}</a></h2>
+            <p>This qualification has 2 additional requirements</p>
+            <p><strong>Level:</strong> {{qualification.level}}</p>
+            <p><strong>Awarding organisation:</strong> {{qualification.awardingOrganisation}}</p>
+          </div>
+          <hr />
+        </li>
+        {% endfor %}
+      </ul>
+  </div>
+  </form>
+</div>
+
+{% endblock %}

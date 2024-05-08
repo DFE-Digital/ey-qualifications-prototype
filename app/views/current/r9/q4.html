@@ -1,0 +1,84 @@
+{% extends "layouts/dfe-main.html" %}
+
+{% block pageTitle %}
+Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "/current/r9/q3"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      What is the awarding organisation?
+    </h1>
+
+    <form class="form" action="post-search-results" method="post">
+      <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
+      <input type="hidden" name="awarding-date" value="{{data['awarding-date']}}" />
+      <input type="hidden" name="qualification-level" value="{{data['qualification-level']}}" />
+      <div class="govuk-radios" data-module="govuk-radios">
+
+        <div class="govuk-form-group">
+
+          {{ govukSelect({
+            id: "awarding-organisation",
+            name: "awarding-organisation",
+            label: {
+              text: "Awarding organisation",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            },
+            items: data['awarding-organisations']
+          }) }}
+
+          <!-- <select class="govuk-select" id="awarding-organisation" name="awarding-organisation">
+            <option value="none">Choose the awarding organisation</option>
+            <option value="any">Not in the list</option>
+            <option value="Anglia Ruskin University">Anglia Ruskin University</option>
+            <option value="Bath Spa University">Bath Spa University</option>
+            <option value="BIIAB">BIIAB</option>
+            <option value="Bournemouth Montessori Examination Board">Bournemouth Montessori Examination Board</option>
+            <option value="City and Guilds">City and Guilds</option>
+            <option value="Crossfields Institute">Crossfields Institute</option>
+            <option value="Edexcel (now Pearson)">Edexcel (now Pearson)</option>
+            <option value="iCan Qualifications Limited (iCQ)">iCan Qualifications Limited (iCQ)</option>
+            <option value="Innovate Awarding">Innovate Awarding</option>
+            <option value="Kingston University">Kingston University</option>
+            <option value="Middlesex University">Middlesex University</option>
+            <option value="NCFE">NCFE</option>
+            <option value="Nottingham Trent University">Nottingham Trent University</option>
+            <option value="Open University OU">Open University OU</option>
+            <option value="Oxford Brookes University">Oxford Brookes University</option>
+            <option value="Pearson">Pearson</option>
+            <option value="Skillsfirst">Skillsfirst</option>
+            <option value="TQUK">TQUK</option>
+            <option value="University Campus Suffolk">University Campus Suffolk</option>
+            <option value="University College Northampton">University College Northampton</option>
+            <option value="University of Bedfordshire">University of Bedfordshire</option>
+            <option value="University of Buxton">University of Buxton</option>
+            <option value="University of Gloucester">University of Gloucester</option>
+            <option value="University of Huddersfield">University of Huddersfield</option>
+            <option value="University of the West of England">University of the West of England</option>
+            <option value="University of Worcester">University of Worcester</option>
+          </select> -->
+        </div>
+      </div>
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
