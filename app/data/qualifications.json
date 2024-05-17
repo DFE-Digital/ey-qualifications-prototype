@@ -3148,58 +3148,6 @@
             "href":"eyq-50"
         },
         {
-            "id":"EYQ-500",
-            "level":2,
-            "dateStarted":"2019",
-            "dateEnd":null,
-            "name":"BIIAB Level 2 Diploma for the Early Years Practitioner",
-            "awardingOrganisation":"BIIAB",
-            "qualificationNumber":"603\/5227\/9",
-            "notes":null,
-            "additionalRequirements":null,
-            "beforeOrAfter2014":"after",
-            "href":"eyq-500"
-        },
-        {
-            "id":"EYQ-501",
-            "level":2,
-            "dateStarted":"2019",
-            "dateEnd":null,
-            "name":"City & Guilds Level 2 Diploma for the Early Years Practitioner (England)",
-            "awardingOrganisation":"City and Guilds",
-            "qualificationNumber":"603\/4935\/9",
-            "notes":null,
-            "additionalRequirements":null,
-            "beforeOrAfter2014":"after",
-            "href":"eyq-501"
-        },
-        {
-            "id":"EYQ-505",
-            "level":2,
-            "dateStarted":"2019",
-            "dateEnd":null,
-            "name":"BTEC Level 2 Diploma in Children's Play, Learning and Development (Early Years Practitioner)",
-            "awardingOrganisation":"Pearson",
-            "qualificationNumber":"603\/0509\/5",
-            "notes":null,
-            "additionalRequirements":null,
-            "beforeOrAfter2014":"after",
-            "href":"eyq-505"
-        },
-        {
-            "id":"EYQ-507",
-            "level":2,
-            "dateStarted":"2019",
-            "dateEnd":null,
-            "name":"Skillsfirst Level 2 Diploma for the Early Years Practitioner (RQF)",
-            "awardingOrganisation":"Skillsfirst",
-            "qualificationNumber":"603\/5179\/2",
-            "notes":null,
-            "additionalRequirements":null,
-            "beforeOrAfter2014":"2024",
-            "href":"eyq-507"
-        },
-        {
             "id":"EYQ-51",
             "level":3,
             "dateStarted":null,
@@ -3447,32 +3395,6 @@
             "href":"eyq-526"
         },
         {
-            "id":"EYQ-527",
-            "level":6,
-            "dateStarted":"2014",
-            "dateEnd":null,
-            "name":"BA in Education Studies Early Years Educator Specialised Award",
-            "awardingOrganisation":"Bath Spa University",
-            "qualificationNumber":"Not required",
-            "notes":"None.",
-            "additionalRequirements":null,
-            "beforeOrAfter2014":"after",
-            "href":"eyq-527"
-        },
-        {
-            "id":"EYQ-529",
-            "level":6,
-            "dateStarted":"2014",
-            "dateEnd":null,
-            "name":"BA (Hons) Joint Honours in Education: Education Studies and Early Years",
-            "awardingOrganisation":"Nottingham Trent University",
-            "qualificationNumber":"Not required",
-            "notes":"None.",
-            "additionalRequirements":null,
-            "beforeOrAfter2014":"after",
-            "href":"eyq-529"
-        },
-        {
             "id":"EYQ-53",
             "level":3,
             "dateStarted":null,
@@ -3484,45 +3406,6 @@
             "additionalRequirements":null,
             "beforeOrAfter2014":"before",
             "href":"eyq-53"
-        },
-        {
-            "id":"EYQ-531",
-            "level":6,
-            "dateStarted":"2014",
-            "dateEnd":null,
-            "name":"BA (Hons) Joint Honours in Education: Early Years, Psychology and Education",
-            "awardingOrganisation":"Nottingham Trent University",
-            "qualificationNumber":"Not required",
-            "notes":"None.",
-            "additionalRequirements":null,
-            "beforeOrAfter2014":"after",
-            "href":"eyq-531"
-        },
-        {
-            "id":"EYQ-532",
-            "level":6,
-            "dateStarted":"2014",
-            "dateEnd":null,
-            "name":"BA (Hons) Joint Honours in Education: Early Years, Business and Education",
-            "awardingOrganisation":"Nottingham Trent University",
-            "qualificationNumber":"Not required",
-            "notes":"None.",
-            "additionalRequirements":null,
-            "beforeOrAfter2014":"after",
-            "href":"eyq-532"
-        },
-        {
-            "id":"EYQ-536",
-            "level":6,
-            "dateStarted":"From Sept 2021",
-            "dateEnd":null,
-            "name":"BA (Hons) Early Years and BA (Hons) Early Years (Top up)",
-            "awardingOrganisation":"University of Greenwich",
-            "qualificationNumber":"Not required",
-            "notes":null,
-            "additionalRequirements":null,
-            "beforeOrAfter2014":"after",
-            "href":"eyq-536"
         },
         {
             "id":"EYQ-538",
@@ -3538,19 +3421,6 @@
             "href":"eyq-538"
         },
         {
-            "id":"EYQ-539",
-            "level":6,
-            "dateStarted":"2014",
-            "dateEnd":null,
-            "name":"Degrees and honours degrees at Level 6\n which are fully consistent with the QAA subject benchmark statement for Early Childhood Studies and include an element of assessed practice in an early years setting",
-            "awardingOrganisation":"Various Awarding Organisations",
-            "qualificationNumber":"Not required",
-            "notes":"Training providers should provide clarification on the below criteria:\n - The course must be fully consistent with the QAA subject benchmark statement for Early Childhood Studies\n - Include an element of assessed practice in an early years setting",
-            "additionalRequirements":null,
-            "beforeOrAfter2014":"after",
-            "href":"eyq-539"
-        },
-        {
             "id":"EYQ-54",
             "level":3,
             "dateStarted":null,
@@ -3562,32 +3432,6 @@
             "additionalRequirements":null,
             "beforeOrAfter2014":"before",
             "href":"eyq-54"
-        },
-        {
-            "id":"EYQ-541",
-            "level":6,
-            "dateStarted":"2014",
-            "dateEnd":null,
-            "name":"Early Years Teacher Status (EYTS)",
-            "awardingOrganisation":"Various Awarding Organisations",
-            "qualificationNumber":"Not required",
-            "notes":null,
-            "additionalRequirements":null,
-            "beforeOrAfter2014":"after",
-            "href":"eyq-541"
-        },
-        {
-            "id":"EYQ-542",
-            "level":6,
-            "dateStarted":"2014",
-            "dateEnd":null,
-            "name":"Early Years Professional Status (EYPS)",
-            "awardingOrganisation":"Various Awarding Organisations",
-            "qualificationNumber":"Not required",
-            "notes":"None.",
-            "additionalRequirements":null,
-            "beforeOrAfter2014":"after",
-            "href":"eyq-542"
         },
         {
             "id":"EYQ-55",
