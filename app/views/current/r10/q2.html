@@ -15,35 +15,43 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
     <form class="form" action="q3" method="post">
 
       <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
-      {{ govukRadios({
-          name: "awarding-date",
-          value: data['awarding-date'],
-          fieldset: {
-            legend: {
-              text: "When was the qualification started?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            {
-              value: "before",
-              text: "Before September 2014"
-            },
-            {
-              value: "after",
-              text: "On or after 1 September 2014"
-            }
-          ]
-        }) }}
+      {% call govukFieldset({
+        legend: {
+          text: "When was the qualification started?",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+      <div id="date-format-hint" class="govuk-hint">
+        For example, 3 2014
+      </div>
+        <div class="govuk-date-input" id="date-started">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="date-started-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-started-month" name="date-started-month" type="text" inputmode="numeric" value="{{data['date-started-month']}}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="date-started-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-started-year" name="date-started-year" type="text" inputmode="numeric" value="{{data['date-started-year']}}">
+            </div>
+          </div>
+        </div>
 
       {{ govukButton({
         text: "Continue"
       }) }}
+
+      {% endcall %}
 
     </form>
 

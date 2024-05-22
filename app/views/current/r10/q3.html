@@ -37,7 +37,8 @@
 
 <form class="form" action="set-awarding-orgs" method="post">
       <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
-      <input type="hidden" name="awarding-date" value="{{data['awarding-date']}}" />
+      <input type="hidden" name="date-started-month" value="{{data['date-started-month']}}" />
+      <input type="hidden" name="date-started-year" value="{{data['date-started-year']}}" />
       {{ govukRadios({
           name: "qualification-level",
           value: data['qualification-level'],

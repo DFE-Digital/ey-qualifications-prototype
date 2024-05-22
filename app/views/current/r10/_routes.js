@@ -4,8 +4,23 @@ const router = express.Router()
 
 var data = require('../../../data/qualifications.json');
 
+router.get('/reset-filters', function(request, response) {
+  var resetData = {};
+  // reset level checked to false
+  for (var i = 2; i <= 7; i++) {
+    var levelChecked = `level-${i}-checked`;
+    resetData[levelChecked] = false;
+  }
+  request.session.data = resetData;
+
+  response.redirect("/current/r10/q1");
+})
+
 router.post('/set-awarding-orgs', function(request, response){
-  request.session.data['awarding-organisations'] = setAwardingOrganisations(data.qualifications, request);
+  var qualifications = data.qualifications;
+  qualifications = filterQualificationYear(qualifications, request);
+  qualifications = filterLevels(qualifications, request);
+  request.session.data['awarding-organisations'] = setAwardingOrganisations(qualifications, request);
 
   response.redirect("/current/r10/q4");
 })
@@ -14,14 +29,15 @@ router.post('/set-awarding-orgs', function(request, response){
 router.post('/post-search-results', function(request, response) {
   var qualifications = data.qualifications;
 
-  if (request.session.data['qualification-search'] != undefined) {
-    var searchTerm = request.session.data['qualification-search'];
-    qualifications = data.qualifications.filter(x => x.name.toLowerCase().includes(searchTerm.toLowerCase()));
-  }
-
   qualifications = filterQualificationYear(qualifications, request);
   qualifications = filterLevels(qualifications, request);
   qualifications = filterAwardingOrganisations(qualifications, request);
+
+  if (request.session.data['qualification-search'] != undefined) {
+    var searchTerm = request.session.data['qualification-search'];
+    qualifications = qualifications.filter(x => x.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  }
+
   request.session.data['result-count'] = qualifications.length;
   request.session.data['search-results'] = qualifications;
   
@@ -45,9 +61,21 @@ const nth = (d) => {
 
 function filterQualificationYear(qualifications, request) {
   // if the data doesn't include the qualification year then just return the list of qualifications as nothing to filter out.
-  if (request.session.data['awarding-date'] == undefined || request.session.data['awarding-date'].length == 0) return qualifications;
+  if (request.session.data['date-started-month'] == undefined || request.session.data['date-started-year'] == undefined || request.session.data['date-started-month'].length == 0 || request.session.data['date-started-year'].length == 0) return qualifications;
+  
+  var filterValue = 'before'; // Current options in the beforeOrAfter2014 field is before, after & 2024
+  var monthAsInt = request.session.data['date-started-month'];
+  var yearAsInt = request.session.data['date-started-year'];
+  if (monthAsInt >= 9 && (yearAsInt >= 2014 && yearAsInt < 2024)){
+    filterValue = 'after';
+  }
+  if (monthAsInt >= 9 && yearAsInt >= 2024){
+    filterValue = '2024';
+  }
 
-  return qualifications.filter(x => x.beforeOrAfter2014 == request.session.data['awarding-date']);
+  request.session.data['awarding-date'] = filterValue;
+
+  return qualifications.filter(x => x.beforeOrAfter2014 == filterValue);
 }
 
 function filterLevels(qualifications, request) {

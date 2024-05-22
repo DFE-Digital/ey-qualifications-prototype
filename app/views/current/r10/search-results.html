@@ -26,7 +26,9 @@ href: "/current/r10/q4"
     <ul class="govuk-list govuk-list--bullet">
       <li>{{ 'Any level' if data['qualification-level'] == 'any' else 'Level ' + data['qualification-level'] }}</li>
       <li>{{ 'Any organisation' if data['awarding-organisation'] == 'any' else data['awarding-organisation']}}</li>
-      <li>{{ 'Before September 2014' if data['awarding-date'] == 'before' else 'On or after 1 September 2014' }}</li>
+      {% if data['awarding-date'] == 'before' %}<li>Before September 2014</li> {% endif %}
+      {% if data['awarding-date'] == 'after' %}<li>On or after 1 September 2014</li> {% endif %}
+      {% if data['awarding-date'] == '2024' %}<li>On or after 1 September 2024</li> {% endif %}
     </ul>
 
     <p class="govuk-body">
@@ -41,6 +43,8 @@ href: "/current/r10/q4"
       <input type="hidden" name="awarding-date" value="{{data['awarding-date']}}" />
       <input type="hidden" name="qualification-level" value="{{data['qualification-level']}}" />
       <input type="hidden" name="awarding-organisation" value="{{data['awarding-organisation']}}" />
+      <input type="hidden" name="date-started-month" value="{{data['date-started-month']}}" />
+      <input type="hidden" name="date-started-year" value="{{data['date-started-year']}}" />
 
       <h1 class="govuk-heading-xl">Select the qualification</h1>
 
