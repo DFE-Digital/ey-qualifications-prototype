@@ -7,7 +7,7 @@ var data = require('../../../data/qualifications.json');
 router.get('/reset-filters', function(request, response) {
   var resetData = {};
   // reset level checked to false
-  for (var i = 2; i <= 7; i++) {
+  for (var i = 2; i <= 8; i++) {
     var levelChecked = `level-${i}-checked`;
     resetData[levelChecked] = false;
   }
@@ -63,14 +63,15 @@ function filterQualificationYear(qualifications, request) {
   // if the data doesn't include the qualification year then just return the list of qualifications as nothing to filter out.
   if (request.session.data['date-started-month'] == undefined || request.session.data['date-started-year'] == undefined || request.session.data['date-started-month'].length == 0 || request.session.data['date-started-year'].length == 0) return qualifications;
   
-  var filterValue = 'before'; // Current options in the beforeOrAfter2014 field is before, after & 2024
+  var filterValue = ''; // Current options in the beforeOrAfter2014 field is before, after & 2024
   var monthAsInt = request.session.data['date-started-month'];
   var yearAsInt = request.session.data['date-started-year'];
-  if (monthAsInt >= 9 && (yearAsInt >= 2014 && yearAsInt < 2024)){
+  if (monthAsInt < 9 && yearAsInt <= 2014){
+    filterValue = 'before';
+  } else if (monthAsInt >= 9 && yearAsInt == 2014 || monthAsInt >= 1 && yearAsInt > 2014 && monthAsInt < 9 && yearAsInt <= 2024){
     filterValue = 'after';
-  }
-  if (monthAsInt >= 9 && yearAsInt >= 2024){
-    filterValue = '2024';
+  } else {
+    filterValue = '2024'
   }
 
   request.session.data['awarding-date'] = filterValue;
