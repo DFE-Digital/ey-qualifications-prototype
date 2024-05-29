@@ -68,7 +68,7 @@ function filterQualificationYear(qualifications, request) {
   var yearAsInt = request.session.data['date-started-year'];
   if (monthAsInt < 9 && yearAsInt <= 2014){
     filterValue = 'before';
-  } else if (monthAsInt >= 9 && yearAsInt == 2014 || monthAsInt >= 1 && yearAsInt > 2014 && monthAsInt < 9 && yearAsInt <= 2024){
+  } else if (monthAsInt >= 9 && yearAsInt == 2014 || monthAsInt >= 1 && yearAsInt > 2014 && monthAsInt <= 12 && yearAsInt <= 2023 || monthAsInt >= 1 && monthAsInt < 9 && yearAsInt == 2024){
     filterValue = 'after';
   } else {
     filterValue = '2024'
