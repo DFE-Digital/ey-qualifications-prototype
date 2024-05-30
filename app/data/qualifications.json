@@ -1819,7 +1819,7 @@
             "notes":"Qualification certificate may previously state CACHE. \n Qualification certificate may also show (QCF) or (VRQ) in titling. \n Where the qualification certificate shows: NCFE CACHE Level 3 Diploma in Early Years Education and Care (Knowledge only pathway) - the holder cannot count in the ratios",
             "additionalRequirements":null,
             "beforeOrAfter2014":"after",
-            "href":"eyq-224"
+            "href":"eyq-224-confirm"
         },
         {
             "id":"EYQ-225",
@@ -4066,7 +4066,7 @@
             "awardingOrganisation": "University of Buxton",
             "qualificationNumber":null,
             "beforeOrAfter2014":"after",
-            "href":"eyq-300"
+            "href":"eyq-300-confirm"
         },
         {
             "id":"EYQ-99",
