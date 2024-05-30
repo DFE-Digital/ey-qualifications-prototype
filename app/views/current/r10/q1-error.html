@@ -16,18 +16,33 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {% set errorMessage = "Please tell us where the qualification was awarded" %}
+    
     <form class="form" action="q1-post" method="post">
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: errorMessage,
+              href: "#awarding-location"
+            }
+          ]
+        }) }}
 
       {{ govukRadios({
           id: "awarding-location",
           name: "awarding-location",
-          value: data['awarding-location'],
+          value: "Please tell us where the qualification was awarded",
           fieldset: {
             legend: {
               text: "Where was the qualification awarded?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
+          },
+          errorMessage: {
+            text: errorMessage
           },
           items: [
             {

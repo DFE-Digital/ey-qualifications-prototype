@@ -4,6 +4,14 @@ const router = express.Router()
 
 var data = require('../../../data/qualifications.json');
 
+router.post('/q1-post', function(request, response){
+  if (request.session.data['awarding-location'] == undefined) {
+    response.redirect("/current/r10/q1-error")
+  } else {
+    response.redirect("/current/r10/q2")
+  }
+})
+
 router.get('/reset-filters', function(request, response) {
   var resetData = {};
   // reset level checked to false
