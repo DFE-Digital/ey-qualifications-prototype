@@ -16,7 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% set errorMessage = "Please tell us where the qualification was awarded" %}
+    {% set errorMessage = "Select where the qualification was awarded" %}
 
     <form class="form" action="q1-post" method="post">
 
@@ -33,7 +33,7 @@
       {{ govukRadios({
           id: "awarding-location",
           name: "awarding-location",
-          value: "Please tell us where the qualification was awarded",
+          value: "Select where the qualification was awarded",
           fieldset: {
             legend: {
               text: "Where was the qualification awarded?",
