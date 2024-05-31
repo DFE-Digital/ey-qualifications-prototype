@@ -1,4 +1,4 @@
-{% extends "layouts/dfe-main.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
@@ -17,7 +17,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     {% set errorMessage = "Please tell us where the qualification was awarded" %}
-    
+
     <form class="form" action="q1-post" method="post">
 
         {{ govukErrorSummary({

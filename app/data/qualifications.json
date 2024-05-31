@@ -15,6 +15,19 @@
             "href":"eyq-1"
         },
         {
+            "id":"EYQ-293",
+            "level":6,
+            "dateStarted":"2014",
+            "dateEnd":null,
+            "name":"Degrees and honours degrees at Level 6",
+            "awardingOrganisation":"Various Awarding Organisations",
+            "qualificationNumber":"Not required",
+            "notes":"Training providers should provide clarification on the below criteria:\n '- The course must be fully consistent with the QAA subject benchmark statement for Early Childhood Studies \n '- Include an element of assessed practice in an early years setting",
+            "additionalRequirements":null,
+            "beforeOrAfter2014":"after",
+            "href":"eyq-293"
+        },
+        {
             "id":"EYQ-10",
             "level":2,
             "dateStarted":null,
@@ -2782,19 +2795,6 @@
             "additionalRequirements":null,
             "beforeOrAfter2014":"after",
             "href":"eyq-291"
-        },
-        {
-            "id":"EYQ-293",
-            "level":6,
-            "dateStarted":"2014",
-            "dateEnd":null,
-            "name":"Degrees and honours degrees at Level 6",
-            "awardingOrganisation":"Various Awarding Organisations",
-            "qualificationNumber":"Not required",
-            "notes":"Training providers should provide clarification on the below criteria:\n '- The course must be fully consistent with the QAA subject benchmark statement for Early Childhood Studies \n '- Include an element of assessed practice in an early years setting",
-            "additionalRequirements":null,
-            "beforeOrAfter2014":"after",
-            "href":"eyq-293"
         },
         {
             "id":"EYQ-294",
