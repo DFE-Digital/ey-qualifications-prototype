@@ -78,7 +78,9 @@ href: "/current/r10/q4"
         <li>
           <div>
             <h2><a href={{qualification.href}}>{{qualification.name}}</a></h2>
-            <p>This qualification has 2 additional requirements</p>
+
+            {% if qualification.additionalRequirementsNumber >0  %}<p>This qualification has {{qualification.additionalRequirementsNumber}} additional {{ ' requirements' if qualification.additionalRequirementsNumber
+              > 1 else ' requirement' }}.</p>{% endif %}
             <p><strong>Level:</strong> {{qualification.level}}</p>
             <p><strong>Awarding organisation:</strong> {{qualification.awardingOrganisation}}</p>
           </div>
