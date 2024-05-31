@@ -19,6 +19,18 @@
     <form class="form" action="confirm-post" method="post">
       <input type="hidden" name="redirect" value="eyq-224" />
 
+      {% set errorMessage = "Please tell us if this is the qualification you are looking for" %}
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: errorMessage,
+            href: "#yes-no"
+          }
+        ]
+      }) }}
+
       <h1 class="govuk-heading-xl">Is this the qualfication you are looking for?</h1>
 
       {{ govukSummaryList({
@@ -75,6 +87,7 @@
       }) }}
 
       {{ govukRadios({
+          id: "yes-no",
           name: "yes-no",
           value: data['yes-no'],
           fieldset: {
@@ -94,7 +107,10 @@
             },
             {
             }
-          ]
+          ],
+          errorMessage: {
+            text: errorMessage
+          }
         }) }}
 
       {{ govukButton({

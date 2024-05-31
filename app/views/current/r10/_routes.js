@@ -33,6 +33,19 @@ router.post('/q3-post', function(request, response){
   }
 })
 
+router.post('/confirm-post', function(request, response) {
+  var redirectValue = request.session.data['redirect'];
+  if (request.session.data['yes-no'] == undefined) {
+    return response.redirect(`/current/r10/${redirectValue}-confirm-error`)
+  }
+  var yesNoValue = request.session.data['yes-no'];
+  if (yesNoValue == 'Yes') {
+    return response.redirect(`/current/r10/${redirectValue}`);
+  } else {
+    return response.redirect('/current/r10/q1');
+  }
+})
+
 router.get('/reset-filters', function(request, response) {
   var resetData = {};
   // reset level checked to false
@@ -48,7 +61,7 @@ router.get('/reset-filters', function(request, response) {
 // Route search results
 router.post('/post-search-results', function(request, response) {
   if (request.session.data['awarding-organisation'] == 'none') return response.redirect('/current/r10/q4-error');
-  
+
   var qualifications = data.qualifications;
 
   qualifications = filterQualificationYear(qualifications, request);

@@ -17,7 +17,19 @@
   <div class="govuk-grid-column-two-thirds-from-desktop">
 
     <form class="form" action="confirm-post" method="post">
-      <input type="hidden" name="redirect" value="eyq-224" />
+      <input type="hidden" name="redirect" value="eyq-300" />
+
+      {% set errorMessage = "Please tell us if this is the qualification you are looking for" %}
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: errorMessage,
+            href: "#yes-no"
+          }
+        ]
+      }) }}
 
       <h1 class="govuk-heading-xl">Is this the qualfication you are looking for?</h1>
 
@@ -29,7 +41,7 @@
               text: "Qualification"
             },
             value: {
-              text: "NCFE CACHE Level 3 Diploma for the Early Years Workforce (Early Years Educator)"
+              text: "BA (Hons) in Early Childhood Studies"
             },
             actions: {
 
@@ -41,7 +53,7 @@
               text: "Qualification level"
             },
             value: {
-              text: "3"
+              text: "6"
             },
             actions: {
 
@@ -53,7 +65,7 @@
               text: "Awarding organisation"
             },
             value: {
-              text: "NCFE CACHE"
+              text: "University of Buxton"
             },
             actions: {
 
@@ -94,7 +106,10 @@
             },
             {
             }
-          ]
+          ],
+          errorMessage: {
+            text: errorMessage
+          }
         }) }}
 
       {{ govukButton({
