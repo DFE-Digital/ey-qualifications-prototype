@@ -24,7 +24,7 @@ href: "/current/r10/q4"
     </h1>
 
     <ul class="govuk-list govuk-list--bullet">
-      <li>{{ 'Any level' if data['qualification-level'] == 'any' else 'Level ' + data['qualification-level'] }}</li>
+      {% if data['qualification-level'] != 'not-sure' %} <li>{{ 'Any level' if data['qualification-level'] == 'any' else 'Level ' + data['qualification-level'] }}</li> {% endif %}
       <li>{{ 'Any organisation' if data['awarding-organisation'] == 'any' else data['awarding-organisation']}}</li>
       {% if data['awarding-date'] == 'before' %}<li>Before September 2014</li> {% endif %}
       {% if data['awarding-date'] == 'after' %}<li>On or after 1 September 2014</li> {% endif %}
