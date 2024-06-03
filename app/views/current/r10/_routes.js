@@ -121,8 +121,8 @@ function filterLevels(qualifications, request) {
     request.session.data[levelChecked] = false;
   }
 
-  // if the data doesn't include the qualification level then just return the list of qualifications as nothing to filter out.
-  if (request.session.data['qualification-level'] == undefined || request.session.data['qualification-level'].length == 0) return qualifications;
+  // if the data doesn't include the qualification level, or the user has selected 'not sure' then just return the list of qualifications as nothing to filter out.
+  if (request.session.data['qualification-level'] == undefined || request.session.data['qualification-level'] == "not-sure" || request.session.data['qualification-level'].length == 0) return qualifications;
 
   // User has selected qualification levels. Iterate through the selected levels and filter out the qualifications that match
   var filteredLevelQualifications = [];
