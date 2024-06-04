@@ -42,7 +42,7 @@ router.post('/confirm-post', function(request, response) {
   if (yesNoValue == 'Yes') {
     return response.redirect(`/current/r10/${redirectValue}`);
   } else {
-    return response.redirect('/current/r10/q1');
+    return response.redirect('/current/r10/search-results');
   }
 })
 
