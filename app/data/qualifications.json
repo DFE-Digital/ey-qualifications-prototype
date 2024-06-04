@@ -27,7 +27,7 @@
             "additionalRequirements":null,
             "additionalRequirementsNumber":2,
             "beforeOrAfter2014":"after",
-            "href":"eyq-293"
+            "href":"eyq-293-confirm"
         },
         {
             "id":"EYQ-10",
@@ -3989,7 +3989,7 @@
             "additionalRequirements":null,
             "additionalRequirementsNumber":0,
             "beforeOrAfter2014":"before",
-            "href":"eyq-75"
+            "href":"eyq-75-confirm"
         },
         {
             "id":"EYQ-76",
