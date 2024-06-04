@@ -19,7 +19,7 @@
     <form class="form" action="confirm-post" method="post">
       <input type="hidden" name="redirect" value="eyq-300" />
 
-      <h1 class="govuk-heading-xl">Is this the qualfication you are looking for?</h1>
+      <h1 class="govuk-heading-xl">Confirm qualification</h1>
 
       {{ govukSummaryList({
         rows: [
@@ -29,7 +29,7 @@
               text: "Qualification"
             },
             value: {
-              text: "BA (Hons) in Early Childhood Studies"
+              text: "BA (Hons) in Early Years Education Practice"
             },
             actions: {
 
@@ -79,8 +79,9 @@
           value: data['yes-no'],
           fieldset: {
             legend: {
+              text: "Is this the qualification you are looking for?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              classes: "govuk-fieldset__legend--s"
             }
           },
           items: [
@@ -90,9 +91,7 @@
             },
             {
               value: "No",
-              text: "No, search again"
-            },
-            {
+              text: "No, select another qualification"
             }
           ]
         }) }}
