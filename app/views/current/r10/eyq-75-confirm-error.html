@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
   {{ govukBackLink({
-  text: "Back to select the qualification",
+  text: "Back to Select the qualification",
   href: "/current/r10/search-results"
 }) }}
 {% endblock %}
@@ -17,7 +17,7 @@
   <div class="govuk-grid-column-two-thirds-from-desktop">
 
     <form class="form" action="confirm-post" method="post">
-      <input type="hidden" name="redirect" value="eyq-75-checked" />
+      <input type="hidden" name="redirect" value="eyq-75" />
 
       {% set errorMessage = "Confirm if this is the qualification you are looking for" %}
 
@@ -31,7 +31,7 @@
         ]
       }) }}
 
-      <h1 class="govuk-heading-xl">Is this the qualification you are looking for?</h1>
+      <h1 class="govuk-heading-xl">Confirm qualification</h1>
 
       {{ govukSummaryList({
         rows: [
@@ -71,6 +71,18 @@
 
             }
           }
+          ,
+          {
+            key: {
+              text: "Date added to early years qualifications list"
+            },
+            value: {
+              text: "Before 1 September 2014"
+            },
+            actions: {
+
+            }
+          }
         ]
       }) }}
 
@@ -80,8 +92,9 @@
           value: data['yes-no'],
           fieldset: {
             legend: {
+              text: "Is this the qualification you are looking for?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              classes: "govuk-fieldset__legend--s"
             }
           },
           items: [
@@ -91,9 +104,7 @@
             },
             {
               value: "No",
-              text: "No, search again"
-            },
-            {
+              text: "No, select another qualification"
             }
           ],
           errorMessage: {
