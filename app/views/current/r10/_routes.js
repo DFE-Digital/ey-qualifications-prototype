@@ -126,6 +126,11 @@ function filterLevels(qualifications, request) {
 
   // User has selected qualification levels. Iterate through the selected levels and filter out the qualifications that match
   var filteredLevelQualifications = [];
+
+  if (request.session.data['qualification-level'] == "degree-with-honours") {
+    return qualifications.filter((q) => q.level === "degree-with-honours");
+  }
+
   for (var i = 0; i < request.session.data['qualification-level'].length; i++) {
     var level = request.session.data['qualification-level'][i];
     var levelChecked = `level-${level}-checked`;
