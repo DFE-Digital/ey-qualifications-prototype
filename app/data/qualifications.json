@@ -1892,6 +1892,20 @@
             "href":"eyq-219"
         },
         {
+            "id":"EYQ-22",
+            "level":3,
+            "dateStarted":null,
+            "dateEnd":"Aug-14",
+            "name":"Advanced Certificate in Playgroup Practice",
+            "awardingOrganisation":"NCFE",
+            "qualificationNumber":null,
+            "notes":null,
+            "additionalRequirements":null,
+            "additionalRequirementsNumber":0,
+            "beforeOrAfter2014":"before",
+            "href":"eyq-22"
+        },
+        {
             "id":"EYQ-220",
             "level":2,
             "dateStarted":"2019",
@@ -3836,6 +3850,20 @@
             "additionalRequirementsNumber":0,
             "beforeOrAfter2014":"before",
             "href":"eyq-64"
+        },
+        {
+            "id":"EYQ-65",
+            "level":3,
+            "dateStarted":null,
+            "dateEnd":"Aug-14",
+            "name":"NCFE Advanced Certificate in Playwork",
+            "awardingOrganisation":"NCFE",
+            "qualificationNumber":null,
+            "notes":null,
+            "additionalRequirements":null,
+            "additionalRequirementsNumber":0,
+            "beforeOrAfter2014":"before",
+            "href":"eyq-65"
         },
         {
             "id":"EYQ-66",
