@@ -81,7 +81,7 @@ href: "/current/r10/q4"
 
             {% if qualification.additionalRequirementsNumber >0  %}<p>This qualification has {{qualification.additionalRequirementsNumber}} additional {{ ' requirements' if qualification.additionalRequirementsNumber
               > 1 else ' requirement' }}.</p>{% endif %}
-            <p><strong>Level: </strong>{{ 'Degree with honours' if data['qualification-level'] == 'degree-with-honours' else data['qualification-level'] }}</p>
+            <p><strong>Level: </strong>{{ 'Degree with honours' if qualification.level == 'degree-with-honours' else qualification.level }}</p>
             <p><strong>Awarding organisation:</strong> {{qualification.awardingOrganisation}}</p>
           </div>
           <hr />
