@@ -165,7 +165,6 @@ function setAwardingOrganisations(qualifications, request) {
     }
   });
   formattedAwardingOrganisations = formattedAwardingOrganisations.sort(compareByText);
-  formattedAwardingOrganisations.unshift({"value": "any", text: "Not in the list"});
   formattedAwardingOrganisations.unshift({"value": "none", text: "Choose the awarding organisation"});
   return formattedAwardingOrganisations;
 }
