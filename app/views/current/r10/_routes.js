@@ -78,7 +78,7 @@ router.post('/post-search-results', function(request, response) {
   
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var date = new Date(Date.now());
-  var dateString = date.getDate() + nth(date.getDate()) + " " + months[date.getMonth()] + " " + date.getFullYear();
+  var dateString = date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
   request.session.data['todays-date'] = dateString;
 
   response.redirect("/current/r10/search-results");
