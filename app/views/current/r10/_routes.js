@@ -146,8 +146,8 @@ function filterAwardingOrganisations(qualifications, request) {
   // if the data doesn't include the awarding organisation filter, then return the lot
   if (request.session.data['awarding-organisation'] == undefined || request.session.data['awarding-organisation'] == 'none' || request.session.data['awarding-organisation'] == 'any') return qualifications;
 
-  // Return the results with the awarding organisation that they want + any results that have 'various' as their organisation.
-  return qualifications.filter(x => x.awardingOrganisation == request.session.data['awarding-organisation'] || x.awardingOrganisation == "Various awarding organisations");
+  // Return the results with the awarding organisation that they want + any results that have 'various' as their organisation or 'All Higher Education Institutes' which is the level 6 equivalent to various.
+  return qualifications.filter(x => x.awardingOrganisation == request.session.data['awarding-organisation'] || x.awardingOrganisation == "Various awarding organisations" || x.awardingOrganisation == "All Higher Education Institutes");
 }
 
 function compareByText(a, b){
