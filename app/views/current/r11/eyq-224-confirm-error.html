@@ -1,0 +1,125 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back to select the qualification",
+  href: "/current/r10/search-results"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <form class="form" action="confirm-post" method="post">
+      <input type="hidden" name="redirect" value="eyq-224" />
+
+      {% set errorMessage = "Please tell us if this is the qualification you are looking for" %}
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: errorMessage,
+            href: "#yes-no"
+          }
+        ]
+      }) }}
+
+      <h1 class="govuk-heading-xl">Is this the qualfication you are looking for?</h1>
+
+      {{ govukSummaryList({
+        rows: [
+
+        {
+            key: {
+              text: "Qualification"
+            },
+            value: {
+              text: "NCFE CACHE Level 3 Diploma for the Early Years Workforce (Early Years Educator)"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Qualification level"
+            },
+            value: {
+              text: "3"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Awarding organisation"
+            },
+            value: {
+              text: "NCFE CACHE"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Date added to early years qualifications list"
+            },
+            value: {
+              text: "1 September 2014"
+            },
+            actions: {
+
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+          id: "yes-no",
+          name: "yes-no",
+          value: data['yes-no'],
+          fieldset: {
+            legend: {
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No, search again"
+            },
+            {
+            }
+          ],
+          errorMessage: {
+            text: errorMessage
+          }
+        }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

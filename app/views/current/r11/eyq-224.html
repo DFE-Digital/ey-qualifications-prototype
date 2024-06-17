@@ -1,0 +1,163 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check an Early Years qualification – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to Select the qualification",
+    href: "/current/r10/search-results"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        Check the additional requirements
+      </h1>
+
+
+      {{ govukSummaryList({
+        rows: [
+
+        {
+            key: {
+              text: "Qualification"
+            },
+            value: {
+              text: "NCFE CACHE Level 3 Diploma for the Early Years Workforce (Early Years Educator)"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Qualification level"
+            },
+            value: {
+              text: "3"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Awarding organisation"
+            },
+            value: {
+              text: "NCFE CACHE"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Date added to early years qualifications list"
+            },
+            value: {
+              text: "1 September 2014"
+            },
+            actions: {
+
+            }
+          }
+        ]
+      }) }}
+
+
+            <div style="margin-top:50px;" class="govuk-inset-text">
+        You can bookmark this page if you need to return to it later
+      </div>
+
+    </div>
+  </div>
+
+  <div style="margin-left:-5px;" class="govuk-grid-row">
+    <div class="full-width-container">
+
+
+
+      <p style="margin-top:25px;" class="govuk-body-l"><strong>Please answer the following questions</strong></p>
+
+
+
+      <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <p style="max-width:35em; margin-bottom:20px; margin-top:20px;" class=class="govuk-body-m">
+        Was the qualification registered for or started after September 2014?
+      </p>
+    </legend>
+    <div style="padding-left:740px; margin-top:-70px;" class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sep2014" name="sep2014" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="sep2014">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sep2014-2" name="sep2014" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="sep2014-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<hr style="margin-top:-20px;">
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<p style="max-width:35em; margin-bottom:20px; margin-top:20px;" class="govuk-body-m">
+  Does the qualification name include Early Years Educator?
+</p>
+</legend>
+<div style="padding-left:740px; margin-top:-70px;" class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="earlyyears" name="earlyyears" type="radio" value="yes">
+  <label class="govuk-label govuk-radios__label" for="earlyyears">
+    Yes
+  </label>
+</div>
+<div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="earlyyears-2" name="earlyyears" type="radio" value="no">
+  <label class="govuk-label govuk-radios__label" for="earlyyears-2">
+    No
+  </label>
+</div>
+</div>
+</fieldset>
+</div>
+<hr style="margin-top:-20px;">
+
+      <div style="max-width:35em;" class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          Your result is dependent on the accuracy of the answers you have provided.
+        </strong>
+      </div>
+
+      <form class="form" action="/current/r10/eyq-224-checked" method="post">
+            {{ govukButton({
+        text: "Get result"
+      }) }}
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}
