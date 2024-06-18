@@ -1,0 +1,193 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check an Early Years qualification – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-xl gem-c-title__context">
+       Early years qualifications list
+      </span>
+
+      <h1 class="govuk-heading-xl">
+        The qualification I am looking for is not on the list
+      </h1>
+
+      <div class="govuk-inset-text">
+        If a qualification is not on the early years qualifications list (EYQL), it cannot be considered approved as full and relevant by the Department for Education (DfE).
+      </div>
+
+      <h2 class="govuk-heading-m">
+        Tips for searching the EYQL using this service
+      </h2>
+
+      <p>
+        If you cannot find a qualification that you think should appear on the EYQL, try:
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>checking your spelling</li>
+          <li>using fewer words from the qualification title</li>
+          <li>checking the qualification name and awarding organisation with the candidate</li>
+          <li>asking the candidate to provide a copy of their certificate</li>
+          <li>adding or removing filters on the search page</a>
+        </ul>
+      </p>
+
+      <p>
+        If you need further clarification, contact Ecctis Early Years Service. Ecctis provides qualification checking guidance on behalf of DfE. Information on the <a rel="external" href="https://ecctis.com/Qualifications/eys/Default.aspx" class="govuk-link">guidance Ecctis is able to provide</a> can be found on their website.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        Full and relevant qualifications which do not appear on the EYQL
+      </h2>
+
+      <!-- <p>
+        The only qualifications which appear on the EYQL, and in this service, are those which are approved as full and relevant by DfE. The qualification name on the certificate must exactly match the one on the EYQL.
+      </p> -->
+
+      <h3 class="govuk-heading-s">
+        Level 2 qualifications started between 1 September 2014 and 31 August 2019
+      </h3>
+
+      <p>
+        Level 2 qualifications awarded from 1 September 2014 until 31 August 2019 are not shown here. All level 2 early years qualifications are full and relevant if they are:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>early years (0 to 5 years) related and appropriate to early years practice</li>
+        <li>Ofqual-approved and included on their <a href="#">list of regulated qualifications</a></li>
+      </ul>
+
+      <h3 class="govuk-heading-s">
+        Qualifications offered by multiple awarding organisations
+      </h3>
+
+      <p>
+        There are some qualifications which are offered by multiple awarding organisations. These are listed on the EYQL and in this service with the awarding organisation name "Various".
+      </p>
+      <p>
+        If the qualification name matches the certificate, and the specific course meets all the requirements shown on the qualification details page, then it can be considered approved as full and relevant.
+      </p>
+
+      <h3 class="govuk-heading-s">
+        New qualifications
+      </h3>
+
+      <p>
+        If a qualification has not yet been reviewed against the DfE criteria to be approved as full and relevant, it will not appear on the list.
+      </p>
+      <p>
+        Awarding organisations and training providers can apply to DfE to have their qualifications reviewed against the criteria. If they are approved as full and relevant, they will be added to the EYQL and this service.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        About full and relevant qualifications
+      </h2>
+
+      <p>
+        The <a href="">EYFS statutory framework</a> sets out the requirements for staff:child ratios in settings delivering the EYFS and the qualification levels practitioners must hold to be included within those requirements.
+      </p>
+      <p>
+        The <a href="#">Early years qualification requirements and standards document</a> defines the qualifications that practitioners must hold to be included in the specified staff:child ratios at levels 2, 3 and 6 of the EYFS.
+      </p>
+      <p>
+        To be included in the staff:child ratios at level 2, level 3 or level 6, staff must hold a qualification that is recognised by the Department for Education as full and relevant at the appropriate level. Any individual that does not hold a full and relevant qualification can only work as an unqualified member of staff in an early years setting and therefore cannot count in the staff:child ratios.
+      </p>
+      <p>
+        Providers must refer to the EYFS statutory framework for any additional requirements that staff must meet to be included in the staff:child ratios (for example, Paediatric First Aid training).
+      </p>
+      <p>
+        You can read more about the level 2, 3 and 6 staff:child ratios, and the criteria for qualifications to be added to the EYQL in the <a href="#">Early years qualification requirements and standards document</a>.
+
+      <h2 class="govuk-heading-m">
+        Get more help and advice
+      </h2>
+
+      <p>
+        If you need more help with checking early years qualifications, contact Ecctis Early Years Service. Ecctis provides qualification checking guidance on behalf of DfE. Information on the <a rel="external" href="https://ecctis.com/Qualifications/eys/Default.aspx" class="govuk-link">guidance Ecctis is able to provide</a> can be found on their website.
+      </p>
+
+      <p>
+        Your local authority's adult education service can help you find training courses in your local area. You can <a href="https://www.gov.uk/find-local-council">find your local authority on GOV.UK</a>.
+      </p>
+
+      <p>
+        You can find out more about <a href="https://www.gov.uk/government/publications/pathway-into-early-years-education/pathway-into-early-years-education">pathways into early years and childcare on GOV.UK</a>. You should check that any qualification you intend to take meets the requirements and is listed on the Early Years Qualifications List (EYQL).
+      </p>
+
+      <p>
+        Free level 3 early years qualifications are available through the <a href="https://www.gov.uk/government/news/adults-to-gain-new-skills-on-400-free-courses">Lifetime Skills Guarantee</a> for adults:
+      </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>who do not already have a level 3 or higher qualification</li>
+          <li>who are unemployed or earning below the National Living Wage annually (£18,525), regardless of any other qualifications held</li>
+        </ul>
+      <p>
+        Students aged between 16 and 19 may be able to access <a href="https://www.gov.uk/guidance/16-to-19-education-financial-support-for-students">financial support</a> during their studies.
+      </p>
+
+      <button class="govuk-link govuk-body-s gem-c-print-link__button">Print this page</button>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Check another qualification
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Early years foundation stage statutory framework (EYFS)
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Early years qualification requirements and standards
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Pathway into early years education
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Early years qualifications achieved outside the United Kingdom
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Early years qualifications that do not meet the criteria
+              </a>
+            </li>
+            <!-- <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li> -->
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+  
+{% endblock %}

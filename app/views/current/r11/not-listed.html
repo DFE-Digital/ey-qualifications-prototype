@@ -1,0 +1,139 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check an Early Years qualification – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-xl gem-c-title__context">
+       Early Years Qualification List
+      </span>
+
+      <h1 class="govuk-heading-xl">
+        Anytown Level 3 Early Years Diploma
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+
+        {
+            key: {
+              text: "Awarding organisation"
+            },
+            value: {
+              text: "Anytown College"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Level"
+            },
+            value: {
+              text: "Level 3"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Date started"
+            },
+            value: {
+              text: "After 1 September 2023"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Date of check"
+            },
+            value: {
+              text: "21 February 2024"
+            },
+            actions: {
+
+            }
+          }
+        ]
+      }) }}
+
+      <p>
+        This qualification is not listed on the Early Years Qualifications List (EYQL). It is therefore not approved as full and relevant by the Department for Education.
+      </p>
+
+      <p>
+        Only individuals who hold a full and relevant qualification listed on the EYQL can be counted towards staff:child ratios as qualified members of staff. However, they can work as an unqualified member of staff in the setting.
+
+      <p>
+        If the candidate holds a level 3, 4, 5, 6, 7 or 8 qualification that is not on the EYQL, they may be able to count in the early years foundation stage (EYFS) staff:child ratios at level 2, providing that:
+      </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the qualification was registered for or started between 1 September 2014 and 31 August 2019  </li>
+          <li>the qualification covers childcare and child development for the 0 to 5 age range </li>
+        </ul>
+
+      <h2 class="govuk-heading-m">
+        Bookmark a link to this qualification check
+      </h2>
+
+      <p>
+        A permanent link to this qualification check is available at:
+        <br />
+        <br />
+        <a href="#">https://check-early-years-qualification.service.gov.uk/qualification-check/601-3117-2</a>
+      </p>
+
+      <form action="#" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Bookmark this qualification check",
+          classes: "govuk-button--secondary"
+        }) }}
+
+      </form>
+
+      <h2 class="govuk-heading-m">
+        Check another qualification
+      </h2>
+      <p>Return to the start of the <a href="start.html">Check an early years qualification</a> service to check another qualification.</p>
+
+      <h2 class="govuk-heading-m">
+        Further information about the Early Years Qualification List
+      </h2>
+
+      <p>For information on non-UK qualifications, refer to the <a href="https://www.gov.uk/government/publications/early-years-qualifications-achieved-outside-england" class="govuk-link">early years qualifications achieved outside the United Kingdom</a> guidance.</p>
+
+      <div class="govuk-inset-text">
+        <p>
+          If you have further queries, contact Ecctis. Information on the <a rel="external" href="https://ecctis.com/Qualifications/eys/Default.aspx" class="govuk-link">guidance Ecctis is able to provide</a> can be found on its website.
+        </p>
+
+        <p>
+          If you contacted the DfE early years workforce team prior to 5 September 2022, you do not need to contact Ecctis.
+        </p>
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}

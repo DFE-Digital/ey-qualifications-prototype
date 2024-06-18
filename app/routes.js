@@ -66,4 +66,7 @@ router.use('/current/r9', require('./views/current/r9/_routes'));
 // r10
 router.use('/current/r10', require('./views/current/r10/_routes'));
 
+// r11
+router.use('/current/r11', require('./views/current/r11/_routes'));
+
 module.exports = router
