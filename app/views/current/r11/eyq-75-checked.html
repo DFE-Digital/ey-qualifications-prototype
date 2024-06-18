@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back to Select the qualification",
-    href: "/current/r10/search-results"
+    href: "/current/r11/search-results"
   }) }}
 {% endblock %}
 
@@ -15,291 +15,285 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-
       <h1 class="govuk-heading-xl">
         Your result
       </h1>
 
-        {{ govukSummaryList({
-          rows: [
+      {{ govukSummaryList({
+        rows: [
 
-                {
-              key: {
-                text: "Qualification"
-              },
-              value: {
-                text: "Level 3 Diploma for the Children and Young People's Workforce (Early Learning and Childcare)"
-              }
+              {
+            key: {
+              text: "Qualification"
             },
+            value: {
+              text: "Level 3 Diploma for the Children and Young People's Workforce (Early Learning and Childcare)"
+            }
+          },
 
+        {
+            key: {
+              text: "Qualification level"
+            },
+            value: {
+              text: "3"
+            },
+            actions: {
+
+            }
+          }
+          ,
           {
               key: {
-                text: "Qualification level"
+                text: "Awarding organisation"
               },
               value: {
-                text: "3"
+                text: "Various awarding organisations"
               },
               actions: {
 
               }
             }
             ,
-            {
-                key: {
-                  text: "Awarding organisation"
-                },
-                value: {
-                  text: "Various awarding organisations"
-                },
-                actions: {
-
-                }
-              }
-              ,
-            {
-                key: {
-                  text: "Date added to early years qualifications list"
-                },
-                value: {
-                  text: "Before September 2014"
-                },
-                actions: {
-
-                }
-              }
-              ,
-            {
+          {
               key: {
-                text: "Date checked"
+                text: "Date added to early years qualifications list"
               },
               value: {
-                text: data['todays-date']
+                text: "Before September 2014"
               },
               actions: {
 
               }
             }
-          ]
-        }) }}
+            ,
+          {
+            key: {
+              text: "Date checked"
+            },
+            value: {
+              text: data['todays-date']
+            },
+            actions: {
 
-
+            }
+          }
+        ]
+      }) }}
 
     </div>
   </div>
-<!--
-  <div style="margin-left:-5px;" class="govuk-grid-row">
-    <div class="full-width-container">
 
+  <!--
+    <div style="margin-left:-5px;" class="govuk-grid-row">
+      <div class="full-width-container">
+        <p class="govuk-body-l"><strong>Your answers</strong></p>
+        <div style="margin-top:40px;" class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <p style="max-width:35em; margin-bottom:20px;" class=class="govuk-body-m">
+                Was the qualification registered for or started after September 2014?
+              </p>
+            </legend>
+            <p style="padding-left:900px; margin-top:-60px;" class=class="govuk-body-m">
+              Yes
+            </p>
+          </fieldset>
+        </div>
+        <hr style="margin-top:-20px;">
 
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <p style="max-width:35em; margin-top:30px;" class="govuk-body-m">
+                Does the qualification name include Early Years Educator?
+              </p>
+            </legend>
+            <p style="padding-left:900px; margin-top:-75px;" class=class="govuk-body-m">
+              Yes
+            </p>
+          </fieldset>
+        </div>
+        <hr style="margin-top:-30px;">
 
-      <p class="govuk-body-l"><strong>Your answers</strong></p>
-
-
-
-      <div style="margin-top:40px;" class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <p style="max-width:35em; margin-bottom:20px;" class=class="govuk-body-m">
-        Was the qualification registered for or started after September 2014?
-      </p>
-    </legend>
-    <p style="padding-left:900px; margin-top:-60px;" class=class="govuk-body-m">
-      Yes
-    </p>
-  </fieldset>
-</div>
-<hr style="margin-top:-20px;">
-
-<div class="govuk-form-group">
-<fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-<p style="max-width:35em; margin-top:30px;" class="govuk-body-m">
-  Does the qualification name include Early Years Educator?
-</p>
-</legend>
-  <p style="padding-left:900px; margin-top:-75px;" class=class="govuk-body-m">
-    Yes
-  </p>
-</fieldset>
-</div>
-<hr style="margin-top:-30px;">
-
-            <p class="govuk-body">
-        <a href="eyq-224" class="govuk-link">Change my answers</a>
-      </p>
-
+        <p class="govuk-body">
+          <a href="eyq-224" class="govuk-link">Change my answers</a>
+        </p>
+      </div>
+    </div>
     -->
 
-      <br>
+  <br>
 
-      <div style="max-width:35em;" class="govuk-warning-text">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">
-          <span class="govuk-visually-hidden">Warning</span>
-          Your result is dependent on the accuracy of the answers you have provided.
+  <div style="max-width:35em;" class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-visually-hidden">Warning</span>
+      Your result is dependent on the accuracy of the answers you have provided.
+    </strong>
+  </div>
+
+  <p style="max-width:35em;" class="govuk-body-m">
+    <strong>Given the answers you have provided, this qualification is approved by the Department for Education as full and relevant for the following staff:child ratios.</strong>
+  </p>
+
+  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint" style="margin-bottom: 30px;">
+    <div style="display: flex; justify-content: space-between; padding-top: 30px; margin-bottom: -24px;">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <p class="govuk-body-m">
+          <strong>
+            Level 3
+          </strong>
+        </p>
+      </legend>
+      <div style="max-height: max-content;">
+        <strong class="govuk-tag govuk-tag--green">
+          Approved
         </strong>
       </div>
+    </div>
+    <!--
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Other requirements to count in the level 3 staff:child ratios
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>For someone who holds this qualification to be included in the staff:child ratios at level 3, they must:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>hold a suitable level 2 English qualification, as specified in the <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">early years qualification requirements and standards document</a></li>
+          <li>obtain a paediatric first aid qualification which meets the criteria in the  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">early years foundation stage (EYFS) statutory framework</a></li> within 3 months of starting work. To continue to be included in the ratio requirement the certificate must be renewed every 3 years.
+          <li>meet all other requirements as set out in the  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">EYFS</a> and the <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">early years qualification requirements and standards document</a></li>
+        </ul>
+        <p class="govuk-body-m">A person who holds a full and relevant level 3 qualification started after September 2014, but who does not hold a suitable level 2 qualification in English can be counted in the staff:child ratios at level 2.
+          </p>
+        <p>Providers must make sure that their members of staff meet all other requirements as set out in the <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2">EYFS</a> and the <a href="https://www.gov.uk/government/publications/early-years-qualification-requirements-and-standards">early years qualification requirements and standards document</a>.</p>
+      </div>
+    </details> -->
+  </fieldset>
+  <hr>
 
-      <p style="max-width:35em;" class="govuk-body-m"><strong>Given the answers you have provided, this qualification is approved by the Department for Education as full and relevant for the following staff:child ratios.</strong></p>
+  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint" style="margin-bottom: 30px;">
+    <div style="display: flex; justify-content: space-between; padding-top: 30px; margin-bottom: -24px;">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <p class="govuk-body-m">
+          <strong>
+            Level 2
+          </strong>
+        </p>
+      </legend>
+      <div style="max-height: max-content;">
+        <strong class="govuk-tag govuk-tag--green">
+          Approved
+        </strong>
+      </div>
+    </div>
+    <!-- 
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Other requirements to count in the level 2 staff:child ratios
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>As this qualification was achieved after 30 June 2016, the member of staff must obtain a paediatric first aid qualification which meets the <a href="">criteria in the early years foundation stage (EYFS) statutory framework</a> within 3 months of starting work. To continue to be included in the ratio requirement the certificate must be renewed every 3 years.</p>
+        <p>Providers must make sure that their members of staff meet all other requirements as set out in the <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2">EYFS</a> and the <a href="https://www.gov.uk/government/publications/early-years-qualification-requirements-and-standards">early years qualification requirements and standards document</a>.</p>
+      </div>
+    </details> -->
+  </fieldset>
+  <hr>
 
-      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint" style="margin-bottom: 30px;">
+  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint" style="margin-bottom: 30px;">
+    <div style="display: flex; justify-content: space-between; padding-top: 30px; margin-bottom: -24px;">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <p class="govuk-body-m">
+          <strong>
+            Unqualified
+          </strong>
+        </p>
+      </legend>
+      <div style="max-height: max-content;">
+        <strong class="govuk-tag govuk-tag--green">
+          Approved
+        </strong>
+      </div>
+    </div>
+    <!-- 
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Other requirements to work as an unqualified member of staff
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>No qualifications are required to work as an unqualified member of staff in an early years setting. However, as set out in the <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2">early years foundation stage (EYFS) statutory framework</a>, providers must ensure that staffing arrangements meet the needs of all children and ensure their safety.</p>
+      </div>
+    </details> -->
+  </fieldset>
+  <hr>
+
+  <div class="govuk-form-group">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
         <div style="display: flex; justify-content: space-between; padding-top: 30px; margin-bottom: -24px;">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <p class="govuk-body-m">
               <strong>
-                Level 3
+                Level 6
               </strong>
             </p>
           </legend>
           <div style="max-height: max-content;">
-            <strong class="govuk-tag govuk-tag--green">
-              Approved
+            <strong class="govuk-tag govuk-tag--red">
+              Not approved
             </strong>
           </div>
         </div>
-
         <!--
         <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Other requirements to count in the level 3 staff:child ratios
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          For someone who holds this qualification to be included in the staff:child ratios at level 3, they must:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>hold a suitable level 2 English qualification, as specified in the <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">early years qualification requirements and standards document</a></li>
-            <li>obtain a paediatric first aid qualification which meets the criteria in the  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">early years foundation stage (EYFS) statutory framework</a></li> within 3 months of starting work. To continue to be included in the ratio requirement the certificate must be renewed every 3 years.
-            <li>meet all other requirements as set out in the  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">EYFS</a> and the <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">early years qualification requirements and standards document</a></li>
-          </ul>
-          <p class="govuk-body-m">A person who holds a full and relevant level 3 qualification started after September 2014, but who does not hold a suitable level 2 qualification in English can be counted in the staff:child ratios at level 2.
-            </p>
-          <p>Providers must make sure that their members of staff meet all other requirements as set out in the <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2">EYFS</a> and the <a href="https://www.gov.uk/government/publications/early-years-qualification-requirements-and-standards">early years qualification requirements and standards document</a>.</p>
-        </div>
-      </details> -->
-      </fieldset>
-      <hr>
-
-      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint" style="margin-bottom: 30px;">
-        <div style="display: flex; justify-content: space-between; padding-top: 30px; margin-bottom: -24px;">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <p class="govuk-body-m">
-              <strong>
-                Level 2
-              </strong>
-            </p>
-          </legend>
-          <div style="max-height: max-content;">
-            <strong class="govuk-tag govuk-tag--green">
-              Approved
-            </strong>
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Requirements to work at level 6
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>To be included in the staff:child ratios at level 6, staff must hold one of the following:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Qualified Teacher Status (QTS)</li>
+              <li>Early Years Teacher Status (EYTS)</li>
+              <li>Early Years Professional Status (EYPS)</li>
+            </ul>
+            <p>Staff who hold one of these qualifications may be counted in the staff:child ratios at either level 3 or level 6, but not both.</p>
           </div>
-        </div>
-        <!-- <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Other requirements to count in the level 2 staff:child ratios
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p>As this qualification was achieved after 30 June 2016, the member of staff must obtain a paediatric first aid qualification which meets the <a href="">criteria in the early years foundation stage (EYFS) statutory framework</a> within 3 months of starting work. To continue to be included in the ratio requirement the certificate must be renewed every 3 years.</p>
-          <p>Providers must make sure that their members of staff meet all other requirements as set out in the <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2">EYFS</a> and the <a href="https://www.gov.uk/government/publications/early-years-qualification-requirements-and-standards">early years qualification requirements and standards document</a>.</p>
-        </div>
-      </details> -->
+        </details> 
+        -->
       </fieldset>
-      <hr>
-
-      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint" style="margin-bottom: 30px;">
-        <div style="display: flex; justify-content: space-between; padding-top: 30px; margin-bottom: -24px;">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <p class="govuk-body-m">
-              <strong>
-                Unqualified
-              </strong>
-            </p>
-          </legend>
-          <div style="max-height: max-content;">
-            <strong class="govuk-tag govuk-tag--green">
-              Approved
-            </strong>
-          </div>
-        </div>
-        <!-- <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Other requirements to work as an unqualified member of staff
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p>No qualifications are required to work as an unqualified member of staff in an early years setting. However, as set out in the <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2">early years foundation stage (EYFS) statutory framework</a>, providers must ensure that staffing arrangements meet the needs of all children and ensure their safety.</p>
-        </div>
-      </details> -->
-      </fieldset>
+    </div>
     <hr>
+    <br>
+    <br>
+    <div>
+      <h2 class="govuk-heading-m">Requirements for all staff</h2>
+      <p>
+        As set out in the <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2">early years foundation stage (EYFS) statutory framework</a>, providers must:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>ensure that staffing arrangements meet the needs of all children and ensure their safety</li>
+        <li>ensure that people looking after children are suitable</li>
+        <li>meet all other requirements as set out in the EYFS and the <a href="https://www.gov.uk/government/publications/early-years-qualification-requirements-and-standards">early years qualification requirements and standards document</a></li>
+      </ul>
+    </div>
+    <br>
 
-      <div class="govuk-form-group">
+    <button onclick="window.print();" class="govuk-link govuk-body-s gem-c-print-link__button">Print this page</button>
+    <br><br>
 
+    <p class="govuk-body">
+      <a href="/current/r11/reset-filters" class="govuk-link">Check another qualification</a>
+    </p>
+  </div>
 
-<div class="govuk-form-group">
-<fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
-<div style="display: flex; justify-content: space-between; padding-top: 30px; margin-bottom: -24px;">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <p class="govuk-body-m">
-    <strong>
-      Level 6
-    </strong>
-  </p>
-</legend>
-<div style="max-height: max-content;">
-  <strong class="govuk-tag govuk-tag--red">
-    Not approved
-  </strong>
-</div>
-</div>
-<!--<details class="govuk-details">
-<summary class="govuk-details__summary">
-<span class="govuk-details__summary-text">
-  Requirements to work at level 6
-</span>
-</summary>
-<div class="govuk-details__text">
-To be included in the staff:child ratios at level 6, staff must hold one of the following:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>Qualified Teacher Status (QTS)</li>
-  <li>Early Years Teacher Status (EYTS)</li>
-  <li>Early Years Professional Status (EYPS)</li>
-</ul>
-<p>Staff who hold one of these qualifications may be counted in the staff:child ratios at either level 3 or level 6, but not both.</p>
-
-</div>
-</details> -->
-</fieldset>
-</div>
-<hr>
-<br>
-<br>
-<div>
-  <h2 class="govuk-heading-m">Requirements for all staff</h2>
-
-  <p>
-    As set out in the <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2">early years foundation stage (EYFS) statutory framework</a>, providers must:
-  </p>
-
-  <ul class="govuk-list govuk-list--bullet">
-    <li>ensure that staffing arrangements meet the needs of all children and ensure their safety</li>
-    <li>ensure that people looking after children are suitable</li>
-    <li>meet all other requirements as set out in the EYFS and the <a href="https://www.gov.uk/government/publications/early-years-qualification-requirements-and-standards">early years qualification requirements and standards document</a></li>
-  </ul>
-</div>
-<br>
-<button onclick="window.print();" class="govuk-link govuk-body-s gem-c-print-link__button">Print this page</button>
-
-<br><br>
-<p class="govuk-body">
-<a href="/current/r10/q1" class="govuk-link">Check another qualification</a>
-</p>
-
-</div>
 </div>
 
 

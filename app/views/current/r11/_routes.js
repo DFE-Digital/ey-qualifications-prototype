@@ -6,43 +6,43 @@ var data = require('../../../data/qualifications.json');
 
 router.post('/q1-post', function(request, response){
   if (request.session.data['awarding-location'] == undefined) {
-    response.redirect("/current/r10/q1-error")
+    response.redirect("/current/r11/q1-error")
   } else {
-    response.redirect("/current/r10/q2")
+    response.redirect("/current/r11/q2")
   }
 })
 
 router.post('/q2-post', function(request, response){
   if (request.session.data['date-started-month'] == "" || request.session.data['date-started-year'] == "") {
-    response.redirect("/current/r10/q2-error")
+    response.redirect("/current/r11/q2-error")
   } else {
-    response.redirect("/current/r10/q3")
+    response.redirect("/current/r11/q3")
   }
 })
 
 router.post('/q3-post', function(request, response){
   if (request.session.data['qualification-level'] == undefined) {
-    response.redirect("/current/r10/q3-error")
+    response.redirect("/current/r11/q3-error")
   } else {
     var qualifications = data.qualifications;
     qualifications = filterQualificationYear(qualifications, request);
     qualifications = filterLevels(qualifications, request);
     request.session.data['awarding-organisations'] = setAwardingOrganisations(qualifications, request);
 
-    response.redirect("/current/r10/q4");
+    response.redirect("/current/r11/q4");
   }
 })
 
 router.post('/confirm-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['yes-no'] == undefined) {
-    return response.redirect(`/current/r10/${redirectValue}-confirm-error`)
+    return response.redirect(`/current/r11/${redirectValue}-confirm-error`)
   }
   var yesNoValue = request.session.data['yes-no'];
   if (yesNoValue == 'Yes') {
-    return response.redirect(`/current/r10/${redirectValue}`);
+    return response.redirect(`/current/r11/${redirectValue}`);
   } else {
-    return response.redirect('/current/r10/search-results');
+    return response.redirect('/current/r11/search-results');
   }
 })
 
@@ -55,12 +55,12 @@ router.get('/reset-filters', function(request, response) {
   }
   request.session.data = resetData;
 
-  response.redirect("/current/r10/q1");
+  response.redirect("/current/11/q1");
 })
 
 // Route search results
 router.post('/post-search-results', function(request, response) {
-  if (request.session.data['awarding-organisation'] == 'none') return response.redirect('/current/r10/q4-error');
+  if (request.session.data['awarding-organisation'] == 'none') return response.redirect('/current/r11/q4-error');
 
   var qualifications = data.qualifications;
 
@@ -81,7 +81,7 @@ router.post('/post-search-results', function(request, response) {
   var dateString = date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
   request.session.data['todays-date'] = dateString;
 
-  response.redirect("/current/r10/search-results");
+  response.redirect("/current/r11/search-results");
 })
 
 const nth = (d) => {

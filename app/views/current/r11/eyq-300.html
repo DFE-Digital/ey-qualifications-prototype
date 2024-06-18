@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back to Select the qualification",
-    href: "/current/r10/search-results"
+    href: "/current/r11/search-results"
   }) }}
 {% endblock %}
 
@@ -16,12 +16,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-
-
       <h1 class="govuk-heading-xl">
         Check the additional requirements
       </h1>
-
 
       {{ govukSummaryList({
         rows: [
@@ -77,7 +74,7 @@
       }) }}
 
 
-            <div style="margin-top:50px;" class="govuk-inset-text">
+      <div style="margin-top:50px;" class="govuk-inset-text">
         You can bookmark this page if you need to return to it later
       </div>
 
@@ -86,87 +83,81 @@
 
   <div style="margin-left:-5px;" class="govuk-grid-row">
     <div class="full-width-container">
-
-
-
       <p style="margin-top:25px;" class="govuk-body-l"><strong>Please answer the following questions</strong></p>
-
-
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <p class=class="govuk-body-m">
+              Was the qualification registered for or started after September 2014?
+            </p>
+          </legend>
+          <div style="padding-left:740px; margin-top:-70px;" class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sep2014" name="sep2014" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="sep2014">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sep2014-2" name="sep2014" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="sep2014-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <hr>
 
       <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <p class=class="govuk-body-m">
-        Was the qualification registered for or started after September 2014?
-      </p>
-    </legend>
-    <div style="padding-left:740px; margin-top:-70px;" class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="sep2014" name="sep2014" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="sep2014">
-          Yes
-        </label>
+        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <p style="max-width:35em;" class="govuk-body-m">
+              Did the qualification include an <a href="">element of assessed practice in an early years setting</a>?
+            </p>
+          </legend>
+          <div style="padding-left:740px; margin-top:-80px;" class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="earlyyears" name="earlyyears" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="earlyyears">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="earlyyears-2" name="earlyyears" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="earlyyears-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="sep2014-2" name="sep2014" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="sep2014-2">
-          No
-        </label>
+      <hr>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <p style="max-width:35em;" class="govuk-body-m">
+              Was the course fully consistent with the <a href="">QAA subject benchmark statement for Early Childhood Studies</a>?
+            </p>
+          </legend>
+        <div style="padding-left:740px; margin-top:-80px;" class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="QAA" name="QAA" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="QAA">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="QAA-2" name="QAA" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="QAA-2">
+              No
+            </label>
+          </div>
+        </div>
+        </fieldset>
       </div>
-    </div>
-  </fieldset>
-</div>
-<hr>
-
-<div class="govuk-form-group">
-<fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-<p style="max-width:35em;" class="govuk-body-m">
-  Did the qualification include an <a href="">element of assessed practice in an early years setting</a>?
-</p>
-</legend>
-<div style="padding-left:740px; margin-top:-80px;" class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-<div class="govuk-radios__item">
-  <input class="govuk-radios__input" id="earlyyears" name="earlyyears" type="radio" value="yes">
-  <label class="govuk-label govuk-radios__label" for="earlyyears">
-    Yes
-  </label>
-</div>
-<div class="govuk-radios__item">
-  <input class="govuk-radios__input" id="earlyyears-2" name="earlyyears" type="radio" value="no">
-  <label class="govuk-label govuk-radios__label" for="earlyyears-2">
-    No
-  </label>
-</div>
-</div>
-</fieldset>
-</div>
-<hr>
-
-<div class="govuk-form-group">
-<fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-<p style="max-width:35em;" class="govuk-body-m">
-  Was the course fully consistent with the <a href="">QAA subject benchmark statement for Early Childhood Studies</a>?
-</p>
-</legend>
-<div style="padding-left:740px; margin-top:-80px;" class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-<div class="govuk-radios__item">
-  <input class="govuk-radios__input" id="QAA" name="QAA" type="radio" value="yes">
-  <label class="govuk-label govuk-radios__label" for="QAA">
-    Yes
-  </label>
-</div>
-<div class="govuk-radios__item">
-  <input class="govuk-radios__input" id="QAA-2" name="QAA" type="radio" value="no">
-  <label class="govuk-label govuk-radios__label" for="QAA-2">
-    No
-  </label>
-</div>
-</div>
-</fieldset>
-</div>
-<hr>
+      <hr>
 
       <div style="max-width:35em;" class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
