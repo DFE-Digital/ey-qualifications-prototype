@@ -1,6 +1,9 @@
-{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+{% extends "layouts/dfe-main.html" %}
 
-{% set pageName="Home" %}
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
 
 {% block content %}
 
@@ -9,6 +12,273 @@
 
     <!-- {% include "govuk-prototype-kit/includes/homepage-top.njk" %} -->
 
+    <h1 class="govuk-heading-l" style="margin: 0px 0px 48px;">
+      Early years qualifications prototypes
+    </h1>
+
+    <!-- Table of contents -->
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">
+            Version
+          </th>
+          <th scope="col" class="govuk-table__header">
+            Status
+          </th>
+          <th scope="col" class="govuk-table__header">
+            Notes
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> 
+            <a href="current/r11/start">r11</a>
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              Design in progress
+            </strong>
+          </td>
+          <td class="govuk-table__cell"> 
+            <a href="https://www.figma.com/design/h1uWad97GS2UeyLKQMVKek/Check-an-Early-Years-Qualification?node-id=37566-16967&t=MAbKCA7gq3B3r7qI-0">Figma file</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> 
+            <a href="current/r10/start">r10</a>
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Research complete
+            </strong>
+          </td>
+          <td class="govuk-table__cell"> 
+            <a href="https://www.figma.com/design/h1uWad97GS2UeyLKQMVKek/Check-an-Early-Years-Qualification?node-id=37515-13772&t=MAbKCA7gq3B3r7qI-0">Figma file</a>
+            <br>
+            <a href="">Research playback Round UR 5 UR</a>
+            <p class="govuk-body" style="margin-top: 25px;">
+              This iteration includes:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>changes on how users answer to when was the qualification started question</li>
+              <li>changes on how users answer to what is the awarding organisation question if they can not find the organisation on the list</li>
+              <li>minor content changes, including making backlinks specific, to comply with GDS style guide</li>
+              <li>error messages</li>
+              <li>new confirm qualification page</li>
+              <li>changes on the page styling to GOV.UK</li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> 
+            <a href="current/r9/start">r9</a>
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--orange">
+              Design done
+            </strong>
+          </td>
+          <td class="govuk-table__cell"> 
+            <p class="govuk-body">
+              This iteration includes:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>same journey as in version r8 but now users must select where the qualification was awarded and a specific qualification level</li>
+            </ul>
+            <p>This iteration was not tested with users.</p>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> 
+            <a href="current/r8/start">r8</a>
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Research complete
+            </strong>
+          </td>
+          <td class="govuk-table__cell"> 
+            <a href="">Research playback Round UR 4 UR</a>
+            <p class="govuk-body" style="margin-top: 25px;">
+              This iteration includes:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>questions about where the qualification was awarded, when it started, what its level is and the awarding organisation</li>
+              <li>redesigned results page</li>
+              <li>new page for checking the qualification's additional requirements</li>
+              <li>updated qualification result page</li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> 
+            <a href="current/r7/start">r7</a>
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Research complete
+            </strong>
+          </td>
+          <td class="govuk-table__cell"> 
+            <a href="">Research playback Round UR 3 UR</a>
+            <p class="govuk-body" style="margin-top: 25px;">
+              This iteration includes:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>a single page for searching and displaying the matching results, with a field to enter the qualification name and qualification level and awarding body filters</li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> 
+            <a href="current/r6/start">r6</a>
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Research complete
+            </strong>
+          </td>
+          <td class="govuk-table__cell"> 
+            <a href="">Research playback Round UR 2 UR</a>
+            <p class="govuk-body" style="margin-top: 25px;">
+              This iteration includes:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>field to enter the qualification name</li>
+              <li>search page displaying the matching results as links with the qualification details under the name and level and awarding body filters</li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> 
+            <a href="current/r5/start">r5</a>
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Research complete
+            </strong>
+          </td>
+          <td class="govuk-table__cell"> 
+            <a href="">Research playback Round UR 2 UR</a>
+            <p class="govuk-body" style="margin-top: 25px;">
+              This iteration includes:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>same journey as in r4 but with a different qualification</li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> 
+            <a href="current/r4/start">r4</a>
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Research complete
+            </strong>
+          </td>
+          <td class="govuk-table__cell"> 
+            <a href="">Research playback Round UR 2 UR</a>
+            <p class="govuk-body" style="margin-top: 25px;">
+              This iteration includes:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>question about the qualification level from 2 to 6, and with an option to show all levels</li>
+              <li>question about the awarding organisation</li>
+              <li>page with the matching qualifications</li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> 
+            <a href="current/r3/start">r3</a>
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Research complete
+            </strong>
+          </td>
+          <td class="govuk-table__cell"> 
+            <a href="">Research playback Round UR 2 UR</a>
+            <p class="govuk-body" style="margin-top: 25px;">
+              This iteration includes:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>minor content changes</li>
+              <li>field to enter the qualification name</li>
+              <li>search page displaying the matching results as links and qualification level and awarding body filters on the left side</li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> 
+            <a href="current/r2/start">r2</a>
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Research complete
+            </strong>
+          </td>
+          <td class="govuk-table__cell"> 
+            <a href="">Research playback Round UR 1 UR</a>
+            <p class="govuk-body" style="margin-top: 25px;">
+              This iteration includes:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>questions about the start date, level, and awarding body of the qualification</li>
+              <li>page to select the qualification</li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> 
+            <a href="current/r1/start">r1</a>
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Research complete
+            </strong>
+          </td>
+          <td class="govuk-table__cell"> 
+            <a href="">Research playback Round UR 1 UR</a>
+            <p class="govuk-body" style="margin-top: 25px;">
+              This iteration includes:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>field to enter the qualification name</li>
+              <li>option to apply filters to narrow the options down</li>
+              <li>qualification result page</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Side navigation -->
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-s" id="subsection-title">
+        Useful links
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <p class="app-related__list-item-description" style="">
+          <a href="">Figma file</a>
+        </p>
+      </nav>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <p class="app-related__list-item-description">
+          <a href="">Design history</a>
+        </p>
+      </nav>
+    </aside>
+  </div>
+</div>
+
+    <!--
+    
     <span class="govuk-caption-l gem-c-title__context">Prototypes</span>
     <h1 class="govuk-heading-m">
       {{ serviceName }}
@@ -53,8 +323,8 @@
       <li><a href="alpha/">Research prototype</a></li>
     </ul>
 
+    -->
+
     <!-- {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %} -->
-  </div>
-</div>
 
 {% endblock %}
