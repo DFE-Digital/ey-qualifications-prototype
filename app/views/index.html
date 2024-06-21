@@ -1,4 +1,4 @@
-{% extends "layouts/dfe-main.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
@@ -7,12 +7,12 @@
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+<div style="display: flex; flex-direction: row; justify-content: space-between;">
+  <div style="padding: 0;" class="govuk-grid-column-two-thirds">
 
     <!-- {% include "govuk-prototype-kit/includes/homepage-top.njk" %} -->
 
-    <h1 class="govuk-heading-l" style="margin: 0px 0px 48px;">
+    <h1 class="govuk-heading-xl" style="margin: 0px 0px 60px;">
       Early years qualifications prototypes
     </h1>
 
@@ -42,7 +42,13 @@
             </strong>
           </td>
           <td class="govuk-table__cell"> 
-            <a href="https://www.figma.com/design/h1uWad97GS2UeyLKQMVKek/Check-an-Early-Years-Qualification?node-id=37566-16967&t=MAbKCA7gq3B3r7qI-0">Figma file</a>
+            <p class="govuk-body">
+              This iteration includes:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>minor content changes</li>
+              <li></li>
+            </ul>
           </td>
         </tr>
         <tr class="govuk-table__row">
@@ -55,8 +61,6 @@
             </strong>
           </td>
           <td class="govuk-table__cell"> 
-            <a href="https://www.figma.com/design/h1uWad97GS2UeyLKQMVKek/Check-an-Early-Years-Qualification?node-id=37515-13772&t=MAbKCA7gq3B3r7qI-0">Figma file</a>
-            <br>
             <a href="">Research playback Round UR 5 UR</a>
             <p class="govuk-body" style="margin-top: 25px;">
               This iteration includes:
@@ -258,14 +262,14 @@
   </div>
 
   <!-- Side navigation -->
-  <div class="govuk-grid-column-one-third">
+  <div style="padding: 0;" class="govuk-grid-column-one-quarter">
     <aside class="app-related-items" role="complementary">
-      <h2 class="govuk-heading-s" id="subsection-title">
+      <h2 class="govuk-heading-m" id="subsection-title">
         Useful links
       </h2>
       <nav role="navigation" aria-labelledby="subsection-title">
-        <p class="app-related__list-item-description" style="">
-          <a href="">Figma file</a>
+        <p class="app-related__list-item-description">
+          <a href="https://www.figma.com/design/h1uWad97GS2UeyLKQMVKek/Check-an-Early-Years-Qualification?node-id=37566-16625&t=GG5JWp1zWnILMmWf-1">Figma file</a>
         </p>
       </nav>
       <nav role="navigation" aria-labelledby="subsection-title">
