@@ -143,14 +143,23 @@ function filterLevels(qualifications, request) {
 }
 
 function filterAwardingOrganisations(qualifications, request) {
-  // if the data doesn't include the awarding organisation filter, then return the lot
-  if (request.session.data['awarding-organisation'] == undefined || request.session.data['awarding-organisation'] == 'none' || request.session.data['awarding-organisation'] == 'any') return qualifications;
-
-  // Return the results with the awarding organisation that they want + any results that have 'various' as their organisation or 'All Higher Education Institutes' which is the level 6 equivalent to various.
-  return qualifications.filter(x => x.awardingOrganisation == request.session.data['awarding-organisation'] || x.awardingOrganisation == "Various awarding organisations" || x.awardingOrganisation == "All Higher Education Institutes");
+  // If the data doesn’t include the awarding organisation filter, then return the lot
+  if (request.session.data['awarding-organisation'] == undefined || request.session.data['awarding-organisation'] == 'none') return qualifications;
+  
+  // Handle the 'any' case separately
+  if (request.session.data['awarding-organisation'] == 'any') {
+    return qualifications.filter(x => x.awardingOrganisation == "Various awarding organisations" || x.awardingOrganisation == "All Higher Education Institutes");
+  }
+  
+  // Otherwise, return the results with the selected awarding organisation plus 'Various awarding organisations' and 'All Higher Education Institutes'
+  return qualifications.filter(x => 
+    x.awardingOrganisation == request.session.data['awarding-organisation'] ||
+    x.awardingOrganisation == "Various awarding organisations" ||
+    x.awardingOrganisation == "All Higher Education Institutes"
+  );
 }
 
-function compareByText(a, b){
+function compareByText(a, b) {
   return a.text.localeCompare(b.text);
 }
 
@@ -165,6 +174,7 @@ function setAwardingOrganisations(qualifications, request) {
       formattedAwardingOrganisations.push({"value": element, "text": element});
     }
   });
+  formattedAwardingOrganisations = formattedAwardingOrganisations.filter((s) => !["Various awarding organisations", "All Higher Education Institutes"].includes(s.value));  
   formattedAwardingOrganisations = formattedAwardingOrganisations.sort(compareByText);
   formattedAwardingOrganisations.unshift({"value": "none", text: "Choose the awarding organisation"});
   return formattedAwardingOrganisations;
