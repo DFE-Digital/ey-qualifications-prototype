@@ -1,0 +1,108 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back to Select the qualification",
+  href: "/current/r11/search-results"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <form class="form" action="confirm-post" method="post">
+      <input type="hidden" name="redirect" value="eyq-293" />
+
+      <h1 class="govuk-heading-xl">Confirm qualification</h1>
+
+      {{ govukSummaryList({
+        rows: [
+
+        {
+            key: {
+              text: "Qualification"
+            },
+            value: {
+              text: "Degrees and honours degrees at Level 6"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Qualification level"
+            },
+            value: {
+              text: "Degree with honours"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Awarding organisation"
+            },
+            value: {
+              text: "Various awarding organisations"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Date added to early years qualifications list"
+            },
+            value: {
+              text: "1 September 2014"
+            },
+            actions: {
+
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+          name: "yes-no",
+          value: data['yes-no'],
+          fieldset: {
+            legend: {
+              text: "Is this the qualification you are looking for?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No, select another qualification"
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
