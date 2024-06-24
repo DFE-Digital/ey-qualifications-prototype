@@ -19,7 +19,7 @@
     <form class="form" action="confirm-post" method="post">
       <input type="hidden" name="redirect" value="eyq-224" />
 
-      {% set errorMessage = "Please tell us if this is the qualification you are looking for" %}
+      {% set errorMessage = "Confirm if this is the qualification you are looking for" %}
 
       {{ govukErrorSummary({
         titleText: "There is a problem",
@@ -31,7 +31,7 @@
         ]
       }) }}
 
-      <h1 class="govuk-heading-xl">Is this the qualfication you are looking for?</h1>
+      <h1 class="govuk-heading-xl">Confirm qualification</h1>
 
       {{ govukSummaryList({
         rows: [
@@ -103,7 +103,7 @@
             },
             {
               value: "No",
-              text: "No, search again"
+              text: "No, select another qualification"
             },
             {
             }
