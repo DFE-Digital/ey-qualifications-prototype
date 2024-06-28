@@ -16,6 +16,18 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {% set errorMessage = "Select one option" %}
+
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: errorMessage,
+          href: "#qualification-level"
+        }
+      ]
+    }) }}
+
     <form class="form" action="eyq-293-requirement2-post" method="post">
       <h1 class="govuk-fieldset__legend--l">
         Was the course fully consistent with the QAA subject benchmark statement for Early Childhood Studies?
@@ -45,7 +57,10 @@
               classes: ""
             }
           },
-
+        },
+        errorMessage: {
+          text: errorMessage
+        },
           items: [
             {
               value: "yes",
