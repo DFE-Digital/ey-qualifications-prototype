@@ -40,7 +40,7 @@ router.post('/confirm-post', function(request, response) {
   }
   var yesNoValue = request.session.data['yes-no'];
   if (yesNoValue == 'Yes') {
-    return response.redirect(`/current/r11/${redirectValue}`);
+    return response.redirect(`/current/r11/${redirectValue}-requirement1`);
   } else {
     return response.redirect('/current/r11/search-results');
   }
