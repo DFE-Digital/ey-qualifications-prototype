@@ -6,8 +6,8 @@
 
 {% block beforeContent %}
   {{ govukBackLink({
-  text: "Back to did the qualification include an element of assessed practice in an early years setting",
-  href: "/current/r11/eyq-293-requirement1"
+  text: "Back to was the course fully consistent with the QAA subject benchmark statement for Early Childhood Studies",
+  href: "/current/r11/eyq-293-requirement2"
 }) }}
 {% endblock %}
 
@@ -18,48 +18,44 @@
 
     <form class="form" action="eyq-293-requirement2-post" method="post">
       <h1 class="govuk-fieldset__legend--l">
-        Was the course fully consistent with the QAA subject benchmark statement for Early Childhood Studies?
+        Check the qualification additional requirements
       </h1>
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            What is Quality Assurance Agency for Higher Education (QAA)?
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          The Quality Assurance Agency for Higher Education (QAA) <a href="https://www.qaa.ac.uk/the-quality-code/subject-benchmark-statements/early-childhood-studies">Subject Benchmark Statement for Early Childhood Studies</a> describes what graduates might reasonably be expected to know at the end of their studies. 
-        </div>
-        <div class="govuk-details__text">
-          The university or training provider should be able to confirm if the course was consistent with the Statement.
-        </div>
-      </details>
 
-      {{ govukRadios({
-          id: "awarding-location",
-          name: "awarding-location",
-          value: data['awarding-location'],
-          fieldset: {
-            legend: {
-              text: "",
-              isPageHeading: false,
-              classes: ""
-            }
-          },
+      <dl style="margin-top: 30px" class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt style="width: 60%;" class="govuk-summary-list__key">
+            Did the qualification include an element of assessed practice in early years setting? 
+          </dt>
+          <dd style="text-align: center;" class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/eyq-293-requirement1">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt style="width: 60%;" class="govuk-summary-list__key">
+            Was the course fully consistent with the QAA subject benchmark statement for Early Childhood Studies?
+          </dt>
+          <dd style="text-align: center;" class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/eyq-293-requirement2">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+      </dl>
 
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          Your result is dependent on the accuracy of the answers you have provided.
+        </strong>
+      </div>
 
       {{ govukButton({
-        text: "Continue"
+        text: "Get result"
       }) }}
 
     </form>
