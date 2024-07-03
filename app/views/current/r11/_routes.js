@@ -40,9 +40,27 @@ router.post('/confirm-post', function(request, response) {
   }
   var yesNoValue = request.session.data['yes-no'];
   if (yesNoValue == 'Yes') {
-    return response.redirect(`/current/r11/${redirectValue}`);
+    return response.redirect(`/current/r11/${redirectValue}-requirement1`);
   } else {
     return response.redirect('/current/r11/search-results');
+  }
+})
+
+router.post('/eyq-293-requirement1-post', function(request, response) {
+  var redirectValue = request.session.data['redirect'];
+  if (request.session.data['includesAssessedPractice'] == undefined) {
+    return response.redirect(`/current/r11/eyq-293-requirement1-error`)
+  } else {
+    return response.redirect(`/current/r11/eyq-293-requirement2`)
+  }
+})
+
+router.post('/eyq-293-requirement2-post', function(request, response) {
+  var redirectValue = request.session.data['redirect'];
+  if (request.session.data['isQAAConsistent'] == undefined) {
+    return response.redirect(`/current/r11/eyq-293-requirement2-error`)
+  } else {
+    return response.redirect(`/current/r11/eyq-293-requirements-check`)
   }
 })
 
