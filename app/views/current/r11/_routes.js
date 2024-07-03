@@ -50,6 +50,8 @@ router.post('/eyq-293-requirement1-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['yes-no'] == undefined) {
     return response.redirect(`/current/r11/eyq-293-requirement1-error`)
+  } else {
+    return response.redirect(`/current/r11/eyq-293-requirement2`)
   }
 })
 
@@ -57,6 +59,8 @@ router.post('/eyq-293-requirement2-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['yes-no'] == undefined) {
     return response.redirect(`/current/r11/eyq-293-requirement2-error`)
+  } else {
+    return response.redirect(`/current/r11/eyq-293-requirements-check`)
   }
 })
 
