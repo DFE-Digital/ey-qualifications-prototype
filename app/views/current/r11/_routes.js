@@ -46,6 +46,15 @@ router.post('/confirm-post', function(request, response) {
   }
 })
 
+router.post('/eyq-240-requirement1-post', function(request, response) {
+  var redirectValue = request.session.data['redirect'];
+  if (request.session.data['includesAssessedPractice'] == undefined) {
+    return response.redirect(`/current/r11/eyq-240-requirement1-error`)
+  } else {
+    return response.redirect(`/current/r11/eyq-240-requirements-check`)
+  }
+})
+
 router.post('/eyq-293-requirement1-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['includesAssessedPractice'] == undefined) {

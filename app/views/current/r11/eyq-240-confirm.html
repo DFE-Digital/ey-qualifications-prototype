@@ -16,20 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
     <form class="form" action="confirm-post" method="post">
-      <input type="hidden" name="redirect" value="eyq-75-checked" />
-
-      {% set errorMessage = "Confirm if this is the qualification you are looking for" %}
-
-      {{ govukErrorSummary({
-        titleText: "There is a problem",
-        errorList: [
-          {
-            text: errorMessage,
-            href: "#yes-no"
-          }
-        ]
-      }) }}
-
+      <input type="hidden" name="redirect" value="eyq-240" />
       <h1 class="govuk-heading-xl">
         Confirm qualification
       </h1>
@@ -42,7 +29,7 @@
               text: "Qualification"
             },
             value: {
-              text: "Level 3 Diploma for the Children and Young People's Workforce (Early Learning and Childcare)"
+              text: "T Level Technical Qualification in Education and Childcare (Specialism - Early Years Educator)"
             },
             actions: {
 
@@ -66,7 +53,7 @@
               text: "Awarding organisation"
             },
             value: {
-              text: "Various awarding organisations"
+              text: "NCFE"
             },
             actions: {
 
@@ -76,7 +63,6 @@
       }) }}
 
       {{ govukRadios({
-          id: "yes-no",
           name: "yes-no",
           value: data['yes-no'],
           fieldset: {
@@ -95,10 +81,7 @@
               value: "No",
               text: "No, select another qualification"
             }
-          ],
-          errorMessage: {
-            text: errorMessage
-          }
+          ]
         }) }}
 
       {{ govukButton({
