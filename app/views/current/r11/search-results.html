@@ -24,11 +24,23 @@ href: "/current/r11/q4"
     </h1>
 
     <ul class="govuk-list govuk-list--bullet">
-      {% if data['qualification-level'] != 'not-sure' %} <li>{{ 'Degree with honours' if data['qualification-level'] == 'degree-with-honours' else 'Level ' + data['qualification-level'] }}</li> {% endif %}
-      <li>{{ 'Any organisation' if data['awarding-organisation'] == 'any' else data['awarding-organisation']}}</li>
-      {% if data['awarding-date'] == 'before' %}<li>Before September 2014</li> {% endif %}
-      {% if data['awarding-date'] == 'after' %}<li>On or after 1 September 2014</li> {% endif %}
-      {% if data['awarding-date'] == '2024' %}<li>On or after 1 September 2024</li> {% endif %}
+
+      <li>{{data['awarding-location']}}</li> 
+
+      <li>{{data['date-started-month']}} {{data['date-started-year']}}</li>
+
+      {% if data['qualification-level'] == 'not-sure' %}
+        <li>Any level</li>
+      {% else %}
+        <li>data['qualification-level']</li>
+      {% endif %}
+
+      {% if data['awarding-organisation'] == 'any' %}
+        <li>Any organisation</li>
+      {% else %}
+        <li>data['awarding-organisation']</li>
+      {% endif %}
+      
     </ul>
 
     <p class="govuk-body">
