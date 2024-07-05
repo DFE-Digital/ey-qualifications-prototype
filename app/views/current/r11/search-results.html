@@ -70,7 +70,7 @@ href: "/current/r11/q4"
         <li>Level {{data['qualification-level']}}</li>
       {% endif %}
 
-      {% if data['awarding-organisation'] === 'any' %}
+      {% if data['awarding-organisation'] == 'any' %}
         <li>Any organisation</li>
       {% else %}
         <li>{{data['awarding-organisation']}}</li>
