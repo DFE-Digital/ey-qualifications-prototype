@@ -81,12 +81,11 @@ href: "/current/r11/q4"
         {% for qualification in data['search-results'] %}
         <li>
           <div>
-            <h2><a href={{qualification.href}}>{{qualification.name}}</a></h2>
-
-            {% if qualification.additionalRequirementsNumber >0  %}<p>This qualification has {{qualification.additionalRequirementsNumber}} additional {{ ' requirements' if qualification.additionalRequirementsNumber
-              > 1 else ' requirement' }}.</p>{% endif %}
-            <p><strong>Level: </strong>{{ 'Degree with honours' if qualification.level == 'degree-with-honours' else qualification.level }}</p>
-            <p><strong>Awarding organisation:</strong> {{qualification.awardingOrganisation}}</p>
+            <p class="govuk-body-l">
+              <strong>
+                <a href={{qualification.href}}>{{qualification.name}}</a>
+              </strong>
+            </p>
           </div>
           <hr />
         </li>
