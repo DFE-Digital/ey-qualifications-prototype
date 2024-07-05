@@ -111,18 +111,18 @@ href: "/current/r11/q4"
           })}}
       </div>
 
-      <ul class="govuk-list govuk-list--spaced">
+      <ul class="qualification-list">
         {% for qualification in data['search-results'] %}
-        <li>
-          <div>
-            <p class="govuk-body-l">
-              <strong>
-                <a href={{qualification.href}}>{{qualification.name}}</a>
-              </strong>
+          <li class="qualification-item">
+            <p class="govuk-body-m">
+              <a href={{qualification.href}}>
+                <strong style="text-decoration: underline; text-decoration-color: #1d70b8; text-decoration-thickness: 2px;">
+                  {{qualification.name}}
+                </strong>
+              </a>
             </p>
-          </div>
-          <hr />
-        </li>
+            <hr>
+          </li>
         {% endfor %}
       </ul>
 
