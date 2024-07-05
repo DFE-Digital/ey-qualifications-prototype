@@ -40,7 +40,7 @@ href: "/current/r11/q4"
       {% else %}
         <li>data['awarding-organisation']</li>
       {% endif %}
-      
+
     </ul>
 
     <p class="govuk-body">
@@ -62,14 +62,6 @@ href: "/current/r11/q4"
 
       <p class="govuk-body-l"><strong>{{ data['result-count'] }} {{ ' qualifications' if data['result-count']
           > 1 else ' qualification' }} </strong></p>
-
-      <div class="govuk-warning-text">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-          <span class="govuk-visually-hidden">Warning</span>
-          To be full and relevant, the qualification name must exactly match the qualification on the certificate, including any wording in brackets.
-          </strong>
-      </div>
 
       <div class="govuk-form-group">
         <label style="margin-bottom:-20px;" class="govuk-label" for="search">
