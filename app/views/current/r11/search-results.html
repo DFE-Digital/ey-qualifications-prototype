@@ -24,11 +24,57 @@ href: "/current/r11/q4"
     </h1>
 
     <ul class="govuk-list govuk-list--bullet">
-      {% if data['qualification-level'] != 'not-sure' %} <li>{{ 'Degree with honours' if data['qualification-level'] == 'degree-with-honours' else 'Level ' + data['qualification-level'] }}</li> {% endif %}
-      <li>{{ 'Any organisation' if data['awarding-organisation'] == 'any' else data['awarding-organisation']}}</li>
-      {% if data['awarding-date'] == 'before' %}<li>Before September 2014</li> {% endif %}
-      {% if data['awarding-date'] == 'after' %}<li>On or after 1 September 2014</li> {% endif %}
-      {% if data['awarding-date'] == '2024' %}<li>On or after 1 September 2024</li> {% endif %}
+
+      <li>{{data['awarding-location']}}</li> 
+
+      {% if data['date-started-month'] === '1' or data['date-started-month'] === '01' %}
+        <li>January {{data['date-started-year']}}</li>
+      {% endif %}
+      {% if data['date-started-month'] === '2' or data['date-started-month'] === '02'%}
+        <li>February {{data['date-started-year']}}</li>
+      {% endif %}
+      {% if data['date-started-month'] === '3'or data['date-started-month'] === '03' %}
+        <li>March {{data['date-started-year']}}</li>
+      {% endif %}
+      {% if data['date-started-month'] === '4' or data['date-started-month'] === '04' %}
+        <li>April {{data['date-started-year']}}</li>
+      {% endif %}
+      {% if data['date-started-month'] === '5' or data['date-started-month'] === '05'%}
+        <li>May {{data['date-started-year']}}</li>
+      {% endif %}
+      {% if data['date-started-month'] === '6' or data['date-started-month'] === '06'%}
+        <li>June {{data['date-started-year']}}</li>
+      {% endif %}
+      {% if data['date-started-month'] === '7' or data['date-started-month'] === '07'%}
+        <li>July {{data['date-started-year']}}</li>
+      {% endif %}
+      {% if data['date-started-month'] === '8' or data['date-started-month'] === '08'%}
+        <li>August {{data['date-started-year']}}</li>
+      {% endif %}
+      {% if data['date-started-month'] === '9' or data['date-started-month'] === '09' %}
+        <li>September {{data['date-started-year']}}</li>
+      {% endif %}
+      {% if data['date-started-month'] === '10' %}
+        <li>October {{data['date-started-year']}}</li>
+      {% endif %}
+      {% if data['date-started-month'] === '11' %}
+        <li>November {{data['date-started-year']}}</li>
+      {% endif %}
+      {% if data['date-started-month'] === '12' %}
+        <li>December {{data['date-started-year']}}</li>
+      {% endif %}
+
+      {% if data['qualification-level'] === 'not-sure' %}
+        <li>Any level</li>
+      {% else %}
+        <li>Level {{data['qualification-level']}}</li>
+      {% endif %}
+
+      {% if data['awarding-organisation'] === 'any' %}
+        <li>Any organisation</li>
+      {% else %}
+        <li>{{data['awarding-organisation']}}</li>
+      {% endif %}
     </ul>
 
     <p class="govuk-body">
@@ -48,16 +94,8 @@ href: "/current/r11/q4"
 
       <h1 class="govuk-heading-xl">Select the qualification</h1>
 
-      <p class="govuk-body-l"><strong>{{ data['result-count'] }} {{ ' qualifications' if data['result-count']
-          > 1 else ' qualification' }} </strong></p>
-
-      <div class="govuk-warning-text">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-          <span class="govuk-visually-hidden">Warning</span>
-          To be full and relevant, the qualification name must exactly match the qualification on the certificate, including any wording in brackets.
-          </strong>
-      </div>
+      <p class="govuk-body-l"><strong>{{ data['result-count'] }} {{ ' qualifications found' if data['result-count']
+          > 1 else ' qualification found' }} </strong></p>
 
       <div class="govuk-form-group">
         <label style="margin-bottom:-20px;" class="govuk-label" for="search">
@@ -67,27 +105,32 @@ href: "/current/r11/q4"
       <div class="govuk-form-group">
         <input class="govuk-input govuk-!-width-three-quarters" id="" name="qualification-search" type="text" value="{{data['qualification-search']}}">
         {{govukButton({
-          text: "Search",
+          text: "Refine",
           type: "Submit",
           classes: "govuk-button--secondary"
           })}}
       </div>
 
-      <ul class="govuk-list govuk-list--spaced">
+      <ul class="qualification-list">
         {% for qualification in data['search-results'] %}
-        <li>
-          <div>
-            <h2><a href={{qualification.href}}>{{qualification.name}}</a></h2>
-
-            {% if qualification.additionalRequirementsNumber >0  %}<p>This qualification has {{qualification.additionalRequirementsNumber}} additional {{ ' requirements' if qualification.additionalRequirementsNumber
-              > 1 else ' requirement' }}.</p>{% endif %}
-            <p><strong>Level: </strong>{{ 'Degree with honours' if qualification.level == 'degree-with-honours' else qualification.level }}</p>
-            <p><strong>Awarding organisation:</strong> {{qualification.awardingOrganisation}}</p>
-          </div>
-          <hr />
-        </li>
+          <li class="qualification-item">
+            <p class="govuk-body-m">
+              <a href={{qualification.href}}>
+                <strong style="text-decoration: underline; text-decoration-color: #1d70b8; text-decoration-thickness: 2px;">
+                  {{qualification.name}}
+                </strong>
+              </a>
+            </p>
+            <hr>
+          </li>
         {% endfor %}
       </ul>
+
+      <p style="margin-top: 40px" class="govuk-body">
+        <a href="not-on-list" class="govuk-link">
+          I can not find the qualification on the list
+        </a>
+      </p>
     </form>
   </div>
 </div>

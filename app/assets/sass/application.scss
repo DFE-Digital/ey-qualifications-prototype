@@ -16,3 +16,37 @@
     cursor: pointer;
     margin: 0;
 }
+
+.qualification-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.qualification-item {
+    position: relative;
+    padding: 10px 0;
+}
+
+.qualification-item a {
+    text-decoration: none;
+    color: #1d70b8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.qualification-item a::after {
+    content: '\203A'; /* Unicode for right-pointing chevron */
+    font-size: 32px;
+    margin-left: 40px;
+    text-decoration: none;
+}
+
+.qualification-item hr {
+    border: 0;
+    height: 1px;
+    background: #d8d8d8;
+    margin: 10px 0 0;
+}
+
