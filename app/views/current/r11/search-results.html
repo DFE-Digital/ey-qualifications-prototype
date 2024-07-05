@@ -64,13 +64,13 @@ href: "/current/r11/q4"
         <li>December {{data['date-started-year']}}</li>
       {% endif %}
 
-      {% if data['qualification-level'] == 'not-sure' %}
+      {% if data['qualification-level'] === 'not-sure' %}
         <li>Any level</li>
       {% else %}
         <li>Level {{data['qualification-level']}}</li>
       {% endif %}
 
-      {% if data['awarding-organisation'] == 'any' %}
+      {% if data['awarding-organisation'] === 'any' %}
         <li>Any organisation</li>
       {% else %}
         <li>{{data['awarding-organisation']}}</li>
@@ -95,7 +95,7 @@ href: "/current/r11/q4"
       <h1 class="govuk-heading-xl">Select the qualification</h1>
 
       <p class="govuk-body-l"><strong>{{ data['result-count'] }} {{ ' qualifications found' if data['result-count']
-          > 1 else ' qualification' }} </strong></p>
+          > 1 else ' qualification found' }} </strong></p>
 
       <div class="govuk-form-group">
         <label style="margin-bottom:-20px;" class="govuk-label" for="search">
