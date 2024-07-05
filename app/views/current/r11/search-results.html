@@ -92,7 +92,9 @@ href: "/current/r11/q4"
       <input type="hidden" name="date-started-month" value="{{data['date-started-month']}}" />
       <input type="hidden" name="date-started-year" value="{{data['date-started-year']}}" />
 
-      <h1 class="govuk-heading-xl">Select the qualification</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        Select the qualification
+      </h1>
 
       <p class="govuk-body-l"><strong>{{ data['result-count'] }} {{ ' qualifications found' if data['result-count']
           > 1 else ' qualification found' }} </strong></p>
