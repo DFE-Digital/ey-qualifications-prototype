@@ -27,18 +27,20 @@ href: "/current/r11/q4"
 
       <li>{{data['awarding-location']}}</li> 
 
-      <li>{{data['date-started-month']}} {{data['date-started-year']}}</li>
+      <li>
+        {{data['date-started-month']}} {{data['date-started-year']}}
+      </li>
 
       {% if data['qualification-level'] == 'not-sure' %}
         <li>Any level</li>
       {% else %}
-        <li>data['qualification-level']</li>
+        <li>Level {{data['qualification-level']}}</li>
       {% endif %}
 
       {% if data['awarding-organisation'] == 'any' %}
         <li>Any organisation</li>
       {% else %}
-        <li>data['awarding-organisation']</li>
+        <li>{{data['awarding-organisation']}}</li>
       {% endif %}
 
     </ul>
