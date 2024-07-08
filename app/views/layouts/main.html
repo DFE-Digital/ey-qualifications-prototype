@@ -8,4 +8,19 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% block scripts %}
   {{ super() }}
   <script src="/node_modules/dfe-frontend-alpha/dist/dfefrontend.min.js"></script>
+
+  <script>
+    function expandDetailsAndPrint() {
+      // Get all details elements
+      const detailsElements = document.querySelectorAll('details');
+      
+      // Open each details element
+      detailsElements.forEach(details => {
+        details.open = true;
+      });
+      
+      // Trigger print dialog
+      window.print();
+    }
+  </script>
 {% endblock %}
