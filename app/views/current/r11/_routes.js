@@ -7,9 +7,10 @@ var data = require('../../../data/qualifications.json');
 router.post('/q1-post', function(request, response){
   if (request.session.data['awarding-location'] == undefined) {
     response.redirect("/current/r11/q1-error")
-  } else {
+  } 
+  if (request.session.data['awarding-location'] == 'England') {
     response.redirect("/current/r11/q2")
-  }
+  } 
 })
 
 router.post('/q2-post', function(request, response){
