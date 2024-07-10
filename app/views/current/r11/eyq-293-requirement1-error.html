@@ -15,47 +15,55 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
+    
     {% set errorMessage = "Select one option" %}
 
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: errorMessage,
+          href: "#requirement1"
+        }
+      ]
+    }) }}
+
     <form class="form" action="eyq-293-requirement1-post" method="post">
+      <div class="govuk-form-group govuk-form-group--error">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+          Was the course fully consistent with the QAA subject benchmark statement for Early Childhood Studies?
+        </h1>
+        <p class="govuk-body-m">
+          The university or training provider should be able to confirm if the course was consistent with the Statement.
+        </p>
 
-      {{ govukErrorSummary({
-        titleText: "There is a problem",
-        errorList: [
-          {
-            text: errorMessage,
-            href: "#awarding-location"
-          }
-        ]
-      }) }}
-
-      {{ govukRadios({
-          id: "includesAssessedPractice",
-          name: "includesAssessedPractice",
-          value: data['includesAssessedPractice'],
-          fieldset: {
-            legend: {
-              text: "Did the qualification include an element of assessed practice in an early years setting?",
-              isPageHeading: true,
-              classes: "govuk-heading-xl govuk-!-margin-bottom-4"
-            }
-          },
-          errorMessage: {
-            text: errorMessage
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
+        {{ govukRadios({
+            id: "includesAssessedPractice",
+            name: "includesAssessedPractice",
+            value: data['includesAssessedPractice'],
+            fieldset: {
+              legend: {
+                text: "",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
             },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
-
+            errorMessage: {
+              text: errorMessage
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+      </div>
+      
       {{ govukButton({
         text: "Continue"
       }) }}
