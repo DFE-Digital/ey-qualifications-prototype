@@ -92,25 +92,27 @@ href: "/current/r11/q4"
       <input type="hidden" name="date-started-month" value="{{data['date-started-month']}}" />
       <input type="hidden" name="date-started-year" value="{{data['date-started-year']}}" />
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
         Select the qualification
       </h1>
 
       <p class="govuk-body-l"><strong>{{ data['result-count'] }} {{ ' qualifications found' if data['result-count']
           > 1 else ' qualification found' }} </strong></p>
 
-      <div class="govuk-form-group">
-        <label style="margin-bottom:-20px;" class="govuk-label" for="search">
-          Refine your search by entering keywords from the qualification name
-        </label>
-      </div>
-      <div class="govuk-form-group">
-        <input class="govuk-input govuk-!-width-three-quarters" id="" name="qualification-search" type="text" value="{{data['qualification-search']}}">
-        {{govukButton({
-          text: "Refine",
-          type: "Submit",
-          classes: "govuk-button--secondary"
-          })}}
+      <div>
+        <div class="govuk-form-group">
+          <label style="margin-bottom:-20px;" class="govuk-label" for="search">
+            Refine your search by entering keywords from the qualification name
+          </label>
+        </div>
+        <div style="margin-bottom:20px;" class="govuk-form-group">
+          <input class="govuk-input govuk-!-width-three-quarters" id="" name="qualification-search" type="text" value="{{data['qualification-search']}}">
+          {{govukButton({
+            text: "Refine",
+            type: "Submit",
+            classes: "govuk-button--secondary"
+            })}}
+        </div>
       </div>
 
       <ul class="qualification-list">
