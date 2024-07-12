@@ -83,7 +83,7 @@ router.get('/reset-filters', function(request, response) {
   }
   request.session.data = resetData;
 
-  response.redirect("/current/11/q1");
+  response.redirect("/current/r11/q1");
 })
 
 // Route search results
