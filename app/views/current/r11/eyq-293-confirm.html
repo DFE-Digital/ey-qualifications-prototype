@@ -62,6 +62,10 @@
         ]
       }) }}
 
+      {{ govukInsetText({
+        text: "Some qualifications are offered by more than one awarding organisation. These qualifications are listed as being awarded by 'various awarding organisations'. "
+      }) }}
+
       {{ govukRadios({
           name: "yes-no",
           value: data['yes-no'],
