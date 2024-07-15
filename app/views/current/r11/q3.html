@@ -26,12 +26,12 @@
         </span>
       </summary>
       <div class="govuk-details__text">
-        <p>Most qualifications have a difficulty level. The higher the level, the more difficult the qualification is.</p>
         <p>To find the level of a qualification, you can:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>check the qualification certificate</li>
           <li>ask the person who holds the qualification</li>
-          <li>see <a href="https://www.gov.uk/what-different-qualification-levels-mean" class="govuk-link" rel="noreferrer noopener" target="_blank">examples of qualification levels</a> in England, Wales and Northern Ireland</li>
+          <li>check with the awarding organisation</li>
+          <li>see <a href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" class="govuk-link" rel="noreferrer noopener" target="_blank">examples of qualification levels in England, Wales and Northern Ireland (link opens in new tab)</a></li>
         </ul>
       </div>
     </details>
@@ -40,7 +40,7 @@
       <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
       <input type="hidden" name="date-started-month" value="{{data['date-started-month']}}" />
       <input type="hidden" name="date-started-year" value="{{data['date-started-year']}}" />
-      
+
       {{ govukRadios({
           name: "qualification-level",
           value: data['qualification-level'],

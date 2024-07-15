@@ -15,7 +15,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    
+
     {% set errorMessage = "Select one option" %}
 
     {{ govukErrorSummary({
@@ -31,10 +31,10 @@
     <form class="form" action="eyq-293-requirement1-post" method="post">
       <div class="govuk-form-group govuk-form-group--error">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-          Was the course fully consistent with the QAA subject benchmark statement for Early Childhood Studies?
+          Did the qualification include an element of assessed practice in an early years setting?
         </h1>
         <p class="govuk-body-m">
-          The university or training provider should be able to confirm if the course was consistent with the Statement.
+          If you don't know, you can ask the qualification holder, the awarding organisation or the training provider.
         </p>
 
         {{ govukRadios({
@@ -63,7 +63,7 @@
             ]
           }) }}
       </div>
-      
+
       {{ govukButton({
         text: "Continue"
       }) }}
