@@ -96,9 +96,16 @@ href: "/current/r11/q4"
         Select the qualification
       </h1>
 
-      <p class="govuk-body-l"><strong>{{ data['result-count'] }} {{ ' qualifications found' if data['result-count']
-          > 1 else ' qualification found' }} </strong></p>
-
+      <p class="govuk-body-l">
+        <strong>
+          {% if data['result-count'] == 0 %}
+            No qualifications found
+          {% else %}
+            {{ data['result-count'] }} {{ 'qualifications found' if data['result-count'] > 1 else 'qualification found' }}
+          {% endif %}
+        </strong>
+      </p>
+      
       <div>
         <div class="govuk-form-group">
           <label style="margin-bottom:-20px;" class="govuk-label" for="search">
@@ -129,6 +136,21 @@ href: "/current/r11/q4"
           </li>
         {% endfor %}
       </ul>
+
+      {% if data['result-count'] == 0 %}
+        <p style="margin-bottom: 40px;" class="govuk-body-m">
+          <strong>There are no matching qualifications.</strong>
+        </p>
+        <p class="govuk-body-m">
+          Improve your search by:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>double-checking your spelling</li>
+          <li>using fewer words</li>
+          <li>using words from the qualification name, rather than the level or awarding organisation name</li>
+          <li>checking the list for groups of qualifications that could include the one you are looking for</li>
+        </ul>
+      {% endif %}
 
       <p style="margin-top: 40px" class="govuk-body">
         <a href="not-on-list" class="govuk-link">
