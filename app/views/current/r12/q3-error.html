@@ -1,0 +1,117 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back to when was the qualification started",
+  href: "/current/r11/q2"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% set errorMessage = "Select the level of the qualification. If you do not know the level, choose Not sure." %}
+
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: errorMessage,
+          href: "#qualification-level"
+        }
+      ]
+    }) }}
+
+    <form class="form" action="q3-post" method="post">
+      <div class="govuk-form-group govuk-form-group--error">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        What level is the qualification?
+      </h1>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            How do I find out what level it is?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>To find the level of a qualification, you can:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>check the qualification certificate</li>
+            <li>check with the awarding organisation</li>
+            <li>see <a href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" class="govuk-link" rel="noreferrer noopener" target="_blank">examples of qualification levels in England, Wales and Northern Ireland (opens in new tab)</a></li>
+          </ul>
+        </div>
+      </details>
+
+      <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
+      <input type="hidden" name="date-started-month" value="{{data['date-started-month']}}" />
+      <input type="hidden" name="date-started-year" value="{{data['date-started-year']}}" />
+
+      {{ govukRadios({
+          id: "qualification-level",
+          name: "qualification-level",
+          value: data['qualification-level'],
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: false,
+              classes: ""
+            }
+          },
+          errorMessage: {
+            text: errorMessage
+          },
+          items: [
+            {
+              value: "2",
+              text: "Level 2"
+            },
+            {
+              value: "3",
+              text: "Level 3"
+            },
+            {
+              value: "4",
+              text: "Level 4"
+            },
+            {
+              value: "5",
+              text: "Level 5"
+            },
+            {
+              value: "6",
+              text: "Level 6",
+              hint: {
+                text: "Includes bachelor of arts (BA), bachelor of education (BEd), ordinary degrees and degrees with honours"
+              }
+            },
+            {
+              value: "7",
+              text: "Level 7"
+            },
+            {
+              value: "not-sure",
+              text: "Not sure"
+            }
+          ]
+        }) }}
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back to check an early years qualification",
+  href: "/current/r11/start"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="q1-post" method="post">
+
+      {{ govukRadios({
+          id: "awarding-location",
+          name: "awarding-location",
+          value: data['awarding-location'],
+          fieldset: {
+            legend: {
+              text: "Where was the qualification awarded?",
+              isPageHeading: true,
+              classes: "govuk-heading-xl govuk-!-margin-bottom-4"
+            }
+          },
+          items: [
+            {
+              value: "England",
+              text: "England"
+            },
+            {
+              value: "Scotland",
+              text: "Scotland"
+            },
+            {
+              value: "Wales",
+              text: "Wales"
+            },
+            {
+              value: "Northern Ireland",
+              text: "Northern Ireland"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Outside the United Kingdom",
+              text: "Outside the United Kingdom"
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

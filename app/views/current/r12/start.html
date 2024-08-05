@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start – {{ serviceName }} – GOV.UK Prototype
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Education, training and skills",
+        href: "#"
+      },
+      {
+        text: "Check an early years qualification"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        {{ serviceName }}
+      </h1>
+
+      <p>Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>check if an early years qualification is approved by the Department for Education (DfE) as full and relevant</li>
+        <li>confirm if someone who holds this qualification can count in staff:child ratios at level 2, 3 or 6</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">Before you start</h2>
+
+      <p>
+        To confirm if the qualification is full and relevant, this service will ask you:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>where the qualification was awarded</li>
+        <li>the date the qualification was started</li>
+        <li>the level of the qualification</li>
+        <li>the awarding organisation</li>
+      </ul>
+
+      <p>
+        Some qualifications have additional requirements which need to be met for the qualification to be considered full and relevant. This service will tell you if any additional requirements apply, and what these are.
+      </p>
+
+      <form class="form" action="/current/r11/q1" method="post">
+        {{ govukButton({
+          text: "Start now",
+          type: "Submit",
+          isStartButton: true
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

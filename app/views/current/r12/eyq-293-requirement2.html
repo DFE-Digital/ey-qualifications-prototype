@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back to did the qualification include an element of assessed practice in an early years setting",
+  href: "/current/r11/eyq-293-requirement1"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="eyq-293-requirement2-post" method="post">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        Was the course fully consistent with the QAA Subject Benchmark Statement for Early Childhood Studies?
+      </h1>
+      <p class="govuk-hint">
+        If you do not know, you can ask the awarding organisation or the training provider.
+      </p>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What is the Quality Assurance Agency for Higher Education (QAA)?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          The Quality Assurance Agency for Higher Education (QAA) <a href="https://www.qaa.ac.uk/the-quality-code/subject-benchmark-statements/early-childhood-studies">Subject Benchmark Statement for Early Childhood Studies</a> describes what graduates might reasonably be expected to know at the end of their studies.
+        </div>
+      </details>
+
+      {{ govukRadios({
+          id: "isQAAConsistent",
+          name: "isQAAConsistent",
+          value: data['isQAAConsistent'],
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: false,
+              classes: ""
+            }
+          },
+
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
