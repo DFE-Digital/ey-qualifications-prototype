@@ -6,71 +6,71 @@ var data = require('../../../data/qualifications.json');
 
 router.post('/q1-post', function(request, response){
   if (request.session.data['awarding-location'] == undefined) {
-    response.redirect("/current/r11/q1-error")
+    response.redirect("/current/r12/q1-error")
   } 
   if (request.session.data['awarding-location'] == 'England') {
-    response.redirect("/current/r11/q2")
+    response.redirect("/current/r12/q2")
   } 
 })
 
 router.post('/q2-post', function(request, response){
   if (request.session.data['date-started-month'] == "" || request.session.data['date-started-year'] == "") {
-    response.redirect("/current/r11/q2-error")
+    response.redirect("/current/r12/q2-error")
   } else {
-    response.redirect("/current/r11/q3")
+    response.redirect("/current/r12/q3")
   }
 })
 
 router.post('/q3-post', function(request, response){
   if (request.session.data['qualification-level'] == undefined) {
-    response.redirect("/current/r11/q3-error")
+    response.redirect("/current/r12/q3-error")
   } else {
     var qualifications = data.qualifications;
     qualifications = filterQualificationYear(qualifications, request);
     qualifications = filterLevels(qualifications, request);
     request.session.data['awarding-organisations'] = setAwardingOrganisations(qualifications, request);
 
-    response.redirect("/current/r11/q4");
+    response.redirect("/current/r12/q4");
   }
 })
 
 router.post('/confirm-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['yes-no'] == undefined) {
-    return response.redirect(`/current/r11/${redirectValue}-confirm-error`)
+    return response.redirect(`/current/r12/${redirectValue}-confirm-error`)
   }
   var yesNoValue = request.session.data['yes-no'];
   if (yesNoValue == 'Yes') {
-    return response.redirect(`/current/r11/${redirectValue}-requirement1`);
+    return response.redirect(`/current/r12/${redirectValue}-requirement1`);
   } else {
-    return response.redirect('/current/r11/search-results');
+    return response.redirect('/current/r12/search-results');
   }
 })
 
 router.post('/eyq-240-requirement1-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['includesAssessedPractice'] == undefined) {
-    return response.redirect(`/current/r11/eyq-240-requirement1-error`)
+    return response.redirect(`/current/r12/eyq-240-requirement1-error`)
   } else {
-    return response.redirect(`/current/r11/eyq-240-requirements-check`)
+    return response.redirect(`/current/r12/eyq-240-requirements-check`)
   }
 })
 
 router.post('/eyq-293-requirement1-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['includesAssessedPractice'] == undefined) {
-    return response.redirect(`/current/r11/eyq-293-requirement1-error`)
+    return response.redirect(`/current/r12/eyq-293-requirement1-error`)
   } else {
-    return response.redirect(`/current/r11/eyq-293-requirement2`)
+    return response.redirect(`/current/r12/eyq-293-requirement2`)
   }
 })
 
 router.post('/eyq-293-requirement2-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['isQAAConsistent'] == undefined) {
-    return response.redirect(`/current/r11/eyq-293-requirement2-error`)
+    return response.redirect(`/current/r12/eyq-293-requirement2-error`)
   } else {
-    return response.redirect(`/current/r11/eyq-293-requirements-check`)
+    return response.redirect(`/current/r12/eyq-293-requirements-check`)
   }
 })
 
@@ -83,12 +83,12 @@ router.get('/reset-filters', function(request, response) {
   }
   request.session.data = resetData;
 
-  response.redirect("/current/r11/q1");
+  response.redirect("/current/r12/q1");
 })
 
 // Route search results
 router.post('/post-search-results', function(request, response) {
-  if (request.session.data['awarding-organisation'] == 'none') return response.redirect('/current/r11/q4-error');
+  if (request.session.data['awarding-organisation'] == 'none') return response.redirect('/current/r12/q4-error');
 
   var qualifications = data.qualifications;
 
@@ -109,7 +109,7 @@ router.post('/post-search-results', function(request, response) {
   var dateString = date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
   request.session.data['todays-date'] = dateString;
 
-  response.redirect("/current/r11/search-results");
+  response.redirect("/current/r12/search-results");
 })
 
 const nth = (d) => {
