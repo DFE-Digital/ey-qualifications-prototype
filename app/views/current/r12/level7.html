@@ -1,0 +1,31 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check an Early Years qualification – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to what level is the qualification",
+    href: "/current/r12/q3"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
+      Level 7 qualifications 
+    </h1>
+    <p class="govuk-body">
+      This is a new service. Some level 7 qualifications have not yet been added to this service. 
+    </p>
+    <p class="govuk-body">
+      To check level 7 qualifications, you should use the existing EYQL service by downloading <a href="https://www.gov.uk/government/publications/early-years-qualifications-achieved-in-england">early years qualifications achieved in the UK check list</a>.
+    </p>
+    </div>
+
+</div>
+
+
+{% endblock %}
