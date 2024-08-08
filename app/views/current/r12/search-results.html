@@ -106,15 +106,17 @@ href: "/current/r12/q4"
         </strong>
       </p>
 
+
+
       <div>
         <div class="govuk-form-group">
-          <label style="margin-bottom:-20px;" class="govuk-label" for="search">
+          <label style="margin-bottom:-20px; margin-top: 40px;" class="govuk-label" for="search">
             Refine your search by entering keywords from the qualification name
           </label>
         </div>
-        <div style="margin-bottom:20px;" class="govuk-form-group">
+        <div style="display: flex; justify-content: space-between; padding-top: 5px; margin-bottom: 20px;" class="govuk-form-group">
           <input class="govuk-input govuk-!-width-two-thirds" id="qualification-search" name="qualification-search" type="text" value="{{data['qualification-search']}}">
-          <div style="display: flex; align-items: center; margin-top: 10px;" class="govuk-button-group">
+          <div style="display: flex; align-items: center" class="govuk-button-group">
             {{govukButton({
               text: "Refine",
               type: "Submit",
@@ -124,8 +126,6 @@ href: "/current/r12/q4"
           </div>
         </div>
       </div>
-
-
 
       <ul class="qualification-list">
         {% for qualification in data['search-results'] %}
