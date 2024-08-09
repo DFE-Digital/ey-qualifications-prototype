@@ -105,20 +105,23 @@ href: "/current/r12/q4"
           {% endif %}
         </strong>
       </p>
-      
+
       <div>
         <div class="govuk-form-group">
-          <label style="margin-bottom:-20px;" class="govuk-label" for="search">
+          <label style="margin-bottom:-20px; margin-top: 40px;" class="govuk-label" for="search">
             Refine your search by entering keywords from the qualification name
           </label>
         </div>
-        <div style="margin-bottom:20px;" class="govuk-form-group">
-          <input class="govuk-input govuk-!-width-three-quarters" id="" name="qualification-search" type="text" value="{{data['qualification-search']}}">
-          {{govukButton({
-            text: "Refine",
-            type: "Submit",
-            classes: "govuk-button--secondary"
+        <div style="display: flex; justify-content: space-between; padding-top: 5px; margin-bottom: 20px;" class="govuk-form-group">
+          <input class="govuk-input govuk-!-width-two-thirds" id="qualification-search" name="qualification-search" type="text" value="{{data['qualification-search']}}">
+          <div style="display: flex; align-items: center" class="govuk-button-group">
+            {{govukButton({
+              text: "Refine",
+              type: "Submit",
+              classes: "govuk-button--secondary"
             })}}
+            <a class="govuk-link" href="/current/r12/clear-search">Clear search</a>
+          </div>
         </div>
       </div>
 
@@ -148,13 +151,12 @@ href: "/current/r12/q4"
           <li>double-checking your spelling</li>
           <li>using fewer words</li>
           <li>using words from the qualification name, rather than the level or awarding organisation name</li>
-          <li>checking the list for groups of qualifications that could include the one you are looking for</li>
         </ul>
       {% endif %}
 
       <p style="margin-top: 40px" class="govuk-body">
         <a href="not-on-list" class="govuk-link">
-          I cannot find the qualification on the list
+          I cannot find the qualification
         </a>
       </p>
     </form>

@@ -126,6 +126,29 @@ router.post('/post-search-results', function(request, response) {
   response.redirect("/current/r12/search-results");
 })
 
+// Route clear search results
+router.get('/clear-search', function(request, response) {
+  request.session.data['qualification-search'] = undefined;
+
+  if (request.session.data['awarding-organisation'] == 'none') return response.redirect('/current/r12/q4-error');
+
+  var qualifications = data.qualifications;
+
+  qualifications = filterQualificationYear(qualifications, request);
+  qualifications = filterLevels(qualifications, request);
+  qualifications = filterAwardingOrganisations(qualifications, request);
+
+  request.session.data['result-count'] = qualifications.length;
+  request.session.data['search-results'] = qualifications;
+  
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var date = new Date(Date.now());
+  var dateString = date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
+  request.session.data['todays-date'] = dateString;
+
+  response.redirect("/current/r12/search-results");  // Redirect back to the search results page
+});
+
 const nth = (d) => {
   const last = +String(d).slice(-2);
   if (last > 3 && last < 21) return 'th';
