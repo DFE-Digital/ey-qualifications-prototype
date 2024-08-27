@@ -1,0 +1,34 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check an Early Years qualification – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to select the qualification",
+    href: "/current/r12/search-results"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
+      I cannot find the qualification
+    </h1>
+    <h2 class="govuk-heading-l">
+      Level 6 qualifications
+    </h2>
+    <p class="govuk-body-m">
+      Many universities offer level 6 degrees in Early Childhood Studies or related subjects. Due to the range of qualifications available at this level, DfE does not individually list each qualification on the early years qualifications list (EYQL).
+    </p>
+    <p>
+      If the qualification you are checking is a level 6 degree, for example a Bachelor of Arts (BA), you should choose <a href="eyq-293-confirm">Degrees and honours degrees at Level 6</a>.
+    </p>
+    </div>
+
+</div>
+
+
+{% endblock %}
