@@ -72,7 +72,7 @@ router.post('/confirm-post2', function(request, response) {
 
 router.post('/eyq-500-requirement1-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
-  if (request.session.data['includesAssessedPractice'] == undefined) {
+  if (request.session.data['ledToQts'] == undefined) {
     return response.redirect(`/current/r12/eyq-500-requirement1-error`)
   } else {
     return response.redirect(`/current/r12/eyq-500-requirement2`)
