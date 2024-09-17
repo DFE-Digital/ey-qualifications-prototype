@@ -28,6 +28,8 @@ router.post('/q3-post', function(request, response){
     case "3":
     case "4":
     case "5":
+    case "6":
+    case "7":
     case "not-sure":
       var qualifications = data.qualifications;
       qualifications = filterQualificationYear(qualifications, request);
@@ -35,12 +37,6 @@ router.post('/q3-post', function(request, response){
       request.session.data['awarding-organisations'] = setAwardingOrganisations(qualifications, request);
     
       response.redirect("/current/r12/q4");
-      break;
-    case "6":
-      response.redirect("/current/r12/level6");
-      break;
-    case "7":
-      response.redirect("/current/r12/level7");
       break;
     default:
       response.redirect("/current/r12/q3-error");
