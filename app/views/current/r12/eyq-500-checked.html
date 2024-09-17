@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back to check the qualification additional requirements",
-    href: "/current/r12/eyq-240-requirements-check"
+    href: "/current/r12/eyq-500-requirements-check"
   }) }}
 {% endblock %}
 
@@ -31,7 +31,7 @@
             text: "Qualification"
           },
           value: {
-            text: "T Level Technical Qualification in Education and Childcare (Specialism - Early Years Educator)"
+            text: "BA (Hons) Early Years"
           }
         },
 
@@ -40,7 +40,7 @@
             text: "Qualification level"
           },
           value: {
-            text: "3"
+            text: "6"
           },
           actions: {
 
@@ -52,7 +52,7 @@
             text: "Awarding organisation"
           },
           value: {
-            text: "NCFE"
+            text: "University of South London"
           },
           actions: {
 
@@ -64,7 +64,7 @@
             text: "Qualification start date"
           },
           value: {
-            text: "September 2020"
+            text: "August 2018"
           },
           actions: {
 
@@ -73,7 +73,19 @@
         ,
         {
           key: {
-            text: "Included an element of assessed practice in an early years setting in England"
+            text: "Qualification led to QTS, EYTS or EYPS "
+          },
+          value: {
+            text: "No"
+          },
+          actions: {
+
+          }
+        }
+        ,
+        {
+          key: {
+            text: "Included an element of assessed practice in an early years setting"
           },
           value: {
             text: "Yes"
@@ -236,26 +248,15 @@
             </strong>
           </div>
         </div>
-        <!--
-        <details class="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Requirements to count in the level 6 staff:child ratios
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <p class="govuk-body-m">To be included in the staff:child ratios at level 6, staff must hold one of the following:</p>
-            <ul class="govuk-list govuk-list--bullet">
-              <li>Qualified Teacher Status (QTS)</li>
-              <li>Early Years Teacher Status (EYTS)</li>
-              <li>Early Years Professional Status (EYPS)</li>
-            </ul>
-            <p class="govuk-body-m">
-              Staff who hold one of these qualifications may be counted in the staff:child ratios at either level 3 or level 6, but not both.
-            </p>
-          </div>
-        </details>
-      -->
+        <p style="margin-top: 10px;" class="govuk-body-m">To be included in the staff:child ratios at level 6, staff must hold one of the following:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Qualified Teacher Status (QTS)</li>
+            <li>Early Years Teacher Status (EYTS)</li>
+            <li>Early Years Professional Status (EYPS)</li>
+          </ul>
+        <p class="govuk-body-m">
+          Staff who hold one of these qualifications may be counted in the staff:child ratios at either level 3 or level 6, but not both.
+        </p>
       </fieldset>
     </div>
     <hr>

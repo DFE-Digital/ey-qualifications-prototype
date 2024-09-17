@@ -28,6 +28,8 @@ router.post('/q3-post', function(request, response){
     case "3":
     case "4":
     case "5":
+    case "6":
+    case "7":
     case "not-sure":
       var qualifications = data.qualifications;
       qualifications = filterQualificationYear(qualifications, request);
@@ -35,12 +37,6 @@ router.post('/q3-post', function(request, response){
       request.session.data['awarding-organisations'] = setAwardingOrganisations(qualifications, request);
     
       response.redirect("/current/r12/q4");
-      break;
-    case "6":
-      response.redirect("/current/r12/level6");
-      break;
-    case "7":
-      response.redirect("/current/r12/level7");
       break;
     default:
       response.redirect("/current/r12/q3-error");
@@ -74,12 +70,21 @@ router.post('/confirm-post2', function(request, response) {
   }
 })
 
-router.post('/eyq-240-requirement1-post', function(request, response) {
+router.post('/eyq-500-requirement1-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['includesAssessedPractice'] == undefined) {
-    return response.redirect(`/current/r12/eyq-240-requirement1-error`)
+    return response.redirect(`/current/r12/eyq-500-requirement1-error`)
   } else {
-    return response.redirect(`/current/r12/eyq-240-requirements-check`)
+    return response.redirect(`/current/r12/eyq-500-requirement2`)
+  }
+})
+
+router.post('/eyq-500-requirement2-post', function(request, response) {
+  var redirectValue = request.session.data['redirect'];
+  if (request.session.data['includesAssessedPractice'] == undefined) {
+    return response.redirect(`/current/r12/eyq-500-requirement2-error`)
+  } else {
+    return response.redirect(`/current/r12/eyq-500-requirements-check`)
   }
 })
 
