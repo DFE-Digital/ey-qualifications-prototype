@@ -74,12 +74,21 @@ router.post('/confirm-post2', function(request, response) {
   }
 })
 
-router.post('/eyq-240-requirement1-post', function(request, response) {
+router.post('/eyq-500-requirement1-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['includesAssessedPractice'] == undefined) {
-    return response.redirect(`/current/r12/eyq-240-requirement1-error`)
+    return response.redirect(`/current/r12/eyq-500-requirement1-error`)
   } else {
-    return response.redirect(`/current/r12/eyq-240-requirements-check`)
+    return response.redirect(`/current/r12/eyq-500-requirement2`)
+  }
+})
+
+router.post('/eyq-500-requirement2-post', function(request, response) {
+  var redirectValue = request.session.data['redirect'];
+  if (request.session.data['includesAssessedPractice'] == undefined) {
+    return response.redirect(`/current/r12/eyq-500-requirement2-error`)
+  } else {
+    return response.redirect(`/current/r12/eyq-500-requirements-check`)
   }
 })
 
