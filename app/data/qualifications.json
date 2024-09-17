@@ -3347,6 +3347,18 @@
                 "notes":null,
                 "beforeOrAfter2014":"after",
                 "href":"eyq-280-confirm"
+            },
+            {
+                "id":"EYQ-500",
+                "level":"6",
+                "dateStarted":"Sep-16",
+                "dateEnd":null,
+                "name":"BA (Hons) Early Years",
+                "awardingOrganisation":"University of South London",
+                "qualificationNumber":"000\/0000\/0",
+                "notes":null,
+                "beforeOrAfter2014":"after",
+                "href":"eyq-500-confirm"
             }
         ]
 }
