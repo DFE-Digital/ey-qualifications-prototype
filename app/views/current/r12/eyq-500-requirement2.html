@@ -23,7 +23,6 @@
       <p class="govuk-hint">
         The university or training provider should be able to confirm if the course was consistent with the subject benchmark.  
       </p>
-
       <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -38,9 +37,9 @@
       </details>
 
       {{ govukRadios({
-          id: "includesAssessedPractice",
-          name: "includesAssessedPractice",
-          value: data['includesAssessedPractice'],
+          id: "isQAAConsistent",
+          name: "isQAAConsistent",
+          value: data['isQAAConsistent'],
           fieldset: {
             legend: {
               text: "",
