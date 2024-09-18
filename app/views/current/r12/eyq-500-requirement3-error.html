@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back to previous additional requirement question",
-  href: "/current/r12/eyq-500-requirement1"
+  href: "/current/r12/eyq-500-requirement2"
 }) }}
 {% endblock %}
 
@@ -23,36 +23,41 @@
       errorList: [
         {
           text: errorMessage,
-          href: "#requirement2"
+          href: "#requirement3"
         }
       ]
     }) }}
 
-    <form class="form" action="eyq-500-requirement2-post" method="post">
+    <form class="form" action="eyq-500-requirement3-post" method="post">
       <div class="govuk-form-group govuk-form-group--error">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-          Was the course fully consistent with the QAA subject benchmark statement for Early Childhood Studies?
+          Did the qualification include an element of assessed practice in an early years setting in England?
         </h1>
-        <p class="govuk-hint">
-          The university or training provider should be able to confirm if the course was consistent with the subject benchmark.  
-        </p>
         <details class="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              What is the QAA Subject Benchmark Statement? 
+              What is assessed practice?
             </span>
           </summary>
           <div class="govuk-details__text">
             <p>
-              The Quality Assurance Agency for Higher Education (QAA) <a href="https://www.qaa.ac.uk/the-quality-code/subject-benchmark-statements/early-childhood-studies" target="_blank">subject benchmark statement for Early Childhood studies (opens in new tab)</a> describes what graduates might reasonably be expected to know, do and understand at the end of their studies. 
+              Examples of suitable elements of assessed practice include:
             </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>direct observation of the learner's practice in the workplace</li>
+              <li>documented accounts of the learner's practice </li>
+              <li>professional discussion, recorded oral or written questions relating to the learner's practice </li>
+              <li>work plans or work-based products created by the learner </li>
+              <li>case studies, working journals, assignments or projects recording the learner's practice in the workplace </li>
+              <li>simulated exercises demonstrating the learner's ability to cope with specific events, for example fire drills or confidential meetings </li>
+            </ul>
           </div>
         </details>
 
         {{ govukRadios({
-            id: "isQAAConsistent",
-            name: "isQAAConsistent",
-            value: data['isQAAConsistent'],
+            id: "includesAssessedPractice",
+            name: "includesAssessedPractice",
+            value: data['includesAssessedPractice'],
             fieldset: {
               legend: {
                 text: "",
