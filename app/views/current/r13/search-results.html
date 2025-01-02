@@ -19,7 +19,7 @@ href: "/current/r13/q4"
 
     <h1 class="govuk-label-wrapper">
       <label class="govuk-label govuk-label--m" for="event-name">
-        Your search
+        Your answers
       </label>
     </h1>
 
@@ -78,7 +78,7 @@ href: "/current/r13/q4"
     </ul>
 
     <p class="govuk-body">
-      <a href="q1" class="govuk-link">Change my search</a>
+      <a href="q1" class="govuk-link">Change answers</a>
     </p>
 
   </div>
@@ -93,13 +93,13 @@ href: "/current/r13/q4"
       <input type="hidden" name="date-started-year" value="{{data['date-started-year']}}" />
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
-        Select the qualification
+        Select a qualification
       </h1>
 
       <p class="govuk-heading-m">
         <strong>
           {% if data['result-count'] == 0 %}
-            No qualifications found
+            No qualifications found based on your answers
           {% else %}
             {{ data['result-count'] }} {{ 'qualifications found' if data['result-count'] > 1 else 'qualification found' }}
           {% endif %}
@@ -109,18 +109,18 @@ href: "/current/r13/q4"
       <div>
         <div class="govuk-form-group">
           <label style="margin-bottom:-20px; margin-top: 40px;" class="govuk-label" for="search">
-            Refine your search by entering keywords from the qualification name
+            Refine the qualifications found by entering keywords from the qualification name
           </label>
         </div>
         <div style="display: flex; justify-content: space-between; padding-top: 5px; margin-bottom: 20px;" class="govuk-form-group">
           <input class="govuk-input govuk-!-width-two-thirds" id="qualification-search" name="qualification-search" type="text" value="{{data['qualification-search']}}">
           <div style="display: flex; align-items: center" class="govuk-button-group">
             {{govukButton({
-              text: "Refine",
+              text: "Refine results",
               type: "Submit",
               classes: "govuk-button--secondary"
             })}}
-            <a class="govuk-link" href="/current/r13/clear-search">Clear search</a>
+            <a class="govuk-link" href="/current/r13/clear-search">Clear</a>
           </div>
         </div>
       </div>
@@ -154,11 +154,21 @@ href: "/current/r13/q4"
         </ul>
       {% endif %}
 
-      <p style="margin-top: 40px" class="govuk-body">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-10">
+        If you cannot find the qualification
+      </h2>
+      <p class="govuk-body-m">
+        This service lists all the qualifications which are approved by the Department for Education (DfE) as full and relevant. It shows you qualifications that are potentially full and relevant and that match your answers.
+      </p> 
+      <p class="govuk-body-m">
+        The information in this service is identical to the early years qualifications achieved in the United Kingdom check list (EYQL) spreadsheet. No qualifications have been removed.
+      </p> 
+      <p class="govuk-body-m">
+        If you cannot find the qualification you are looking for, check your answers. If you checked your answers and still cannot find the qualification listed, go to <br>
         <a href="#" class="govuk-link">
           I cannot find the qualification
         </a>
-      </p>
+      </p>       
     </form>
   </div>
 </div>
