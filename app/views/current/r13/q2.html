@@ -25,9 +25,13 @@
           classes: "govuk-heading-xl govuk-!-margin-bottom-4"
         }
       }) %}
-      <div id="date-format-hint" class="govuk-hint">
-        For example 3 2014
-      </div>
+      <div class="govuk-form-group">
+        <p class= "govuk-heading-s" style="margin-bottom: 10px">
+          Date started
+        </p>
+        <div id="date-format-hint" class="govuk-hint">
+          Enter the date the qualification was started so we can establish which criteria the qualification was approved against. For example 9 2013
+        </div>
         <div class="govuk-date-input" id="date-started">
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
@@ -46,6 +50,33 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="govuk-form-group">
+        <p class= "govuk-heading-s" style="margin-bottom: 10px">
+          Date awarded
+        </p>
+        <div id="date-format-hint" class="govuk-hint">
+          Enter the date the qualification was awarded -achieved or obtained- to determine if other requirements apply. For example 6 2015
+        </div>
+        <div class="govuk-date-input" id="date-started">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="date-started-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-started-month" name="date-started-month" type="text" inputmode="numeric" value="{{data['date-started-month']}}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="date-started-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-started-year" name="date-started-year" type="text" inputmode="numeric" value="{{data['date-started-year']}}">
+            </div>
+          </div>
+        </div>
+      </div>
 
       {{ govukButton({
         text: "Continue"
