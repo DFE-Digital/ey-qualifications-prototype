@@ -99,7 +99,7 @@ href: "/current/r13/q4"
       <p class="govuk-heading-m">
         <strong>
           {% if data['result-count'] == 0 %}
-            No qualifications found
+            No qualifications found based on your answers
           {% else %}
             {{ data['result-count'] }} {{ 'qualifications found' if data['result-count'] > 1 else 'qualification found' }}
           {% endif %}
@@ -109,7 +109,7 @@ href: "/current/r13/q4"
       <div>
         <div class="govuk-form-group">
           <label style="margin-bottom:-20px; margin-top: 40px;" class="govuk-label" for="search">
-            Refine your search by entering keywords from the qualification name
+            Refine the qualifications found by entering keywords from the qualification name
           </label>
         </div>
         <div style="display: flex; justify-content: space-between; padding-top: 5px; margin-bottom: 20px;" class="govuk-form-group">
