@@ -20,32 +20,18 @@
       <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
       {% call govukFieldset({
         legend: {
-          text: "When was the qualification started?",
+          text: "When was the qualification started and awarded?",
           isPageHeading: true,
           classes: "govuk-heading-xl govuk-!-margin-bottom-4"
         }
       }) %}
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Why do we ask for the date the qualification was started?
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p>
-            DfE sets the criteria for early years qualifications to be approved as full and relevant for working in the staff:child ratios. These criteria are occasionally updated following review and consultation with the early years sector.          
-          </p>
-          <p>
-            We use the date the qualification was started, rather than the completion date, to establish which criteria the qualification was approved against.
-          </p>
-          <p>
-            You can read more about the criteria in the <a href="https://www.gov.uk/government/publications/early-years-qualification-requirements-and-standards" target="_blank">early years qualification requirements and standards guidance document (opens in new tab)</a>.
-          </p>
+      <div class="govuk-form-group">
+        <p class= "govuk-heading-s" style="margin-bottom: 10px">
+          Date started
+        </p>
+        <div id="date-format-hint" class="govuk-hint">
+          Enter the date the qualification was started so we can establish which criteria the qualification was approved against. For example 9 2013
         </div>
-      </details>
-      <div id="date-format-hint" class="govuk-hint">
-        For example 3 2014
-      </div>
         <div class="govuk-date-input" id="date-started">
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
@@ -64,6 +50,33 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="govuk-form-group">
+        <p class= "govuk-heading-s" style="margin-bottom: 10px">
+          Date awarded
+        </p>
+        <div id="date-format-hint" class="govuk-hint">
+          Enter the date the qualification was awarded -achieved or obtained- to determine if other requirements apply. For example 6 2015
+        </div>
+        <div class="govuk-date-input" id="date-started">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="date-started-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-started-month" name="date-started-month" type="text" inputmode="numeric" value="{{data['date-started-month']}}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="date-started-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-started-year" name="date-started-year" type="text" inputmode="numeric" value="{{data['date-started-year']}}">
+            </div>
+          </div>
+        </div>
+      </div>
 
       {{ govukButton({
         text: "Continue"
