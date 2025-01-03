@@ -64,6 +64,43 @@ href: "/current/r13/q4"
         <li>Started in December {{data['date-started-year']}}</li>
       {% endif %}
 
+      {% if data['date-awarded-month'] === '1' or data['date-awarded-month'] === '01' %}
+        <li>Awarded in January {{data['date-awarded-year']}}</li>
+      {% endif %}
+      {% if data['date-awarded-month'] === '2' or data['date-awarded-month'] === '02'%}
+        <li>Awarded in February {{data['date-awarded-year']}}</li>
+      {% endif %}
+      {% if data['date-awarded-month'] === '3'or data['date-awarded-month'] === '03' %}
+        <li>Awarded in March {{data['date-awarded-year']}}</li>
+      {% endif %}
+      {% if data['date-awarded-month'] === '4' or data['date-awarded-month'] === '04' %}
+        <li>Awarded in April {{data['date-awarded-year']}}</li>
+      {% endif %}
+      {% if data['date-awarded-month'] === '5' or data['date-awarded-month'] === '05'%}
+        <li>Awarded in May {{data['date-awarded-year']}}</li>
+      {% endif %}
+      {% if data['date-awarded-month'] === '6' or data['date-awarded-month'] === '06'%}
+        <li>Awarded in June {{data['date-awarded-year']}}</li>
+      {% endif %}
+      {% if data['date-awarded-month'] === '7' or data['date-awarded-month'] === '07'%}
+        <li>Awarded in July {{data['date-awarded-year']}}</li>
+      {% endif %}
+      {% if data['date-awarded-month'] === '8' or data['date-awarded-month'] === '08'%}
+        <li>Awarded in August {{data['date-awarded-year']}}</li>
+      {% endif %}
+      {% if data['date-awarded-month'] === '9' or data['date-awarded-month'] === '09' %}
+        <li>Awarded in September {{data['date-awarded-year']}}</li>
+      {% endif %}
+      {% if data['date-awarded-month'] === '10' %}
+        <li>Awarded in October {{data['date-awarded-year']}}</li>
+      {% endif %}
+      {% if data['date-awarded-month'] === '11' %}
+        <li>Awarded in November {{data['date-awarded-year']}}</li>
+      {% endif %}
+      {% if data['date-awarded-month'] === '12' %}
+        <li>Awarded in December {{data['date-awarded-year']}}</li>
+      {% endif %}
+
       {% if data['qualification-level'] === 'not-sure' %}
         <li>Any level</li>
       {% else %}
