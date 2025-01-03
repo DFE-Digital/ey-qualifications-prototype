@@ -17,12 +17,17 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="q2-post" method="post">
 
+      <!-- This list each error separately: -->
       {{ govukErrorSummary({
         titleText: "There is a problem",
         errorList: [
           {
             text: 'Enter the month and year that the qualification was started',
             href: "#date-started-month"
+          },
+          {
+            text: "Enter the month and year that the qualification was awarded",
+            href: "#date-awarded-month"
           }
         ]
       }) }}
@@ -36,31 +41,68 @@
             classes: "govuk-heading-xl govuk-!-margin-bottom-4"
           }
         }) %}
-        <div id="date-format-hint" class="govuk-hint">
-          For example 3 2014
-        </div>
-        <p id="passport-issued-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> Enter the month and year that the qualification was started
-        </p>
-        <div class="govuk-date-input" id="date-started">
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="date-started-month">
-                Month
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="date-started-month" name="date-started-month" type="text" inputmode="numeric" value="{{data['date-started-month']}}">
+
+        <!-- Date started -->
+        <div class="govuk-form-group">
+          <p class= "govuk-heading-s" style="margin-bottom: 10px">
+            Date started
+          </p>
+          <div id="date-started-format-hint" class="govuk-hint">
+            Enter the date the qualification was started so we can establish which criteria the qualification was approved against. For example 9 2013
+          </div>
+          <p id="date-started-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter the month and year that the qualification was started
+          </p>
+          <div class="govuk-date-input" id="date-started">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-started-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-started-month" name="date-started-month" type="text" inputmode="numeric" value="{{data['date-started-month']}}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-started-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-started-year" name="date-started-year" type="text" inputmode="numeric" value="{{data['date-started-year']}}">
+              </div>
             </div>
           </div>
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="date-started-year">
-                Year
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="date-started-year" name="date-started-year" type="text" inputmode="numeric" value="{{data['date-started-year']}}">
+        </div>
+
+        <!-- Date awarded -->
+        <div class="govuk-form-group">
+          <p class= "govuk-heading-s" style="margin-bottom: 10px">
+            Date awarded
+          </p>
+          <div id="date-awarded-format-hint" class="govuk-hint">
+            Enter the date the qualification was awarded -achieved or obtained- to determine if other requirements apply. For example 6 2015
+          </div>
+          <p id="date-awarded-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter the month and year that the qualification was awarded
+          </p>
+          <div class="govuk-date-input" id="date-awarded">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-started-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-awarded-month" name="date-awarded-month" type="text" inputmode="numeric" value="{{data['date-awarded-month']}}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-awarded-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-awarded-year" name="date-awarded-year" type="text" inputmode="numeric" value="{{data['date-awarded-year']}}">
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
       {{ govukButton({
         text: "Continue"
