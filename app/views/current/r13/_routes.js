@@ -6,20 +6,29 @@ var data = require('../../../data/qualifications.json');
 
 router.post('/q1-post', function(request, response){
   if (request.session.data['awarding-location'] == undefined) {
-    response.redirect("/current/r13/q1-error")
+    return response.redirect("/current/r13/q1-error")
   } 
   if (request.session.data['awarding-location'] == 'England') {
-    response.redirect("/current/r13/q2")
+    return response.redirect("/current/r13/q2")
   } 
 })
 
 router.post('/q2-post', function(request, response){
-  if (request.session.data['date-started-month'] == "" || request.session.data['date-started-year'] == "") {
-    response.redirect("/current/r13/q2-error")
-  } else {
-    response.redirect("/current/r13/q3")
+  var noStartedDate = request.session.data['date-started-month'] == "" || request.session.data['date-started-year'] == "";
+  var noAwardedDate = request.session.data['date-awarded-month'] == "" || request.session.data['date-awarded-year'] == "";
+  if (noStartedDate && noAwardedDate) {
+    return response.redirect("/current/r13/q2-error-date-started-awarded");
   }
+  if (noStartedDate) {
+    return response.redirect("/current/r13/q2-error-date-started");
+  }
+  if (noAwardedDate) {
+    return response.redirect("/current/r13/q2-error-date-awarded");
+  }
+  return response.redirect("/current/r13/q3");
 })
+
+
 
 router.post('/q3-post', function(request, response){
   switch(request.session.data['qualification-level']) {
