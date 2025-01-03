@@ -138,7 +138,7 @@ href: "/current/r13/q4"
           {% if data['result-count'] == 0 %}
             No qualifications found based on your answers
           {% else %}
-            {{ data['result-count'] }} {{ 'qualifications found' if data['result-count'] > 1 else 'qualification found' }}
+            {{ data['result-count'] }} {{ 'qualifications found based on your answers' if data['result-count'] > 1 else 'qualification found based on your answers' }}
           {% endif %}
         </strong>
       </p>
