@@ -75,19 +75,6 @@ router.post('/eyq-240-requirement1-post', function(request, response) {
   }
 })
 
-router.post('/confirm-post2', function(request, response) {
-  var redirectValue = request.session.data['redirect'];
-  if (request.session.data['yes-no'] == undefined) {
-    return response.redirect(`/current/r13/qts-confirm-error`)
-  }
-  var yesNoValue = request.session.data['yes-no'];
-  if (yesNoValue == 'Yes') {
-    return response.redirect(`/current/r13/qts-checked`);
-  } else {
-    return response.redirect('/current/r13/level6');
-  }
-})
-
 router.post('/eyq-500-requirement1-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['ledToQTS'] == undefined) {
@@ -272,5 +259,10 @@ function setAwardingOrganisations(qualifications, request) {
   formattedAwardingOrganisations.unshift({"value": "none", text: "Choose the awarding organisation"});
   return formattedAwardingOrganisations;
 }
+
+// Show a different qualification result based on additional requirements questions answers
+
+
+
 
 module.exports = router
