@@ -17,11 +17,9 @@ href: "/current/r13/q4"
 
   <div class="govuk-grid-column-one-third">
 
-    <h1 class="govuk-label-wrapper">
-      <label class="govuk-label govuk-label--m" for="event-name">
+    <h2 class="govuk-heading-m">
         Your answers
-      </label>
-    </h1>
+    </h2>
 
     <ul class="govuk-list govuk-list--bullet">
 
@@ -133,15 +131,13 @@ href: "/current/r13/q4"
         Select a qualification
       </h1>
 
-      <p class="govuk-heading-m">
-        <strong>
-          {% if data['result-count'] == 0 %}
-            No qualifications found based on your answers
-          {% else %}
-            {{ data['result-count'] }} {{ 'qualifications found based on your answers' if data['result-count'] > 1 else 'qualification found based on your answers' }}
-          {% endif %}
-        </strong>
-      </p>
+      <h2 class="govuk-heading-m">
+        {% if data['result-count'] == 0 %}
+          No qualifications found based on your answers
+        {% else %}
+          {{ data['result-count'] }} {{ 'qualifications found based on your answers' if data['result-count'] > 1 else 'qualification found based on your answers' }}
+        {% endif %}
+      </h2>
 
       <div>
         <div class="govuk-form-group">
