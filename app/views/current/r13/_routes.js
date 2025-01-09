@@ -4,6 +4,7 @@ const router = express.Router()
 
 var data = require('../../../data/qualifications.json');
 
+// q1
 router.post('/q1-post', function(request, response){
   if (request.session.data['awarding-location'] == undefined) {
     return response.redirect("/current/r13/q1-error")
@@ -13,6 +14,7 @@ router.post('/q1-post', function(request, response){
   } 
 })
 
+// q2
 router.post('/q2-post', function(request, response){
   var noStartedDate = request.session.data['date-started-month'] == "" || request.session.data['date-started-year'] == "";
   var noAwardedDate = request.session.data['date-awarded-month'] == "" || request.session.data['date-awarded-year'] == "";
@@ -28,8 +30,7 @@ router.post('/q2-post', function(request, response){
   return response.redirect("/current/r13/q3");
 })
 
-
-
+// q3
 router.post('/q3-post', function(request, response){
   switch(request.session.data['qualification-level']) {
     case "1":
@@ -53,6 +54,7 @@ router.post('/q3-post', function(request, response){
   }
 })
 
+// Confirm qualification
 router.post('/confirm-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['yes-no'] == undefined) {
@@ -66,15 +68,7 @@ router.post('/confirm-post', function(request, response) {
   }
 })
 
-router.post('/eyq-240-requirement1-post', function(request, response) {
-  var redirectValue = request.session.data['redirect'];
-  if (request.session.data['includesAssessedPractice'] == undefined) {
-    return response.redirect(`/current/r13/eyq-240-requirement1-error`)
-  } else {
-    return response.redirect(`/current/r13/eyq-240-requirements-check`)
-  }
-})
-
+// Additional requirement 1
 router.post('/eyq-500-requirement1-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['ledToQTS'] == undefined) {
@@ -84,6 +78,7 @@ router.post('/eyq-500-requirement1-post', function(request, response) {
   }
 })
 
+// Additional requirement 2
 router.post('/eyq-500-requirement2-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['isQAAConsistent'] == undefined) {
@@ -93,6 +88,7 @@ router.post('/eyq-500-requirement2-post', function(request, response) {
   }
 })
 
+// Additional requirement 3
 router.post('/eyq-500-requirement3-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['includesAssessedPractice'] == undefined) {
@@ -102,7 +98,9 @@ router.post('/eyq-500-requirement3-post', function(request, response) {
   }
 })
 
+// Show a different qualification result based on additional requirements questions answers
 
+// Reset filters when select 'Check another qualification'
 router.get('/reset-filters', function(request, response) {
   var resetData = {};
   // reset level checked to false
@@ -115,7 +113,7 @@ router.get('/reset-filters', function(request, response) {
   response.redirect("/current/r13/q1");
 })
 
-// Route search results
+// Search results
 router.post('/post-search-results', function(request, response) {
   if (request.session.data['awarding-organisation'] == 'none') return response.redirect('/current/r13/q4-error');
 
@@ -141,7 +139,7 @@ router.post('/post-search-results', function(request, response) {
   response.redirect("/current/r13/search-results");
 })
 
-// Route clear search results
+// Clear search results
 router.get('/clear-search', function(request, response) {
   request.session.data['qualification-search'] = undefined;
 
@@ -260,7 +258,7 @@ function setAwardingOrganisations(qualifications, request) {
   return formattedAwardingOrganisations;
 }
 
-// Show a different qualification result based on additional requirements questions answers
+
 
 
 
