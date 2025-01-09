@@ -25,6 +25,7 @@ href: "/current/r13/q4"
 
       <li>{{data['awarding-location']}}</li> 
 
+      <!-- These ifs conventer date started month number in month text -->
       {% if data['date-started-month'] === '1' or data['date-started-month'] === '01' %}
         <li>Started in January {{data['date-started-year']}}</li>
       {% endif %}
@@ -62,6 +63,7 @@ href: "/current/r13/q4"
         <li>Started in December {{data['date-started-year']}}</li>
       {% endif %}
 
+      <!-- These ifs conventer date awarded month number in month text -->
       {% if data['date-awarded-month'] === '1' or data['date-awarded-month'] === '01' %}
         <li>Awarded in January {{data['date-awarded-year']}}</li>
       {% endif %}
@@ -99,12 +101,14 @@ href: "/current/r13/q4"
         <li>Awarded in December {{data['date-awarded-year']}}</li>
       {% endif %}
 
+      <!-- To display a specific level or 'Any level' if users select 'not sure' -->
       {% if data['qualification-level'] === 'not-sure' %}
         <li>Any level</li>
       {% else %}
         <li>Level {{data['qualification-level']}}</li>
       {% endif %}
 
+      <!-- To display a specific organisation or 'Various awarding organisations' if users select 'not on the list' -->
       {% if data['awarding-organisation'] == 'any' %}
         <li>Various awarding organisations</li>
       {% else %}
