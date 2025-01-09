@@ -22,116 +22,146 @@
     <h2 class="govuk-heading-l govuk-!-margin-bottom-4">
       Qualification details
     </h2>
-
-    {{ govukSummaryList({
-      rows: [
-
-        {
-          key: {
-            text: "Name"
-          },
-          value: {
-            text: "BA (Hons) Early Years"
-          }
-        },
-
-        {
-          key: {
-            text: "Level"
-          },
-          value: {
-            text: "6"
-          },
-          actions: {
-
-          }
-        }
-        ,
-        {
-          key: {
-            text: "Awarding organisation"
-          },
-          value: {
-            text: "University of South London"
-          },
-          actions: {
-
-          }
-        }
-        ,
-        {
-          key: {
-            text: "Start date"
-          },
-          value: {
-            text: "August 2018"
-          },
-          actions: {
-
-          }
-        }
-        ,
-        {
-          key: {
-            text: "Award date"
-          },
-          value: {
-            text: "September 2021"
-          },
-          actions: {
-
-          }
-        }
-        ,
-        {
-          key: {
-            text: "Qualification led to QTS, EYTS or EYPS "
-          },
-          value: {
-            text: "No"
-          },
-          actions: {
-
-          }
-        }
-        ,
-        {
-          key: {
-            text: "Course was fully consistent with the QAA Subject Benchmark Statement for Early Childhood Studies"
-          },
-          value: {
-            text: "Yes"
-          },
-          actions: {
-
-          }
-        }
-        ,
-        {
-          key: {
-            text: "Included an element of assessed practice in an early years setting"
-          },
-          value: {
-            text: "Yes"
-          },
-          actions: {
-
-          }
-        }
-        ,
-        {
-          key: {
-            text: "Date checked"
-          },
-          value: {
-            text: data['todays-date']
-          },
-          actions: {
-
-          }
-        }
-      ]
-    }) }}
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          BA (Hons) Early Years
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Level
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data ['qualification-level']}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Awarding organisation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data ['awarding-organisation']}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Start date
+        </dt>
+        {% if data['date-started-month'] === '1' or data['date-started-month'] === '01' %}
+          <dd class="govuk-summary-list__value"> January {{data['date-started-year']}} </dd>
+        {% endif %}
+        {% if data['date-started-month'] === '2' or data['date-started-month'] === '02'%}
+          <dd class="govuk-summary-list__value"> February {{data['date-started-year']}} </dd>
+        {% endif %}
+        {% if data['date-started-month'] === '3'or data['date-started-month'] === '03' %}
+          <dd class="govuk-summary-list__value"> March {{data['date-started-year']}} </dd>
+        {% endif %}
+        {% if data['date-started-month'] === '4' or data['date-started-month'] === '04' %}
+          <dd class="govuk-summary-list__value"> April {{data['date-started-year']}} </dd>
+        {% endif %}
+        {% if data['date-started-month'] === '5' or data['date-started-month'] === '05'%}
+          <dd class="govuk-summary-list__value"> May {{data['date-started-year']}} </dd> 
+        {% endif %}
+        {% if data['date-started-month'] === '6' or data['date-started-month'] === '06'%}
+          <dd class="govuk-summary-list__value"> June {{data['date-started-year']}} </dd> 
+        {% endif %}
+        {% if data['date-started-month'] === '7' or data['date-started-month'] === '07'%}
+          <dd class="govuk-summary-list__value"> July {{data['date-started-year']}} </dd> 
+        {% endif %}
+        {% if data['date-started-month'] === '8' or data['date-started-month'] === '08'%}
+          <dd class="govuk-summary-list__value"> August {{data['date-started-year']}} </dd> 
+        {% endif %}
+        {% if data['date-started-month'] === '9' or data['date-started-month'] === '09' %}
+          <dd class="govuk-summary-list__value"> September {{data['date-started-year']}} </dd> 
+        {% endif %}
+        {% if data['date-started-month'] === '10' %}
+          <dd class="govuk-summary-list__value"> October {{data['date-started-year']}} </dd> 
+        {% endif %}
+        {% if data['date-started-month'] === '11' %}
+          <dd class="govuk-summary-list__value"> November {{data['date-started-year']}} </dd> 
+        {% endif %}
+        {% if data['date-started-month'] === '12' %}
+          <dd class="govuk-summary-list__value"> December {{data['date-started-year']}} </dd> 
+        {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Award date
+        </dt>
+        {% if data['date-awarded-month'] === '1' or data['date-awarded-month'] === '01' %}
+        <dd class="govuk-summary-list__value"> January {{data['date-awarded-year']}} </dd>
+        {% endif %}
+        {% if data['date-awarded-month'] === '2' or data['date-awarded-month'] === '02'%}
+          <dd class="govuk-summary-list__value"> February {{data['date-awarded-year']}} </dd>
+        {% endif %}
+        {% if data['date-awarded-month'] === '3'or data['date-awarded-month'] === '03' %}
+          <dd class="govuk-summary-list__value"> March {{data['date-awarded-year']}} </dd>
+        {% endif %}
+        {% if data['date-awarded-month'] === '4' or data['date-awarded-month'] === '04' %}
+          <dd class="govuk-summary-list__value"> April {{data['date-awarded-year']}} </dd>
+        {% endif %}
+        {% if data['date-awarded-month'] === '5' or data['date-awarded-month'] === '05'%}
+          <dd class="govuk-summary-list__value"> May {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+        {% if data['date-awarded-month'] === '6' or data['date-awarded-month'] === '06'%}
+          <dd class="govuk-summary-list__value"> June {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+        {% if data['date-awarded-month'] === '7' or data['date-awarded-month'] === '07'%}
+          <dd class="govuk-summary-list__value"> July {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+        {% if data['date-awarded-month'] === '8' or data['date-awarded-month'] === '08'%}
+          <dd class="govuk-summary-list__value"> August {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+        {% if data['date-awarded-month'] === '9' or data['date-awarded-month'] === '09' %}
+          <dd class="govuk-summary-list__value"> September {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+        {% if data['date-awarded-month'] === '10' %}
+          <dd class="govuk-summary-list__value"> October {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+        {% if data['date-awarded-month'] === '11' %}
+          <dd class="govuk-summary-list__value"> November {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+        {% if data['date-awarded-month'] === '12' %}
+          <dd class="govuk-summary-list__value"> December {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Qualification led to QTS, EYTS or EYPS
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data ['ledToQTS']}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Course was fully consistent with the QAA Subject Benchmark Statement for Early Childhood Studies
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data ['isQAAConsistent']}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Included an element of assessed practice in an early years setting
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data ['includesAssessedPractice']}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date checked
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data ['todays-date']}}
+        </dd>
+      </div>
+    </dl>
   </div>
 </div>
 
