@@ -16,7 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="eyq-500-checked" method="post">
+    <form class="form" action="eyq-500-checked-post" method="post">
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
         Check the qualification additional requirements
       </h1>
@@ -27,7 +27,7 @@
             Did the qualification lead to QTS, EYTS or EYPS?
           </dt>
           <dd style="text-align: center;" class="govuk-summary-list__value">
-            No
+            {{data['ledToQTS']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="eyq-500-requirement1">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -38,7 +38,7 @@
             Was the course fully consistent with the QAA subject benchmark statement for Early Childhood Studies? 
           </dt>
           <dd style="text-align: center;" class="govuk-summary-list__value">
-            Yes
+            {{data['isQAAConsistent']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="eyq-500-requirement2">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -49,7 +49,7 @@
             Did the qualification include an element of assessed practice in an early years setting? 
           </dt>
           <dd style="text-align: center;" class="govuk-summary-list__value">
-            Yes
+            {{data['includesAssessedPractice']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="eyq-500-requirement3">Change<span class="govuk-visually-hidden"> name</span></a>
