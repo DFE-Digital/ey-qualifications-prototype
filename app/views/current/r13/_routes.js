@@ -98,7 +98,27 @@ router.post('/eyq-500-requirement3-post', function(request, response) {
   }
 })
 
+
+
 // Show a different qualification result based on additional requirements questions answers
+router.post('/eyq-500-checked-post', function (req, res) {
+  // Retrieve values from the POST body
+  const question1 = req.session.data['ledToQTS']   // "Yes" or "No"
+  const question2 = req.session.data['isQAAConsistent']   // "Yes" or "No"
+  const question3 = req.session.data['includesAssessedPractice']   // "Yes" or "No"
+
+  // Check answers: (No, Yes, Yes) => Full and relevant
+  if (question1 === 'No' && question2 === 'Yes' && question3 === 'Yes') {
+    return res.redirect('/current/r13/eyq-500-checked')
+  }
+
+  // Check answers: (No, No, No) => Not full and relevant
+  if (question1 === 'No' && question2 === 'No' && question3 === 'No') {
+    return res.redirect('/current/r13/eyq-500-checked-no-full-and-relevant')
+  }
+})
+
+
 
 // Reset filters when select 'Check another qualification'
 router.get('/reset-filters', function(request, response) {
