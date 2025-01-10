@@ -109,12 +109,12 @@ router.post('/eyq-500-checked-post', function (req, res) {
 
   // Check answers: (No, Yes, Yes) => Full and relevant
   if (question1 === 'No' && question2 === 'Yes' && question3 === 'Yes') {
-    return res.redirect('/current/r13/eyq-500-checked')
+    return res.redirect('/current/r13/eyq-500-checked-full-and-relevant')
   }
 
   // Check answers: (No, No, No) => Not full and relevant
   if (question1 === 'No' && question2 === 'No' && question3 === 'No') {
-    return res.redirect('/current/r13/eyq-500-checked-no-full-and-relevant')
+    return res.redirect('/current/r13/eyq-500-checked-not-full-and-relevant')
   }
 })
 
