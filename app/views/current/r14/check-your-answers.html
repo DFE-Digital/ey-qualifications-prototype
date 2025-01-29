@@ -50,7 +50,11 @@
             What level is the qualification?
           </dt>
           <dd style="text-align: left; width: 30%;"  class="govuk-summary-list__value">
+            {% if data['qualification-level'] === 'not-sure' %}
+            Any level
+            {% else %}
             Level {{data['qualification-level']}}
+          {% endif %}
           </dd>
           <dd style="width: 10%;" class="govuk-summary-list__actions">
             <a class="govuk-link" href="q3">Change<span class="govuk-visually-hidden"> address</span></a>
