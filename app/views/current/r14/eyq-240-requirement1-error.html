@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back to select the qualification",
-  href: "/current/r13/search-results"
+  href: "/current/r12/search-results"
 }) }}
 {% endblock %}
 
@@ -16,7 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% set errorMessage = "Select Yes or No" %}
+    {% set errorMessage = "Select one option" %}
 
     {{ govukErrorSummary({
       titleText: "There is a problem",
@@ -28,19 +28,36 @@
       ]
     }) }}
 
-    <form class="form" action="eyq-500-requirement1-post" method="post">
+    <form class="form" action="eyq-240-requirement1-post" method="post">
       <div class="govuk-form-group govuk-form-group--error">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-          Did the qualification lead to QTS, EYTS or EYPS?
+          Did the qualification include an element of assessed practice in an early years setting in England?
         </h1>
-        <p class="govuk-hint">
-          Qualified Teacher Status (QTS), Early Years Teacher Status (EYTS) or Early Years Practitioner Status (EYPS) may be awarded either on completion of standalone qualifications or as part of completion of a level 6 or 7 qualification.
-        </p>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What is assessed practice? 
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">
+              Examples of suitable assessed practice include:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>direct observation of the learner's practice in the workplace </li>
+              <li>documented accounts of the learner's practice </li>
+              <li>professional discussion, recorded oral or written questions relating to the learner's practice</li>
+              <li>work plans or work-based products created by the learner </li>
+              <li>case studies, working journals, assignments or projects recording the learner's practice in the workplace</li>
+              <li>simulated exercises demonstrating the learner's ability to cope with specific events, for example fire drills or confidential meetings </li>
+            </ul> 
+          </div>
+        </details>
 
         {{ govukRadios({
-            id: "ledToQTS",
-            name: "ledToQTS",
-            value: data['ledToQTS'],
+            id: "includesAssessedPractice",
+            name: "includesAssessedPractice",
+            value: data['includesAssessedPractice'],
             fieldset: {
               legend: {
                 text: "",
@@ -53,11 +70,11 @@
             },
             items: [
               {
-                value: "Yes",
+                value: "yes",
                 text: "Yes"
               },
               {
-                value: "No",
+                value: "no",
                 text: "No"
               }
             ]
