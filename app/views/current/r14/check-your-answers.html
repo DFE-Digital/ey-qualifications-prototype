@@ -6,8 +6,8 @@
 
 {% block beforeContent %}
   {{ govukBackLink({
-  text: "Back to last additional requirement question",
-  href: "/current/r14/eyq-240-requirement1"
+  text: "Back to what is the awarding organisation",
+  href: "/current/r14/q4"
 }) }}
 {% endblock %}
 
@@ -16,7 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="eyq-240-checked" method="post">
+    <form class="form" action="post-search-results" method="post">
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
         Check your answers
       </h1>
@@ -74,7 +74,7 @@
             {% if data['date-started-month'] === '12' %}
               <dd class="govuk-summary-list__value"> December {{data['date-started-year']}} </dd> 
             {% endif %}
-            <br>
+     
             {% if data['date-awarded-month'] === '1' or data['date-awarded-month'] === '01' %}
               <dd class="govuk-summary-list__value"> January {{data['date-awarded-year']}} </dd>
             {% endif %}
@@ -120,9 +120,9 @@
       <dl style="margin-top: 30px" class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt style="width: 60%;" class="govuk-summary-list__key">
-            What level is the qualification</dt>
+            What level is the qualification?</dt>
           <dd style="text-align: center;" class="govuk-summary-list__value">
-            {{data['qualification-level']}}
+            Level {{data['qualification-level']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="q3">Change<span class="govuk-visually-hidden"> name</span></a>
