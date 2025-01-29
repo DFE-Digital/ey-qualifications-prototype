@@ -14,114 +14,6 @@ href: "/current/r14/check-your-answers"
 {% block content %}
 
 <div class="govuk-grid-row">
-
-  <div class="govuk-grid-column-one-third">
-
-    <h2 class="govuk-heading-m">
-        Your answers
-    </h2>
-
-    <ul class="govuk-list govuk-list--bullet">
-
-      <li>{{data['awarding-location']}}</li> 
-
-      <!-- These ifs conventer date started month number in month text -->
-      {% if data['date-started-month'] === '1' or data['date-started-month'] === '01' %}
-        <li>Started in January {{data['date-started-year']}}</li>
-      {% endif %}
-      {% if data['date-started-month'] === '2' or data['date-started-month'] === '02'%}
-        <li>Started in February {{data['date-started-year']}}</li>
-      {% endif %}
-      {% if data['date-started-month'] === '3'or data['date-started-month'] === '03' %}
-        <li>Started in March {{data['date-started-year']}}</li>
-      {% endif %}
-      {% if data['date-started-month'] === '4' or data['date-started-month'] === '04' %}
-        <li>Started in April {{data['date-started-year']}}</li>
-      {% endif %}
-      {% if data['date-started-month'] === '5' or data['date-started-month'] === '05'%}
-        <li>Started in May {{data['date-started-year']}}</li>
-      {% endif %}
-      {% if data['date-started-month'] === '6' or data['date-started-month'] === '06'%}
-        <li>Started in June {{data['date-started-year']}}</li>
-      {% endif %}
-      {% if data['date-started-month'] === '7' or data['date-started-month'] === '07'%}
-        <li>Started in July {{data['date-started-year']}}</li>
-      {% endif %}
-      {% if data['date-started-month'] === '8' or data['date-started-month'] === '08'%}
-        <li>Started in August {{data['date-started-year']}}</li>
-      {% endif %}
-      {% if data['date-started-month'] === '9' or data['date-started-month'] === '09' %}
-        <li>Started in September {{data['date-started-year']}}</li>
-      {% endif %}
-      {% if data['date-started-month'] === '10' %}
-        <li>Started in October {{data['date-started-year']}}</li>
-      {% endif %}
-      {% if data['date-started-month'] === '11' %}
-        <li>Started in November {{data['date-started-year']}}</li>
-      {% endif %}
-      {% if data['date-started-month'] === '12' %}
-        <li>Started in December {{data['date-started-year']}}</li>
-      {% endif %}
-
-      <!-- These ifs conventer date awarded month number in month text -->
-      {% if data['date-awarded-month'] === '1' or data['date-awarded-month'] === '01' %}
-        <li>Awarded in January {{data['date-awarded-year']}}</li>
-      {% endif %}
-      {% if data['date-awarded-month'] === '2' or data['date-awarded-month'] === '02'%}
-        <li>Awarded in February {{data['date-awarded-year']}}</li>
-      {% endif %}
-      {% if data['date-awarded-month'] === '3'or data['date-awarded-month'] === '03' %}
-        <li>Awarded in March {{data['date-awarded-year']}}</li>
-      {% endif %}
-      {% if data['date-awarded-month'] === '4' or data['date-awarded-month'] === '04' %}
-        <li>Awarded in April {{data['date-awarded-year']}}</li>
-      {% endif %}
-      {% if data['date-awarded-month'] === '5' or data['date-awarded-month'] === '05'%}
-        <li>Awarded in May {{data['date-awarded-year']}}</li>
-      {% endif %}
-      {% if data['date-awarded-month'] === '6' or data['date-awarded-month'] === '06'%}
-        <li>Awarded in June {{data['date-awarded-year']}}</li>
-      {% endif %}
-      {% if data['date-awarded-month'] === '7' or data['date-awarded-month'] === '07'%}
-        <li>Awarded in July {{data['date-awarded-year']}}</li>
-      {% endif %}
-      {% if data['date-awarded-month'] === '8' or data['date-awarded-month'] === '08'%}
-        <li>Awarded in August {{data['date-awarded-year']}}</li>
-      {% endif %}
-      {% if data['date-awarded-month'] === '9' or data['date-awarded-month'] === '09' %}
-        <li>Awarded in September {{data['date-awarded-year']}}</li>
-      {% endif %}
-      {% if data['date-awarded-month'] === '10' %}
-        <li>Awarded in October {{data['date-awarded-year']}}</li>
-      {% endif %}
-      {% if data['date-awarded-month'] === '11' %}
-        <li>Awarded in November {{data['date-awarded-year']}}</li>
-      {% endif %}
-      {% if data['date-awarded-month'] === '12' %}
-        <li>Awarded in December {{data['date-awarded-year']}}</li>
-      {% endif %}
-
-      <!-- To display a specific level or 'Any level' if users select 'not sure' -->
-      {% if data['qualification-level'] === 'not-sure' %}
-        <li>Any level</li>
-      {% else %}
-        <li>Level {{data['qualification-level']}}</li>
-      {% endif %}
-
-      <!-- To display a specific organisation or 'Various awarding organisations' if users select 'not on the list' -->
-      {% if data['awarding-organisation'] == 'any' %}
-        <li>Various awarding organisations</li>
-      {% else %}
-        <li>{{data['awarding-organisation']}}</li>
-      {% endif %}
-    </ul>
-
-    <p class="govuk-body">
-      <a href="q1" class="govuk-link">Change answers</a>
-    </p>
-
-  </div>
-
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="/current/r14/post-search-results" method="post">
       <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
@@ -135,11 +27,109 @@ href: "/current/r14/check-your-answers"
         Select a qualification to check
       </h1>
 
+      <p class="govuk-body-m">
+        You told us that the qualification was:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+
+        <li>{{data['awarding-location']}}</li> 
+  
+        <!-- These ifs conventer date started month number in month text -->
+        {% if data['date-started-month'] === '1' or data['date-started-month'] === '01' %}
+          <li>Started in January {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '2' or data['date-started-month'] === '02'%}
+          <li>Started in February {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '3'or data['date-started-month'] === '03' %}
+          <li>Started in March {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '4' or data['date-started-month'] === '04' %}
+          <li>Started in April {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '5' or data['date-started-month'] === '05'%}
+          <li>Started in May {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '6' or data['date-started-month'] === '06'%}
+          <li>Started in June {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '7' or data['date-started-month'] === '07'%}
+          <li>Started in July {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '8' or data['date-started-month'] === '08'%}
+          <li>Started in August {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '9' or data['date-started-month'] === '09' %}
+          <li>Started in September {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '10' %}
+          <li>Started in October {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '11' %}
+          <li>Started in November {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '12' %}
+          <li>Started in December {{data['date-started-year']}}</li>
+        {% endif %}
+  
+        <!-- These ifs conventer date awarded month number in month text -->
+        {% if data['date-awarded-month'] === '1' or data['date-awarded-month'] === '01' %}
+          <li>Awarded in January {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '2' or data['date-awarded-month'] === '02'%}
+          <li>Awarded in February {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '3'or data['date-awarded-month'] === '03' %}
+          <li>Awarded in March {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '4' or data['date-awarded-month'] === '04' %}
+          <li>Awarded in April {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '5' or data['date-awarded-month'] === '05'%}
+          <li>Awarded in May {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '6' or data['date-awarded-month'] === '06'%}
+          <li>Awarded in June {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '7' or data['date-awarded-month'] === '07'%}
+          <li>Awarded in July {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '8' or data['date-awarded-month'] === '08'%}
+          <li>Awarded in August {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '9' or data['date-awarded-month'] === '09' %}
+          <li>Awarded in September {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '10' %}
+          <li>Awarded in October {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '11' %}
+          <li>Awarded in November {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '12' %}
+          <li>Awarded in December {{data['date-awarded-year']}}</li>
+        {% endif %}
+  
+        <!-- To display a specific level or 'Any level' if users select 'not sure' -->
+        {% if data['qualification-level'] === 'not-sure' %}
+          <li>Any level</li>
+        {% else %}
+          <li>Level {{data['qualification-level']}}</li>
+        {% endif %}
+  
+        <!-- To display a specific organisation or 'Various awarding organisations' if users select 'not on the list' -->
+        {% if data['awarding-organisation'] == 'any' %}
+          <li>Various awarding organisations</li>
+        {% else %}
+          <li>{{data['awarding-organisation']}}</li>
+        {% endif %}
+      </ul>
+
       <h2 class="govuk-heading-m">
         {% if data['result-count'] == 0 %}
-          No qualifications found based on your answers
+          We found 0 matching qualifications
         {% else %}
-          {{ data['result-count'] }} {{ 'qualifications found based on your answers' if data['result-count'] > 1 else 'qualification found based on your answers' }}
+          We found {{ data['result-count'] }} {{ 'matching qualifications' if data['result-count'] > 1 else 'matching qualification' }}
         {% endif %}
       </h2>
 
@@ -178,9 +168,6 @@ href: "/current/r14/check-your-answers"
       </ul>
 
       {% if data['result-count'] == 0 %}
-        <p style="margin-bottom: 30px;" class="govuk-body-m">
-          <strong>There are no matching qualifications.</strong>
-        </p>
         <p class="govuk-body-m">
           Improve your search by:
         </p>
@@ -189,7 +176,7 @@ href: "/current/r14/check-your-answers"
           <li>using fewer words</li>
           <li>using words from the qualification name, rather than the level or awarding organisation name</li>
         </ul>
-        <hr style="border: 0; border-bottom: 1px solid 	#b1b4b6;">
+        <hr style="border: 0; border-bottom: 1px solid 	#8ba2b2;">
       {% endif %}
 
       <h3 style="margin-top: 30px" class="govuk-heading-m govuk-!-margin-bottom-10">
