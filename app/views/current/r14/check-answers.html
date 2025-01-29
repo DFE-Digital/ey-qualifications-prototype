@@ -1,0 +1,154 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back to last additional requirement question",
+  href: "/current/r14/eyq-240-requirement1"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="eyq-240-checked" method="post">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
+        Check your answers
+      </h1>
+
+      <dl style="margin-top: 30px" class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt style="width: 60%;" class="govuk-summary-list__key">
+            Where was the qualification awarded?</dt>
+          <dd style="text-align: center;" class="govuk-summary-list__value">
+            {{data['awarding-location']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="q1">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+      </dl>
+      <dl style="margin-top: 30px" class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt style="width: 60%;" class="govuk-summary-list__key">
+            When was the qualification started and awarded?</dt>
+          <dd style="text-align: center;" class="govuk-summary-list__value">
+            {% if data['date-started-month'] === '1' or data['date-started-month'] === '01' %}
+              <dd class="govuk-summary-list__value"> January {{data['date-started-year']}} </dd>
+            {% endif %}
+            {% if data['date-started-month'] === '2' or data['date-started-month'] === '02'%}
+              <dd class="govuk-summary-list__value"> February {{data['date-started-year']}} </dd>
+            {% endif %}
+            {% if data['date-started-month'] === '3'or data['date-started-month'] === '03' %}
+              <dd class="govuk-summary-list__value"> March {{data['date-started-year']}} </dd>
+            {% endif %}
+            {% if data['date-started-month'] === '4' or data['date-started-month'] === '04' %}
+              <dd class="govuk-summary-list__value"> April {{data['date-started-year']}} </dd>
+            {% endif %}
+            {% if data['date-started-month'] === '5' or data['date-started-month'] === '05'%}
+              <dd class="govuk-summary-list__value"> May {{data['date-started-year']}} </dd> 
+            {% endif %}
+            {% if data['date-started-month'] === '6' or data['date-started-month'] === '06'%}
+              <dd class="govuk-summary-list__value"> June {{data['date-started-year']}} </dd> 
+            {% endif %}
+            {% if data['date-started-month'] === '7' or data['date-started-month'] === '07'%}
+              <dd class="govuk-summary-list__value"> July {{data['date-started-year']}} </dd> 
+            {% endif %}
+            {% if data['date-started-month'] === '8' or data['date-started-month'] === '08'%}
+              <dd class="govuk-summary-list__value"> August {{data['date-started-year']}} </dd> 
+            {% endif %}
+            {% if data['date-started-month'] === '9' or data['date-started-month'] === '09' %}
+              <dd class="govuk-summary-list__value"> September {{data['date-started-year']}} </dd> 
+            {% endif %}
+            {% if data['date-started-month'] === '10' %}
+              <dd class="govuk-summary-list__value"> October {{data['date-started-year']}} </dd> 
+            {% endif %}
+            {% if data['date-started-month'] === '11' %}
+              <dd class="govuk-summary-list__value"> November {{data['date-started-year']}} </dd> 
+            {% endif %}
+            {% if data['date-started-month'] === '12' %}
+              <dd class="govuk-summary-list__value"> December {{data['date-started-year']}} </dd> 
+            {% endif %}
+            <br>
+            {% if data['date-awarded-month'] === '1' or data['date-awarded-month'] === '01' %}
+              <dd class="govuk-summary-list__value"> January {{data['date-awarded-year']}} </dd>
+            {% endif %}
+            {% if data['date-awarded-month'] === '2' or data['date-awarded-month'] === '02'%}
+              <dd class="govuk-summary-list__value"> February {{data['date-awarded-year']}} </dd>
+            {% endif %}
+            {% if data['date-awarded-month'] === '3'or data['date-awarded-month'] === '03' %}
+              <dd class="govuk-summary-list__value"> March {{data['date-awarded-year']}} </dd>
+            {% endif %}
+            {% if data['date-awarded-month'] === '4' or data['date-awarded-month'] === '04' %}
+              <dd class="govuk-summary-list__value"> April {{data['date-awarded-year']}} </dd>
+            {% endif %}
+            {% if data['date-awarded-month'] === '5' or data['date-awarded-month'] === '05'%}
+              <dd class="govuk-summary-list__value"> May {{data['date-awarded-year']}} </dd> 
+            {% endif %}
+            {% if data['date-awarded-month'] === '6' or data['date-awarded-month'] === '06'%}
+              <dd class="govuk-summary-list__value"> June {{data['date-awarded-year']}} </dd> 
+            {% endif %}
+            {% if data['date-awarded-month'] === '7' or data['date-awarded-month'] === '07'%}
+              <dd class="govuk-summary-list__value"> July {{data['date-awarded-year']}} </dd> 
+            {% endif %}
+            {% if data['date-awarded-month'] === '8' or data['date-awarded-month'] === '08'%}
+              <dd class="govuk-summary-list__value"> August {{data['date-awarded-year']}} </dd> 
+            {% endif %}
+            {% if data['date-awarded-month'] === '9' or data['date-awarded-month'] === '09' %}
+              <dd class="govuk-summary-list__value"> September {{data['date-awarded-year']}} </dd> 
+            {% endif %}
+            {% if data['date-awarded-month'] === '10' %}
+              <dd class="govuk-summary-list__value"> October {{data['date-awarded-year']}} </dd> 
+            {% endif %}
+            {% if data['date-awarded-month'] === '11' %}
+              <dd class="govuk-summary-list__value"> November {{data['date-awarded-year']}} </dd> 
+            {% endif %}
+            {% if data['date-awarded-month'] === '12' %}
+              <dd class="govuk-summary-list__value"> December {{data['date-awarded-year']}} </dd> 
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="q2">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+      </dl>
+      <dl style="margin-top: 30px" class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt style="width: 60%;" class="govuk-summary-list__key">
+            What level is the qualification</dt>
+          <dd style="text-align: center;" class="govuk-summary-list__value">
+            {{data['qualification-level']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="q3">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+      </dl>
+      <dl style="margin-top: 30px" class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt style="width: 60%;" class="govuk-summary-list__key">
+            What is the awarding organisation?</dt>
+          <dd style="text-align: center;" class="govuk-summary-list__value">
+            {{data['awarding-organisation']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="q4">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+      </dl>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
