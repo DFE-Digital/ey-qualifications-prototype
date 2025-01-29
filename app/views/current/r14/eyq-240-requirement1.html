@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back to select the qualification",
+  href: "/current/r13/search-results"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="eyq-500-requirement1-post" method="post">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        Did the qualification lead to QTS, EYTS or EYPS?
+      </h1>
+      <p class="govuk-hint">
+        Qualified Teacher Status (QTS), Early Years Teacher Status (EYTS) or Early Years Practitioner Status (EYPS) may be awarded either on completion of standalone qualifications or as part of completion of a level 6 or 7 qualification.
+      </p>
+
+      {{ govukRadios({
+          id: "ledToQTS",
+          name: "ledToQTS",
+          value: data['ledToQTS'],
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: false,
+              classes: ""
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

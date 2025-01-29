@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back to where was the qualification awarded",
+  href: "/current/r13/q1"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="q2-post" method="post">
+
+      <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
+      {% call govukFieldset({
+        legend: {
+          text: "When was the qualification started and awarded?",
+          isPageHeading: true,
+          classes: "govuk-heading-xl govuk-!-margin-bottom-4"
+        }
+      }) %}
+      <div class="govuk-form-group">
+        <h2 class= "govuk-heading-s" style="margin-bottom: 10px">
+          Date started
+        </h2>
+        <div id="date-started-format-hint" class="govuk-hint">
+          Enter the date the qualification was started so we can establish which criteria the qualification was approved against. For example 9 2013
+        </div>
+        <div class="govuk-date-input" id="date-started">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="date-started-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-started-month" name="date-started-month" type="text" inputmode="numeric" value="{{data['date-started-month']}}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="date-started-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-started-year" name="date-started-year" type="text" inputmode="numeric" value="{{data['date-started-year']}}">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-form-group">
+        <h2 class= "govuk-heading-s" style="margin-bottom: 10px">
+          Date awarded
+        </h2>
+        <div id="date-awarded-format-hint" class="govuk-hint">
+          Enter the date the qualification was awarded -achieved or obtained- to determine if other requirements apply. For example 6 2015
+        </div>
+        <div class="govuk-date-input" id="date-awarded">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="date-started-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-awarded-month" name="date-awarded-month" type="text" inputmode="numeric" value="{{data['date-awarded-month']}}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="date-awarded-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-awarded-year" name="date-awarded-year" type="text" inputmode="numeric" value="{{data['date-awarded-year']}}">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      {% endcall %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,348 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check an Early Years qualification – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to check the qualification additional requirements",
+    href: "/current/r13/eyq-500-requirements-check"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
+      Qualification check
+    </h1>
+
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-4">
+      Qualification details
+    </h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          BA (Hons) Early Years
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Level
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data ['qualification-level']}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Awarding organisation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data ['awarding-organisation']}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Start date
+        </dt>
+        {% if data['date-started-month'] === '1' or data['date-started-month'] === '01' %}
+          <dd class="govuk-summary-list__value"> January {{data['date-started-year']}} </dd>
+        {% endif %}
+        {% if data['date-started-month'] === '2' or data['date-started-month'] === '02'%}
+          <dd class="govuk-summary-list__value"> February {{data['date-started-year']}} </dd>
+        {% endif %}
+        {% if data['date-started-month'] === '3'or data['date-started-month'] === '03' %}
+          <dd class="govuk-summary-list__value"> March {{data['date-started-year']}} </dd>
+        {% endif %}
+        {% if data['date-started-month'] === '4' or data['date-started-month'] === '04' %}
+          <dd class="govuk-summary-list__value"> April {{data['date-started-year']}} </dd>
+        {% endif %}
+        {% if data['date-started-month'] === '5' or data['date-started-month'] === '05'%}
+          <dd class="govuk-summary-list__value"> May {{data['date-started-year']}} </dd> 
+        {% endif %}
+        {% if data['date-started-month'] === '6' or data['date-started-month'] === '06'%}
+          <dd class="govuk-summary-list__value"> June {{data['date-started-year']}} </dd> 
+        {% endif %}
+        {% if data['date-started-month'] === '7' or data['date-started-month'] === '07'%}
+          <dd class="govuk-summary-list__value"> July {{data['date-started-year']}} </dd> 
+        {% endif %}
+        {% if data['date-started-month'] === '8' or data['date-started-month'] === '08'%}
+          <dd class="govuk-summary-list__value"> August {{data['date-started-year']}} </dd> 
+        {% endif %}
+        {% if data['date-started-month'] === '9' or data['date-started-month'] === '09' %}
+          <dd class="govuk-summary-list__value"> September {{data['date-started-year']}} </dd> 
+        {% endif %}
+        {% if data['date-started-month'] === '10' %}
+          <dd class="govuk-summary-list__value"> October {{data['date-started-year']}} </dd> 
+        {% endif %}
+        {% if data['date-started-month'] === '11' %}
+          <dd class="govuk-summary-list__value"> November {{data['date-started-year']}} </dd> 
+        {% endif %}
+        {% if data['date-started-month'] === '12' %}
+          <dd class="govuk-summary-list__value"> December {{data['date-started-year']}} </dd> 
+        {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Award date
+        </dt>
+        {% if data['date-awarded-month'] === '1' or data['date-awarded-month'] === '01' %}
+        <dd class="govuk-summary-list__value"> January {{data['date-awarded-year']}} </dd>
+        {% endif %}
+        {% if data['date-awarded-month'] === '2' or data['date-awarded-month'] === '02'%}
+          <dd class="govuk-summary-list__value"> February {{data['date-awarded-year']}} </dd>
+        {% endif %}
+        {% if data['date-awarded-month'] === '3'or data['date-awarded-month'] === '03' %}
+          <dd class="govuk-summary-list__value"> March {{data['date-awarded-year']}} </dd>
+        {% endif %}
+        {% if data['date-awarded-month'] === '4' or data['date-awarded-month'] === '04' %}
+          <dd class="govuk-summary-list__value"> April {{data['date-awarded-year']}} </dd>
+        {% endif %}
+        {% if data['date-awarded-month'] === '5' or data['date-awarded-month'] === '05'%}
+          <dd class="govuk-summary-list__value"> May {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+        {% if data['date-awarded-month'] === '6' or data['date-awarded-month'] === '06'%}
+          <dd class="govuk-summary-list__value"> June {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+        {% if data['date-awarded-month'] === '7' or data['date-awarded-month'] === '07'%}
+          <dd class="govuk-summary-list__value"> July {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+        {% if data['date-awarded-month'] === '8' or data['date-awarded-month'] === '08'%}
+          <dd class="govuk-summary-list__value"> August {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+        {% if data['date-awarded-month'] === '9' or data['date-awarded-month'] === '09' %}
+          <dd class="govuk-summary-list__value"> September {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+        {% if data['date-awarded-month'] === '10' %}
+          <dd class="govuk-summary-list__value"> October {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+        {% if data['date-awarded-month'] === '11' %}
+          <dd class="govuk-summary-list__value"> November {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+        {% if data['date-awarded-month'] === '12' %}
+          <dd class="govuk-summary-list__value"> December {{data['date-awarded-year']}} </dd> 
+        {% endif %}
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Qualification led to QTS, EYTS or EYPS
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data ['ledToQTS']}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Course was fully consistent with the QAA Subject Benchmark Statement for Early Childhood Studies
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data ['isQAAConsistent']}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Included an element of assessed practice in an early years setting
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data ['includesAssessedPractice']}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date checked
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data ['todays-date']}}
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 style="margin-top: 20px" class="govuk-heading-l govuk-!-margin-bottom-4">
+      Result for this qualification
+    </h2>
+    <div style="border-left-color: #00703c" class="govuk-inset-text">
+      <h3 class="govuk-heading-m">
+        Full and relevant
+      </h3>
+      <p class="govuk-body-m">
+        Given the information you have provided, this qualification is approved by the Department for Education as full and relevant.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 style="margin-top: 20px" class="govuk-heading-l govuk-!-margin-bottom-4">
+      Staff:child ratios for this qualification
+    </h2>
+
+    <p class="govuk-body-m">
+      To count in the staff:child ratios, practitioners may need to meet other requirements in addition to holding a full and relevant qualification.
+    </p>
+
+    <div>
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        <div style="display: flex; justify-content: space-between; padding-top: 30px; margin-bottom: -24px;">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h3 class="govuk-heading-m">
+                Level 3
+            </h3>
+          </legend>
+          <div style="max-height: max-content;">
+            <strong class="govuk-tag govuk-tag--green">
+              Approved
+            </strong>
+          </div>
+        </div>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Requirements to count in the staff:child ratios at level 3
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <h4 class="govuk-heading-s">
+                Level 2 English qualification
+            </h4>
+            <p class="govuk-body-m">
+              If this qualification was achieved on or after 1 September 2014, the member of staff must also hold a suitable level 2 English qualification to be included in the staff:child ratios at level 3. You can find a list of suitable Level 2 English qualifications in the <a href="https://www.gov.uk/government/publications/early-years-qualification-requirements-and-standards" target="_blank">early years qualification requirements and standards document (opens in new tab)</a>.
+            </p>
+            <p class="govuk-body-m">
+              A person who holds a full and relevant level 3 qualification achieved on or after 1 September 2014, but who does not hold a suitable level 2 English qualification can be counted in the staff:child ratios at level 2.
+            </p>
+            <h4 class="govuk-heading-s">
+                Paediatric first aid certificate
+            <h4>
+            <p class="govuk-body-m">
+              If this qualification was obtained since 30 June 2016, the member of staff must obtain a paediatric first aid certificate which meets the criteria in the <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2" target="_blank">early years foundation stage (EYFS) statutory framework (opens in new tab)</a> within 3 months of starting work. To continue to be included in the ratio, the certificate must be renewed every 3 years.
+            </p>
+          </div>
+        </details>
+      </fieldset>
+    </div>
+    <hr>
+
+    <div>
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        <div style="display: flex; justify-content: space-between; padding-top: 30px; margin-bottom: -24px;">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h3 class="govuk-heading-m">
+              Level 2
+            </h3>
+          </legend>
+          <div style="max-height: max-content;">
+            <strong class="govuk-tag govuk-tag--green">
+              Approved
+            </strong>
+          </div>
+        </div>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Requirements to count in the staff:child ratios at level 2
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <h4 class="govuk-heading-s">
+                Paediatric first aid certificate
+            </h4>
+            <p>
+              If this qualification was obtained since 30 June 2016, the member of staff must obtain a paediatric first aid certificate which meets the criteria in the <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2" target="_blank">early years foundation stage (EYFS) statutory framework (opens in new tab)</a> within 3 months of starting work. To continue to be included in the ratio, the certificate must be renewed every 3 years.
+            </p>
+          </div>
+        </details>
+      </fieldset>
+    </div>
+    <hr>
+
+    <div>
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint" style="margin-bottom: 30px;">
+        <div style="display: flex; justify-content: space-between; padding-top: 30px; margin-bottom: -24px;">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h3 class="govuk-heading-m">
+              Unqualified
+            </h3>
+          </legend>
+          <div style="max-height: max-content;">
+            <strong class="govuk-tag govuk-tag--green">
+              Approved
+            </strong>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <hr>
+
+    <div>
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint" style="margin-bottom: 30px;">
+        <div style="display: flex; justify-content: space-between; padding-top: 30px; margin-bottom: -24px;">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h3 class="govuk-heading-m">
+              Level 6
+            </h3>
+          </legend>
+          <div style="max-height: max-content;">
+            <strong class="govuk-tag govuk-tag--red">
+              Not approved
+            </strong>
+          </div>
+        </div>
+        <p style="margin-top: 10px;" class="govuk-body-m">To be included in the staff:child ratios at level 6, staff must hold one of the following:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Qualified Teacher Status (QTS)</li>
+            <li>Early Years Teacher Status (EYTS)</li>
+            <li>Early Years Professional Status (EYPS)</li>
+          </ul>
+        <p class="govuk-body-m">
+          Staff who hold one of these qualifications may be counted in the staff:child ratios at either level 3 or level 6, but not both.
+        </p>
+      </fieldset>
+    </div>
+    <hr>
+  </div>
+
+  <br>
+  <br>
+
+  <div style="margin-top: 40px" class="govuk-grid-column-full">
+    <h2 style="margin-top: 20px" class="govuk-heading-l govuk-!-margin-bottom-4">
+      Your responsibilities as a provider
+    </h2>
+    <p>
+      As set out in the <a href="https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2" target="_blank">early years foundation stage (EYFS) statutory framework (opens in new tab)</a>, providers must:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>ensure that staffing arrangements meet the needs of all children and ensure their safety</li>
+      <li>ensure that people looking after children are suitable</li>
+      <li>meet all other requirements as set out in the EYFS and the <a href="https://www.gov.uk/government/publications/early-years-qualification-requirements-and-standards" target="_blank">early years qualification requirements and standards document (opens in new tab)</a></li>
+    </ul>
+  </div>
+</div>
+<br>
+
+<button onclick="expandDetailsAndPrint();" class="govuk-link govuk-body-s gem-c-print-link__button">Print this page</button>
+
+<br>
+<br>
+
+<p class="govuk-body-m">
+  <a href="/current/r13/reset-filters" class="govuk-button govuk-button--secondary">
+    Check another qualification
+  </a>
+</p>
+
+
+{% endblock %}

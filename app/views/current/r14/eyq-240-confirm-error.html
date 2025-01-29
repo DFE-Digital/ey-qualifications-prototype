@@ -1,0 +1,115 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back to select the qualification",
+  href: "/current/r13/search-results"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <form class="form" action="confirm-post" method="post">
+      <input type="hidden" name="redirect" value="eyq-500" />
+
+      {% set errorMessage = "Confirm if this is the qualification you are looking for" %}
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: errorMessage,
+            href: "#yes-no"
+          }
+        ]
+      }) }}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
+        Confirm qualification
+      </h1>
+      <p class="govuk-body">
+        Review the qualification details are correct before confirming the qualification.
+      </p>
+
+      {{ govukSummaryList({
+        rows: [
+
+        {
+            key: {
+              text: "Qualification"
+            },
+            value: {
+              text: "BA (Hons) Early Years"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Qualification level"
+            },
+            value: {
+              text: data['qualification-level']
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Awarding organisation"
+            },
+            value: {
+              text: data['awarding-organisation']
+            },
+            actions: {
+
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+          id: "yes-no",
+          name: "yes-no",
+          value: data['yes-no'],
+          fieldset: {
+            legend: {
+              text: "Is this the qualification you are looking for?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No, select another qualification"
+            }
+          ],
+          errorMessage: {
+            text: errorMessage
+          }
+        }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
