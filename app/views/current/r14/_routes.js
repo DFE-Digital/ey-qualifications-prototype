@@ -93,13 +93,13 @@ router.get('/reset-filters', function(request, response) {
 })
 
 // Search results
-router.post('/post-check-your-answers', function(request, response) {
+router.post('/check-your-answers-post', function(request, response) {
   if (request.session.data['awarding-organisation'] == 'none') return response.redirect('/current/r14/q4-error');
 
   response.redirect("/current/r14/check-your-answers");
 });
 
-router.post('/post-search-results', function(request, response) {
+router.post('/search-results-post', function(request, response) {
 
   var qualifications = data.qualifications;
 
