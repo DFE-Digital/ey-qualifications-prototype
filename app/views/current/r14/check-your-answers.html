@@ -29,7 +29,7 @@
           <dd style="text-align: left; width: 30%;" class="govuk-summary-list__value">
             {{data['awarding-location']}}
           </dd>
-          <dd style="width: 10%;" class="govuk-summary-list__actions">
+          <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="q1">Change<span class="govuk-visually-hidden"> name</span></a>
           </dd>
         </div>
@@ -114,7 +114,7 @@
               Awarded in December {{data['date-awarded-year']}}
             {% endif %}
           </dd>
-          <dd style="width: 10%;" class="govuk-summary-list__actions">
+          <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="q2">Change<span class="govuk-visually-hidden"> date of birth</span></a>
           </dd>
         </div>
@@ -129,7 +129,7 @@
             Level {{data['qualification-level']}}
           {% endif %}
           </dd>
-          <dd style="width: 10%;" class="govuk-summary-list__actions">
+          <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="q3">Change<span class="govuk-visually-hidden"> address</span></a>
           </dd>
         </div>
@@ -145,11 +145,12 @@
               {{data['awarding-organisation']}}
             {% endif %}
           </dd>
-          <dd style="width: 10%;" class="govuk-summary-list__actions">
+          <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="q4">Change<span class="govuk-visually-hidden"> address</span></a>
           </dd>
         </div>
-
+      </dl>
+      
       {{ govukButton({
         text: "Continue"
       }) }}
