@@ -38,8 +38,81 @@
             When was the qualification started and awarded?
           </dt>
           <dd style="text-align: left; width: 30%;" class="govuk-summary-list__value">
-            {{data['date started']}} <br>
-            {{data['date awarded']}}
+            <!-- These ifs conventer date started month number in month text -->
+            {% if data['date-started-month'] === '1' or data['date-started-month'] === '01' %}
+            Started in January {{data['date-started-year']}}
+            {% endif %}
+            {% if data['date-started-month'] === '2' or data['date-started-month'] === '02'%}
+            Started in February {{data['date-started-year']}}
+            {% endif %}
+            {% if data['date-started-month'] === '3'or data['date-started-month'] === '03' %}
+            Started in March {{data['date-started-year']}}
+            {% endif %}
+            {% if data['date-started-month'] === '4' or data['date-started-month'] === '04' %}
+            Started in April {{data['date-started-year']}}
+            {% endif %}
+            {% if data['date-started-month'] === '5' or data['date-started-month'] === '05'%}
+            Started in May {{data['date-started-year']}}
+            {% endif %}
+            {% if data['date-started-month'] === '6' or data['date-started-month'] === '06'%}
+            Started in June {{data['date-started-year']}}
+            {% endif %}
+            {% if data['date-started-month'] === '7' or data['date-started-month'] === '07'%}
+            Started in July {{data['date-started-year']}}
+            {% endif %}
+            {% if data['date-started-month'] === '8' or data['date-started-month'] === '08'%}
+            Started in August {{data['date-started-year']}}
+            {% endif %}
+            {% if data['date-started-month'] === '9' or data['date-started-month'] === '09' %}
+            Started in September {{data['date-started-year']}}
+            {% endif %}
+            {% if data['date-started-month'] === '10' %}
+            Started in October {{data['date-started-year']}}
+            {% endif %}
+            {% if data['date-started-month'] === '11' %}
+            Started in November {{data['date-started-year']}}
+            {% endif %}
+            {% if data['date-started-month'] === '12' %}
+              Started in December {{data['date-started-year']}}
+            {% endif %}
+
+            <!-- These ifs conventer date awarded month number in month text -->
+            {% if data['date-awarded-month'] === '1' or data['date-awarded-month'] === '01' %}
+              Awarded in January {{data['date-awarded-year']}}
+            {% endif %}
+            {% if data['date-awarded-month'] === '2' or data['date-awarded-month'] === '02'%}
+              Awarded in February {{data['date-awarded-year']}}
+            {% endif %}
+            {% if data['date-awarded-month'] === '3'or data['date-awarded-month'] === '03' %}
+              Awarded in March {{data['date-awarded-year']}}
+            {% endif %}
+            {% if data['date-awarded-month'] === '4' or data['date-awarded-month'] === '04' %}
+              Awarded in April {{data['date-awarded-year']}}
+            {% endif %}
+            {% if data['date-awarded-month'] === '5' or data['date-awarded-month'] === '05'%}
+              Awarded in May {{data['date-awarded-year']}}
+            {% endif %}
+            {% if data['date-awarded-month'] === '6' or data['date-awarded-month'] === '06'%}
+              Awarded in June {{data['date-awarded-year']}}
+            {% endif %}
+            {% if data['date-awarded-month'] === '7' or data['date-awarded-month'] === '07'%}
+              Awarded in July {{data['date-awarded-year']}}
+            {% endif %}
+            {% if data['date-awarded-month'] === '8' or data['date-awarded-month'] === '08'%}
+              Awarded in August {{data['date-awarded-year']}}
+            {% endif %}
+            {% if data['date-awarded-month'] === '9' or data['date-awarded-month'] === '09' %}
+              Awarded in September {{data['date-awarded-year']}}
+            {% endif %}
+            {% if data['date-awarded-month'] === '10' %}
+              Awarded in October {{data['date-awarded-year']}}
+            {% endif %}
+            {% if data['date-awarded-month'] === '11' %}
+              Awarded in November {{data['date-awarded-year']}}
+            {% endif %}
+            {% if data['date-awarded-month'] === '12' %}
+              Awarded in December {{data['date-awarded-year']}}
+            {% endif %}
           </dd>
           <dd style="width: 10%;" class="govuk-summary-list__actions">
             <a class="govuk-link" href="q2">Change<span class="govuk-visually-hidden"> date of birth</span></a>
@@ -65,7 +138,12 @@
             What is the awarding organisation?
           </dt>
           <dd style="text-align: left; width: 30%;"  class="govuk-summary-list__value">
-            {{data['awarding-organisation']}}
+            <!-- To display a specific organisation or 'Various awarding organisations' if users select 'not on the list' -->
+            {% if data['awarding-organisation'] == 'any' %}
+              Various awarding organisations
+            {% else %}
+              {{data['awarding-organisation']}}
+            {% endif %}
           </dd>
           <dd style="width: 10%;" class="govuk-summary-list__actions">
             <a class="govuk-link" href="q4">Change<span class="govuk-visually-hidden"> address</span></a>
