@@ -93,8 +93,13 @@ router.get('/reset-filters', function(request, response) {
 })
 
 // Search results
-router.post('/post-search-results', function(request, response) {
+router.post('/post-check-your-answers', function(request, response) {
   if (request.session.data['awarding-organisation'] == 'none') return response.redirect('/current/r14/q4-error');
+
+  response.redirect("/current/r14/check-your-answers");
+});
+
+router.post('/post-search-results', function(request, response) {
 
   var qualifications = data.qualifications;
 
@@ -115,7 +120,7 @@ router.post('/post-search-results', function(request, response) {
   var dateString = date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
   request.session.data['todays-date'] = dateString;
 
-  response.redirect("/current/r14/check-your-answers");
+  response.redirect("/current/r14/search-results");
 })
 
 // Clear search results
