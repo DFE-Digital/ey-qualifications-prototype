@@ -115,7 +115,7 @@ router.post('/post-search-results', function(request, response) {
   var dateString = date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
   request.session.data['todays-date'] = dateString;
 
-  response.redirect("/current/r14/search-results");
+  response.redirect("/current/r14/check-your-answers");
 })
 
 // Clear search results
