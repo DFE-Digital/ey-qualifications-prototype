@@ -71,10 +71,10 @@ router.post('/confirm-post', function(request, response) {
 // Additional requirement 1
 router.post('/eyq-240-requirement1-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
-  if (request.session.data['ledToQTS'] == undefined) {
+  if (request.session.data['includesAssessedPractice'] == undefined) {
     return response.redirect(`/current/r14/eyq-240-requirement1-error`)
   } else {
-    return response.redirect(`/current/r14/eyq-240-check`)
+    return response.redirect(`/current/r14/eyq-240-requirements-check`)
   }
 })
 
