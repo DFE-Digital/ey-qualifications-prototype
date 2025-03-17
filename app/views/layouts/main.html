@@ -5,6 +5,22 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {% from "govuk/components/header/macro.njk" import govukHeader %}
+  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukHeader({
+    classes: "govuk-header--full-width-border"
+  }) }}
+
+  {{ govukServiceNavigation({
+    serviceName: "Check an early years qualification",
+    serviceUrl: "#"
+  }) }}
+
+{% endblock %}
+
 {% block scripts %}
   {{ super() }}
   <script src="/node_modules/dfe-frontend-alpha/dist/dfefrontend.min.js"></script>
