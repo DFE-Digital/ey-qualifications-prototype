@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back to what level is the qualification",
+href: "/current/r14/q3"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% set isNotOnTheListSelected = data['awarding-organisation'] == 'any' %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      What is the awarding organisation?
+    </h1>
+
+    <form class="form" action="check-your-answers-post" method="post">
+      {# Q1 #}
+      <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
+      {# Q2 #}
+      <input type="hidden" name="date-started-month" value="{{data['date-started-month']}}" />
+      <input type="hidden" name="date-started-year" value="{{data['date-started-year']}}" />
+      <input type="hidden" name="date-awarded-month" value="{{data['date-awarded-month']}}" />
+      <input type="hidden" name="date-awarded-year" value="{{data['date-awarded-year']}}" />
+      {# Q3 #}
+      <input type="hidden" name="qualification-level" value="{{data['qualification-level']}}" />
+
+      <div class="govuk-radios" data-module="govuk-radios">
+
+        <div class="govuk-form-group">
+          {{ govukSelect({
+            id: "awarding-organisation-select",
+            name: "awarding-organisation",
+            disabled: isNotOnTheListSelected,
+            label: {
+              text: "Awarding organisation",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            },
+            items: data['awarding-organisations']
+          }) }}
+        </div>
+
+
+        <div class="govuk-form-group">
+          {{ govukCheckboxes({
+            id: "awarding-organisation",
+            name: "awarding-organisation",
+            classes: "govuk-checkboxes--large",
+            items: [
+              {
+                value: "any",
+                text: "Not on the list",
+                checked: isNotOnTheListSelected
+              }
+            ]
+          }) }}
+        </div>
+      </div>
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var checkbox = document.getElementById('awarding-organisation');
+    var select = document.getElementById('awarding-organisation-select');
+
+    checkbox.addEventListener('click', function() {
+      if (checkbox.checked) {
+        select.disabled = true;
+        console.log(select);
+      } else {
+        select.disabled = false;
+      }
+    });
+  });
+</script>
+
+{% endblock %}
