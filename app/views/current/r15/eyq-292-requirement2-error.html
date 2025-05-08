@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back to previous additional requirement",
+  href: "/current/r15/eyq-292-requirement1"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% set errorMessage = "Select one option" %}
+
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: errorMessage,
+          href: "#requirement2"
+        }
+      ]
+    }) }}
+
+    <form class="form" action="eyq-292-requirement2-post" method="post">
+      <div class="govuk-form-group govuk-form-group--error">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+          Was the course fully consistent with the QAA subject benchmark statement for Early Childhood Studies? 
+        </h1>
+        <p class="govuk-hint">
+          The university or training provider should be able to confirm if the course was consistent with the subject benchmark.  
+        </p>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What is the QAA Subject Benchmark Statement? 
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>
+              The Quality Assurance Agency for Higher Education (QAA) <a href="https://www.qaa.ac.uk/the-quality-code/subject-benchmark-statements/early-childhood-studies" target="_blank">subject benchmark statement for Early Childhood studies (opens in new tab)</a> describes what graduates might reasonably be expected to know, do and understand at the end of their studies. 
+            </p>
+          </div>
+        </details>
+
+        {{ govukRadios({
+            id: "isQAAConsistent",
+            name: "isQAAConsistent",
+            value: data['isQAAConsistent'],
+            fieldset: {
+              legend: {
+                text: "",
+                isPageHeading: true,
+                classes: ""
+              }
+            },
+            errorMessage: {
+              text: errorMessage
+            },
+            items: [
+              {
+                value: "Yes",
+                text: "Yes"
+              },
+              {
+                value: "No",
+                text: "No"
+              }
+            ]
+          }) }}
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

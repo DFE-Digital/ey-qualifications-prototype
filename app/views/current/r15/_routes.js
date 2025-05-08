@@ -69,12 +69,32 @@ router.post('/confirm-post', function(request, response) {
 })
 
 // Additional requirement 1
-router.post('/eyq-240-requirement1-post', function(request, response) {
+router.post('/eyq-292-requirement1-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['includesAssessedPractice'] == undefined) {
-    return response.redirect(`/current/r15/eyq-240-requirement1-error`)
+    return response.redirect(`/current/r15/eyq-292-requirement1-error`)
   } else {
-    return response.redirect(`/current/r15/eyq-240-requirements-check`)
+    return response.redirect(`/current/r15/eyq-292-requirement2`)
+  }
+})
+
+// Additional requirement 2
+router.post('/eyq-292-requirement2-post', function(request, response) {
+  var redirectValue = request.session.data['redirect'];
+  if (request.session.data['includesAssessedPractice'] == undefined) {
+    return response.redirect(`/current/r15/eyq-292-requirement2-error`)
+  } else {
+    return response.redirect(`/current/r15/eyq-292-requirement3`)
+  }
+})
+
+// Additional requirement 3
+router.post('/eyq-292-requirement3-post', function(request, response) {
+  var redirectValue = request.session.data['redirect'];
+  if (request.session.data['includesAssessedPractice'] == undefined) {
+    return response.redirect(`/current/r15/eyq-292-requirement3-error`)
+  } else {
+    return response.redirect(`/current/r15/eyq-292-requirements-check`)
   }
 })
 

@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back to last additional requirement question",
+  href: "/current/r15/eyq-292-requirement3"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="eyq-292-checked" method="post">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
+        Check the qualification additional requirements
+      </h1>
+      <dl style="margin-top: 30px" class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt style="width: 60%;" class="govuk-summary-list__key">
+            Did the qualification lead to QTS, EYTS or EYPS?
+          </dt>
+          <dd style="text-align: center;" class="govuk-summary-list__value">
+            {{data['ledToQTS']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="eyq-292-requirement1">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt style="width: 60%;" class="govuk-summary-list__key">
+            Was the course fully consistent with the QAA subject benchmark statement for Early Childhood Studies? 
+          </dt>
+          <dd style="text-align: center;" class="govuk-summary-list__value">
+            {{data['isQAAConsistent']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="eyq-292-requirement2">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt style="width: 60%;" class="govuk-summary-list__key">
+            Did the qualification include an element of assessed practice in an early years setting?
+          </dt>
+          <dd style="text-align: center;" class="govuk-summary-list__value">
+            {{data['includesAssessedPractice']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="eyq-292-requirement3">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+      </dl>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          Your result is dependent on the accuracy of the answers you have provided.
+        </strong>
+      </div>
+
+      {{ govukButton({
+        text: "Get result"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
