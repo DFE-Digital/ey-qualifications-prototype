@@ -69,7 +69,7 @@
               text: "Awarding organisation"
             },
             value: {
-              text: data['awarding-organisation']
+              text: "{% if data['awarding-organisation'] == 'any' %} Various awarding organisations {% else %}{{ data['awarding-organisation'] }}{% endif %}"
             },
             actions: {
 

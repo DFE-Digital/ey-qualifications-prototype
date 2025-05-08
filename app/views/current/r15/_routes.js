@@ -71,7 +71,7 @@ router.post('/confirm-post', function(request, response) {
 // Additional requirement 1
 router.post('/eyq-292-requirement1-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
-  if (request.session.data['includesAssessedPractice'] == undefined) {
+  if (request.session.data['ledToQTS'] == undefined) {
     return response.redirect(`/current/r15/eyq-292-requirement1-error`)
   } else {
     return response.redirect(`/current/r15/eyq-292-requirement2`)
@@ -81,7 +81,7 @@ router.post('/eyq-292-requirement1-post', function(request, response) {
 // Additional requirement 2
 router.post('/eyq-292-requirement2-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
-  if (request.session.data['includesAssessedPractice'] == undefined) {
+  if (request.session.data['isQAAConsistent'] == undefined) {
     return response.redirect(`/current/r15/eyq-292-requirement2-error`)
   } else {
     return response.redirect(`/current/r15/eyq-292-requirement3`)

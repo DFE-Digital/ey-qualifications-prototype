@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back to check the qualification additional requirements",
-    href: "/current/r14/eyq-240-requirements-check"
+    href: "/current/r15/eyq-292-requirements-check"
   }) }}
 {% endblock %}
 
@@ -44,7 +44,11 @@
           Awarding organisation
         </dt>
         <dd class="govuk-summary-list__value">
-          {{data ['awarding-organisation']}}
+          {% if data['awarding-organisation'] == 'any' %}
+          Various awarding organisations
+          {% else %}
+            {{data['awarding-organisation']}}
+          {% endif %}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -222,8 +226,8 @@
                 Level 2
             </h3>
           </legend>
-          <div style="min-width: 205px;">
-            <strong class="govuk-tag govuk-tag--grey" style="white-space: nowrap; min-width: 188px;">
+          <div>
+            <strong class="govuk-tag govuk-tag--grey" style="max-width: fit-content;">
               Further action required
             </strong>
           </div>
@@ -254,8 +258,8 @@
               Level 3
             </h3>
           </legend>
-          <div style="min-width: 200px;">
-            <strong class="govuk-tag govuk-tag--light-blue" style="white-space: nowrap; min-width: 193px;">
+          <div>
+            <strong class="govuk-tag govuk-tag--light-blue" style="white-space: nowrap; max-width: fit-content;">
               Possible route available
             </strong>
           </div>
@@ -275,8 +279,8 @@
               Level 6
             </h3>
           </legend>
-          <div style="min-width: 200px;">
-            <strong class="govuk-tag govuk-tag--light-blue" style="white-space: nowrap; min-width: 193px;">
+          <div>
+            <strong class="govuk-tag govuk-tag--light-blue" style="white-space: nowrap; max-width: fit-content;">
               Possible route available
             </strong>
           </div>
@@ -325,7 +329,7 @@
 <br>
 
 <p class="govuk-body-m">
-  <a href="/current/r14/reset-filters" class="govuk-button govuk-button--secondary">
+  <a href="/current/r15/reset-filters" class="govuk-button govuk-button--secondary">
     Check another qualification
   </a>
 </p>
