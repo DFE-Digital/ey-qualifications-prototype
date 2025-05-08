@@ -24,6 +24,13 @@
         Review the qualification details are correct before confirming the qualification.
       </p>
 
+      {% if data['awarding-organisation'] == 'any' %}
+        {% set awardingOrganisationText = 'Various awarding organisations' %}
+      {% else %}
+        {% set awardingOrganisationText = data['awarding-organisation'] %}
+      {% endif %}
+
+
       {{ govukSummaryList({
         rows: [
 
@@ -56,7 +63,7 @@
               text: "Awarding organisation"
             },
             value: {
-              text: data['awarding-organisation']
+              text: awardingOrganisationText
             },
             actions: {
 
