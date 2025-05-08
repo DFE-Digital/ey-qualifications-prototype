@@ -93,6 +93,11 @@
           ]
         }) }}
 
+        {{ govukWarningText({
+          text: "Your result is dependent on the accuracy of the information you have provided.",
+          iconFallbackText: "Warning"
+        }) }}
+
       {{ govukButton({
         text: "Continue"
       }) }}
