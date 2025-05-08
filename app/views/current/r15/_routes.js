@@ -54,15 +54,29 @@ router.post('/q3-post', function(request, response){
   }
 })
 
-// Confirm qualification
-router.post('/confirm-post', function(request, response) {
+// Confirm qualification eyq-236
+router.post('/confirm-post-236', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['yes-no'] == undefined) {
-    return response.redirect(`/current/r15/${redirectValue}-confirm-error`)
+    return response.redirect(`/current/r15/eyq-236-confirm-error`)
   }
   var yesNoValue = request.session.data['yes-no'];
   if (yesNoValue == 'Yes') {
-    return response.redirect(`/current/r15/${redirectValue}-requirement1`);
+    return response.redirect(`/current/r15/eyq-236-checked`);
+  } else {
+    return response.redirect('/current/r15/search-results');
+  }
+})
+
+// Confirm qualification eyq-292
+router.post('/confirm-post-292', function(request, response) {
+  var redirectValue = request.session.data['redirect'];
+  if (request.session.data['yes-no'] == undefined) {
+    return response.redirect(`/current/r15/eyq-292-confirm-error`)
+  }
+  var yesNoValue = request.session.data['yes-no'];
+  if (yesNoValue == 'Yes') {
+    return response.redirect(`/current/r15/eyq-292-requirement1`);
   } else {
     return response.redirect('/current/r15/search-results');
   }

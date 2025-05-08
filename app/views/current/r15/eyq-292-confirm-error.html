@@ -15,7 +15,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <form class="form" action="confirm-post" method="post">
+    <form class="form" action="confirm-post-292" method="post">
       <input type="hidden" name="redirect" value="eyq-292" />
 
       {% set errorMessage = "Confirm if this is the qualification you are looking for" %}
@@ -36,6 +36,12 @@
       <p class="govuk-body">
         Review the qualification details are correct before confirming the qualification.
       </p>
+
+      {% if data['awarding-organisation'] == 'any' %}
+        {% set awardingOrganisationText = 'Various awarding organisations' %}
+      {% else %}
+        {% set awardingOrganisationText = data['awarding-organisation'] %}
+      {% endif %}
 
       {{ govukSummaryList({
         rows: [
@@ -69,7 +75,7 @@
               text: "Awarding organisation"
             },
             value: {
-              text: "{% if data['awarding-organisation'] == 'any' %} Various awarding organisations {% else %}{{ data['awarding-organisation'] }}{% endif %}"
+              text: awardingOrganisationText
             },
             actions: {
 
