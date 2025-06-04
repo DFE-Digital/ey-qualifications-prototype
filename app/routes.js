@@ -81,5 +81,8 @@ router.use('/current/r14', require('./views/current/r14/_routes'));
 // r15
 router.use('/current/r15', require('./views/current/r15/_routes'));
 
+// r16
+router.use('/current/r16', require('./views/current/r16/_routes'));
+
 
 module.exports = router
