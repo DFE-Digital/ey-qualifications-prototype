@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back to select the qualification",
+  href: "/current/r16/search-results"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <form class="form" action="confirm-post-293" method="post">
+      <input type="hidden" name="redirect" value="eyq-293" />
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
+        Confirm qualification
+      </h1>
+      <p class="govuk-body">
+        Review the qualification details are correct before confirming the qualification.
+      </p>
+
+      {% if data['awarding-organisation'] == 'any' %}
+        {% set awardingOrganisationText = 'Various awarding organisations' %}
+      {% else %}
+        {% set awardingOrganisationText = data['awarding-organisation'] %}
+      {% endif %}
+
+
+      {{ govukSummaryList({
+        rows: [
+
+        {
+            key: {
+              text: "Qualification"
+            },
+            value: {
+              text: "Degrees and honours degrees at Level 6"
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Qualification level"
+            },
+            value: {
+              text: data['qualification-level']
+            },
+            actions: {
+
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Awarding organisation"
+            },
+            value: {
+              text: "Various awarding organisations"
+            },
+            actions: {
+
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukInsetText({
+        text: "Some qualifications are offered by more than one awarding organisation. These qualifications are listed as being awarded by 'various awarding organisations'. "
+      }) }}
+
+      {{ govukRadios({
+          name: "yes-no",
+          value: data['yes-no'],
+          fieldset: {
+            legend: {
+              text: "Is this the qualification you are looking for?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No, select another qualification"
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,199 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back to check your answers",
+href: "/current/r16/check-your-answers"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/current/r16/search-results-post" method="post">
+      <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
+      <input type="hidden" name="awarding-date" value="{{data['awarding-date']}}" />
+      <input type="hidden" name="qualification-level" value="{{data['qualification-level']}}" />
+      <input type="hidden" name="awarding-organisation" value="{{data['awarding-organisation']}}" />
+      <input type="hidden" name="date-started-month" value="{{data['date-started-month']}}" />
+      <input type="hidden" name="date-started-year" value="{{data['date-started-year']}}" />
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
+        Select a qualification to check
+      </h1>
+
+      <p class="govuk-body-m">
+        You told us that the qualification was:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+
+        <li>awarded in {{data['awarding-location']}}</li> 
+  
+        <!-- These ifs conventer date started month number in month text -->
+        {% if data['date-started-month'] === '1' or data['date-started-month'] === '01' %}
+          <li>started in January {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '2' or data['date-started-month'] === '02'%}
+          <li>started in February {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '3'or data['date-started-month'] === '03' %}
+          <li>started in March {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '4' or data['date-started-month'] === '04' %}
+          <li>started in April {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '5' or data['date-started-month'] === '05'%}
+          <li>started in May {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '6' or data['date-started-month'] === '06'%}
+          <li>started in June {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '7' or data['date-started-month'] === '07'%}
+          <li>started in July {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '8' or data['date-started-month'] === '08'%}
+          <li>started in August {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '9' or data['date-started-month'] === '09' %}
+          <li>started in September {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '10' %}
+          <li>started in October {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '11' %}
+          <li>started in November {{data['date-started-year']}}</li>
+        {% endif %}
+        {% if data['date-started-month'] === '12' %}
+          <li>started in December {{data['date-started-year']}}</li>
+        {% endif %}
+  
+        <!-- These ifs conventer date awarded month number in month text -->
+        {% if data['date-awarded-month'] === '1' or data['date-awarded-month'] === '01' %}
+          <li>awarded in January {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '2' or data['date-awarded-month'] === '02'%}
+          <li>awarded in February {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '3'or data['date-awarded-month'] === '03' %}
+          <li>awarded in March {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '4' or data['date-awarded-month'] === '04' %}
+          <li>awarded in April {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '5' or data['date-awarded-month'] === '05'%}
+          <li>awarded in May {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '6' or data['date-awarded-month'] === '06'%}
+          <li>awarded in June {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '7' or data['date-awarded-month'] === '07'%}
+          <li>awarded in July {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '8' or data['date-awarded-month'] === '08'%}
+          <li>awarded in August {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '9' or data['date-awarded-month'] === '09' %}
+          <li>awarded in September {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '10' %}
+          <li>awarded in October {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '11' %}
+          <li>awarded in November {{data['date-awarded-year']}}</li>
+        {% endif %}
+        {% if data['date-awarded-month'] === '12' %}
+          <li>awarded in December {{data['date-awarded-year']}}</li>
+        {% endif %}
+  
+        <!-- To display a specific level or 'Any level' if users select 'not sure' -->
+        {% if data['qualification-level'] === 'not-sure' %}
+          <li>any level</li>
+        {% else %}
+          <li>level {{data['qualification-level']}}</li>
+        {% endif %}
+  
+        <!-- To display a specific organisation or 'Various awarding organisations' if users select 'not on the list' -->
+        {% if data['awarding-organisation'] == 'any' %}
+          <li>awarded by various awarding organisations</li>
+        {% else %}
+          <li>awarded by {{data['awarding-organisation']}}</li>
+        {% endif %}
+      </ul>
+
+      <h2 class="govuk-heading-m">
+        {% if data['result-count'] == 0 %}
+          We found 0 matching qualifications
+        {% else %}
+          We found {{ data['result-count'] }} {{ 'matching qualifications' if data['result-count'] > 1 else 'matching qualification' }}
+        {% endif %}
+      </h2>
+
+      <div>
+        <div class="govuk-form-group">
+          <label style="margin-bottom:-20px; margin-top: 40px;" class="govuk-label" for="search">
+            Refine the qualifications found by entering keywords from the qualification name
+          </label>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding-top: 5px; margin-bottom: 20px;" class="govuk-form-group">
+          <input class="govuk-input govuk-!-width-two-thirds" id="qualification-search" name="qualification-search" type="text" value="{{data['qualification-search']}}">
+          <div style="display: flex; align-items: center" class="govuk-button-group">
+            {{govukButton({
+              text: "Refine results",
+              type: "Submit",
+              classes: "govuk-button--secondary"
+            })}}
+            <a class="govuk-link" href="/current/r16/clear-search">Clear</a>
+          </div>
+        </div>
+      </div>
+
+      <ul class="qualification-list">
+        {% for qualification in data['search-results'] %}
+          <li class="qualification-item">
+            <p class="govuk-body-m">
+              <a href={{qualification.href}}>
+                <strong style="text-decoration: underline; text-decoration-color: #1d70b8; text-decoration-thickness: 2px;">
+                  {{qualification.name}}
+                </strong>
+              </a>
+            </p>
+            <hr>
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% if data['result-count'] == 0 %}
+        <p class="govuk-body-m">
+          Improve your search by:
+        </p>
+        <ul style="margin-bottom: 30px" class="govuk-list govuk-list--bullet">
+          <li>double-checking your spelling</li>
+          <li>using fewer words</li>
+          <li>using words from the qualification name, rather than the level or awarding organisation name</li>
+        </ul>
+        <hr style="border: 0; border-bottom: 1px solid 	#8ba2b2;">
+      {% endif %}
+
+      <h3 style="margin-top: 30px" class="govuk-heading-m govuk-!-margin-bottom-10">
+        If you cannot find the qualification
+      </h3>
+      <p class="govuk-body-m">
+        This service lists all the qualifications which are approved by the Department for Education (DfE) as full and relevant. It shows you qualifications that are potentially full and relevant and that match your answers.
+      </p> 
+      <p class="govuk-body-m">
+        The information in this service is identical to the early years qualifications list (EYQL) spreadsheet. No qualifications have been removed from either the EYQL or this service.      
+      </p> 
+      <p class="govuk-body-m">
+        If you cannot find the qualification you are looking for, check your answers. If you checked your answers and still cannot find the qualification listed, go to <br>
+        <a href="#" class="govuk-link">I cannot find the qualification</a>, which provides more detail on what to do next.
+      </p>       
+    </form>
+  </div>
+</div>
+
+{% endblock %}
