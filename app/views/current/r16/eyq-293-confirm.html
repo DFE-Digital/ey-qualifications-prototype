@@ -15,21 +15,8 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <form class="form" action="confirm-post-292" method="post">
-      <input type="hidden" name="redirect" value="eyq-292" />
-
-      {% set errorMessage = "Confirm if this is the qualification you are looking for" %}
-
-      {{ govukErrorSummary({
-        titleText: "There is a problem",
-        errorList: [
-          {
-            text: errorMessage,
-            href: "#yes-no"
-          }
-        ]
-      }) }}
-
+    <form class="form" action="confirm-post-293" method="post">
+      <input type="hidden" name="redirect" value="eyq-293" />
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
         Confirm qualification
       </h1>
@@ -42,6 +29,7 @@
       {% else %}
         {% set awardingOrganisationText = data['awarding-organisation'] %}
       {% endif %}
+
 
       {{ govukSummaryList({
         rows: [
@@ -85,7 +73,6 @@
       }) }}
 
       {{ govukRadios({
-          id: "yes-no",
           name: "yes-no",
           value: data['yes-no'],
           fieldset: {
@@ -104,10 +91,7 @@
               value: "No",
               text: "No, select another qualification"
             }
-          ],
-          errorMessage: {
-            text: errorMessage
-          }
+          ]
         }) }}
 
       {{ govukButton({

@@ -68,47 +68,47 @@ router.post('/confirm-post-236', function(request, response) {
   }
 })
 
-// Confirm qualification eyq-292
-router.post('/confirm-post-292', function(request, response) {
+// Confirm qualification eyq-293
+router.post('/confirm-post-293', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['yes-no'] == undefined) {
-    return response.redirect(`/current/r15/eyq-292-confirm-error`)
+    return response.redirect(`/current/r15/eyq-293-confirm-error`)
   }
   var yesNoValue = request.session.data['yes-no'];
   if (yesNoValue == 'Yes') {
-    return response.redirect(`/current/r15/eyq-292-requirement1`);
+    return response.redirect(`/current/r15/eyq-293-requirement1`);
   } else {
     return response.redirect('/current/r15/search-results');
   }
 })
 
 // Additional requirement 1
-router.post('/eyq-292-requirement1-post', function(request, response) {
+router.post('/eyq-293-requirement1-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['ledToQTS'] == undefined) {
-    return response.redirect(`/current/r15/eyq-292-requirement1-error`)
+    return response.redirect(`/current/r15/eyq-293-requirement1-error`)
   } else {
-    return response.redirect(`/current/r15/eyq-292-requirement2`)
+    return response.redirect(`/current/r15/eyq-293-requirement2`)
   }
 })
 
 // Additional requirement 2
-router.post('/eyq-292-requirement2-post', function(request, response) {
+router.post('/eyq-293-requirement2-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['isQAAConsistent'] == undefined) {
-    return response.redirect(`/current/r15/eyq-292-requirement2-error`)
+    return response.redirect(`/current/r15/eyq-293-requirement2-error`)
   } else {
-    return response.redirect(`/current/r15/eyq-292-requirement3`)
+    return response.redirect(`/current/r15/eyq-293-requirement3`)
   }
 })
 
 // Additional requirement 3
-router.post('/eyq-292-requirement3-post', function(request, response) {
+router.post('/eyq-293-requirement3-post', function(request, response) {
   var redirectValue = request.session.data['redirect'];
   if (request.session.data['includesAssessedPractice'] == undefined) {
-    return response.redirect(`/current/r15/eyq-292-requirement3-error`)
+    return response.redirect(`/current/r15/eyq-293-requirement3-error`)
   } else {
-    return response.redirect(`/current/r15/eyq-292-requirements-check`)
+    return response.redirect(`/current/r15/eyq-293-requirements-check`)
   }
 })
 
