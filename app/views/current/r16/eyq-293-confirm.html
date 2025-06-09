@@ -17,6 +17,17 @@
   <div class="govuk-grid-column-two-thirds-from-desktop">
     <form class="form" action="confirm-post-293" method="post">
       <input type="hidden" name="redirect" value="eyq-293" />
+      {# Q1 #}
+      <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
+      {# Q2 #}
+      <input type="hidden" name="date-started-month" value="{{data['date-started-month']}}" />
+      <input type="hidden" name="date-started-year" value="{{data['date-started-year']}}" />
+      <input type="hidden" name="date-awarded-month" value="{{data['date-awarded-month']}}" />
+      <input type="hidden" name="date-awarded-year" value="{{data['date-awarded-year']}}" />
+      {# Q3 #}
+      <input type="hidden" name="qualification-level" value="{{data['qualification-level']}}" />
+      {# Q4 #}
+      <input type="hidden" name="awarding-organisation" value="{{data['awarding-organisation']}}" />
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
         Confirm qualification
       </h1>

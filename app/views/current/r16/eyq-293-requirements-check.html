@@ -17,6 +17,25 @@
   <div class="govuk-grid-column-two-thirds">
 
     <form class="form" action="eyq-293-checked" method="post">
+      {# Q1 #}
+      <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
+      {# Q2 #}
+      <input type="hidden" name="date-started-month" value="{{data['date-started-month']}}" />
+      <input type="hidden" name="date-started-year" value="{{data['date-started-year']}}" />
+      <input type="hidden" name="date-awarded-month" value="{{data['date-awarded-month']}}" />
+      <input type="hidden" name="date-awarded-year" value="{{data['date-awarded-year']}}" />
+      {# Q3 #}
+      <input type="hidden" name="qualification-level" value="{{data['qualification-level']}}" />
+      {# Q4 #}
+      <input type="hidden" name="awarding-organisation" value="{{data['awarding-organisation']}}" />
+      {# Confirm #}
+      <input type="hidden" name="yes-no" value="{{data['yes-no']}}" />
+      {# Req 1 #}
+      <input type="hidden" name="ledToQTS" value="{{data['ledToQTS']}}" />
+      {# Req 2 #}
+      <input type="hidden" name="isQAAConsistent" value="{{data['isQAAConsistent']}}" />
+      {# Req 3 #}
+      <input type="hidden" name="includesAssessedPractice" value="{{data['includesAssessedPractice']}}" />
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
         Check the qualification additional requirements
       </h1>
