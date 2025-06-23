@@ -1,0 +1,149 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to select a qualification to check",
+    href: "/current/r16/search-results"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl" style="margin-bottom: 50px;">
+        I cannot find the qualification
+      </h1>
+      <div class="govuk-inset-text">
+        You are seeing this page because you are checking a level 6 qualification that was started between 1 September 2014 and 31 August 2019.
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-bottom: 30px;">
+        About this service
+      </h2>
+      <p class="govuk-body">
+        This service lists all the qualifications which meet the criteria set by the Department for Education (DfE) for working as a qualified member of staff in an early years setting in England. These qualifications are considered 'full and relevant', and someone who holds one of these qualifications can be counted in staff:child ratios.
+      </p>
+      <p class="govuk-body">
+        If you cannot find the qualification on the list, this may be because it does not meet DfE's criteria, and is therefore not approved as full and relevant.
+      </p>
+      <p class="govuk-body">
+        The information in this service is identical to the information in the early years qualifications list (EYQL) spreadsheet, which you may have used in the past. No qualifications have been removed from either the EYQL or this service.
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 20px; margin-bottom: 30px;">
+        Tips for using this service
+      </h2>
+      <p class="govuk-body">
+        If you cannot find a qualification that you think should appear on the early years qualifications list (EYQL), try:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>asking the qualification holder to provide a copy of their certificate - the certificate may include extra information about the qualification name, level and awarding organisation that can help you find the qualification</li>
+        <li>making sure you have entered the date the qualification was started, rather than the date it was awarded</li>
+        <li>checking the <a href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" target="_blank">qualification level (opens in new tab)</a></li>
+      </ul>
+      <p class="govuk-body">
+        If you have already checked the qualification name, date started and level, continue reading this page for more information about how to check this qualification.
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 20px; margin-bottom: 30px;">
+        Level 6 qualifications
+      </h2>
+      <p class="govuk-body">
+        Many universities and other higher education institutions offer qualifications in Early Childhood Studies or related subjects. Due to the range of qualifications available at this level, the Department for Education (DfE) does not always individually list each qualification on the EYQL.
+      </p>
+      <p class="govuk-body">
+        Some level 6 qualifications are grouped together, with several qualifications listed as a single entry on the EYQL.
+      </p>
+      <p class="govuk-body">
+        If the qualification you are checking is a level 6 degree, for example a Bachelor of Arts (BA), you should choose Degrees and honours degrees at Level 6.
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 20px; margin-bottom: 30px;">
+        Use the existing EYQL service
+      </h2>
+      <p class="govuk-body">
+        This is a new service. You can still use the existing service by downloading the <a href="https://www.gov.uk/government/publications/early-years-qualifications-achieved-in-england" target="_blank">EYQL spreadsheet (opens in new tab)</a>. This document is regularly updated by DfE to add new or updated qualifications as they become approved. You should refresh the page before downloading the EYQL spreadsheet to be sure that you are using the latest version.  
+      </p>
+      <p class="govuk-body">
+        If you cannot find the qualification on this new service, but can find it using the EYQL spreadsheet, let us know using the <a href="https://forms.office.com/pages/responsepage.aspx?id=yXfS-grGoU2187O4s0qC-cSw9n9hGzVNg45loL6BnkZUQkVRR01NTk5WQUs5QkVRS1BST09FOFA1Vy4u&route=shorturl" target="_blank">feedback form (opens in a new tab)</a>. Your feedback will help us to improve the service for everyone.
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 20px; margin-bottom: 30px;">
+        If you still cannot find the qualification
+      </h2>
+      <p class="govuk-body">
+        If you have tried the suggestions above and still cannot find the qualification, the qualification cannot be considered full and relevant. This means that the qualification holder cannot be counted in the staff:child ratios at level 3.
+      </p>
+      <p class="govuk-body">
+        They may be able to count in the staff:child ratios at level 2, if their qualification:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>is at level 3 or above</li>
+        <li>was started between 1 September 2014 and 31 August 2019</li>
+        <li>is early years (0 to 5 years related)</li>
+        <li>appropriate to early years practice</li>
+      </ul>
+      <p class="govuk-body">
+        DfE can help you confirm whether the qualification meets these requirements. To get help with confirming these qualifications, you can use the <a href="https://www.gov.uk/contact-dfe" target="_blank">DfE contact form (opens in new tab)</a>. Choose the option to ask a question and include 'For the attention of the Early Years Qualifications Unit' in your message. You will usually get a reply within 15 working days.
+      </p>
+      <p class="govuk-body">
+        If their qualification does not meet these requirements, they can work as an unqualified member of staff.
+      </p>
+      <p class="govuk-body">
+        Alternatively, they may be eligible for DfE's new experience-based route (EBR) for early years staff.
+      </p>
+      <p class="govuk-body">
+        EBR is a process which will allow suitable early years practitioners without an approved qualification the opportunity to gain status to work within the staff:child ratios at level 3. This is an optional flexibility, available from 3 March 2025 to providers and educators who meet the eligibility criteria.
+      </p>
+      <p class="govuk-body">
+        Eligible staff will undertake a period of supervised practice in their setting, during which they will develop and demonstrate any skills and knowledge from the Early Years Educator (level 3) criteria that are missing from their existing qualifications and experience.
+      </p>
+      <p class="govuk-body">
+        Read more about the <a href="https://www.gov.uk/government/publications/experience-based-route-for-early-years-staff" target="_blank">experience-based route (opens in new tab)</a>.
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="margin-top: 20px; margin-bottom: 30px;">
+        Related content
+      </h2>
+      <p class="govuk-body">
+        <a href="https://www.gov.uk/government/publications/early-years-qualification-requirements-and-standards" target="_blank">
+          Early years qualification requirements and standards (opens in new tab)
+        </a>
+        <p class="govuk-body">
+          <a href="https://www.gov.uk/government/publications/pathway-into-early-years-education/pathway-into-early-years-education" target="_blank">
+            Pathway into early years education (opens in new tab)          
+          </a>
+        </p>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}
