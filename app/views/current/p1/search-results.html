@@ -7,7 +7,7 @@ Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
 {% block beforeContent %}
 {{ govukBackLink({
 text: "Back to check your answers",
-href: "/current/r16/check-your-answers"
+href: "/current/p1/check-your-answers"
 }) }}
 {% endblock %}
 
@@ -15,7 +15,7 @@ href: "/current/r16/check-your-answers"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/current/r16/search-results-post" method="post">
+    <form class="form" action="/current/p1/search-results-post" method="post">
       {# Q1 #}
       <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
       {# Q2 #}
@@ -152,7 +152,7 @@ href: "/current/r16/check-your-answers"
               type: "Submit",
               classes: "govuk-button--secondary"
             })}}
-            <a class="govuk-link" href="/current/r16/clear-search">Clear</a>
+            <a class="govuk-link" href="/current/p1/clear-search">Clear</a>
           </div>
         </div>
       </div>
@@ -195,7 +195,7 @@ href: "/current/r16/check-your-answers"
       </p> 
       <p class="govuk-body-m">
         If you cannot find the qualification you are looking for, check your answers. If you checked your answers and still cannot find the qualification listed, go to <br>
-        <a href="/current/r16/eyq-293-cannot-find-qualification.html" class="govuk-link">I cannot find the qualification</a>, which provides more detail on what to do next.
+        <a href="/current/p1/eyq-293-cannot-find-qualification.html" class="govuk-link">I cannot find the qualification</a>, which provides more detail on what to do next.
       </p>       
     </form>
   </div>

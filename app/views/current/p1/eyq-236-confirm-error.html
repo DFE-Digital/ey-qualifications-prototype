@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back to select the qualification",
-  href: "/current/r16/search-results"
+  href: "/current/p1/search-results"
 }) }}
 {% endblock %}
 
@@ -15,8 +15,8 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <form class="form" action="confirm-post-293" method="post">
-      <input type="hidden" name="redirect" value="eyq-293" />
+    <form class="form" action="confirm-post-236" method="post">
+      <input type="hidden" name="redirect" value="eyq-236" />
 
       {% set errorMessage = "Confirm if this is the qualification you are looking for" %}
 
@@ -51,7 +51,7 @@
               text: "Qualification"
             },
             value: {
-              text: "Degrees and honours degrees at Level 6"
+              text: "IAO Level 3 Diploma In Early Learning and Childcare (Early Years Educator)"
             },
             actions: {
 
@@ -75,17 +75,13 @@
               text: "Awarding organisation"
             },
             value: {
-              text: "Various awarding organisations"
+              text: awardingOrganisationText
             },
             actions: {
 
             }
           }
         ]
-      }) }}
-
-      {{ govukInsetText({
-        text: "Some qualifications are offered by more than one awarding organisation. These qualifications are listed as being awarded by 'various awarding organisations'. "
       }) }}
 
       {{ govukRadios({
@@ -112,6 +108,11 @@
           errorMessage: {
             text: errorMessage
           }
+        }) }}
+
+        {{ govukWarningText({
+          text: "Your result is dependent on the accuracy of the information you have provided.",
+          iconFallbackText: "Warning"
         }) }}
 
       {{ govukButton({
