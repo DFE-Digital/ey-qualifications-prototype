@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back to select the qualification",
-  href: "/current/r16/search-results"
+  href: "/current/p1/search-results"
 }) }}
 {% endblock %}
 
@@ -15,19 +15,21 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <form class="form" action="confirm-post-236" method="post">
-      <input type="hidden" name="redirect" value="eyq-236" />
-      {# Q1 #}
-      <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
-      {# Q2 #}
-      <input type="hidden" name="date-started-month" value="{{data['date-started-month']}}" />
-      <input type="hidden" name="date-started-year" value="{{data['date-started-year']}}" />
-      <input type="hidden" name="date-awarded-month" value="{{data['date-awarded-month']}}" />
-      <input type="hidden" name="date-awarded-year" value="{{data['date-awarded-year']}}" />
-      {# Q3 #}
-      <input type="hidden" name="qualification-level" value="{{data['qualification-level']}}" />
-      {# Q4 #}
-      <input type="hidden" name="awarding-organisation" value="{{data['awarding-organisation']}}" />
+    <form class="form" action="confirm-post-293" method="post">
+      <input type="hidden" name="redirect" value="eyq-293" />
+
+      {% set errorMessage = "Confirm if this is the qualification you are looking for" %}
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: errorMessage,
+            href: "#yes-no"
+          }
+        ]
+      }) }}
+
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
         Confirm qualification
       </h1>
@@ -49,7 +51,7 @@
               text: "Qualification"
             },
             value: {
-              text: "IAO Level 3 Diploma In Early Learning and Childcare (Early Years Educator)"
+              text: "Degrees and honours degrees at Level 6"
             },
             actions: {
 
@@ -73,7 +75,7 @@
               text: "Awarding organisation"
             },
             value: {
-              text: awardingOrganisationText
+              text: "Various awarding organisations"
             },
             actions: {
 
@@ -82,7 +84,12 @@
         ]
       }) }}
 
+      {{ govukInsetText({
+        text: "Some qualifications are offered by more than one awarding organisation. These qualifications are listed as being awarded by 'various awarding organisations'. "
+      }) }}
+
       {{ govukRadios({
+          id: "yes-no",
           name: "yes-no",
           value: data['yes-no'],
           fieldset: {
@@ -101,12 +108,10 @@
               value: "No",
               text: "No, select another qualification"
             }
-          ]
-        }) }}
-
-        {{ govukWarningText({
-          text: "Your result is dependent on the accuracy of the information you have provided.",
-          iconFallbackText: "Warning"
+          ],
+          errorMessage: {
+            text: errorMessage
+          }
         }) }}
 
       {{ govukButton({

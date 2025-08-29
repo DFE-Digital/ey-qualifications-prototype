@@ -6,8 +6,8 @@
 
 {% block beforeContent %}
   {{ govukBackLink({
-  text: "Back to select the qualification",
-  href: "/current/r16/search-results"
+  text: "Back to previous additional requirement",
+  href: "/current/p1/eyq-293-requirement1"
 }) }}
 {% endblock %}
 
@@ -23,24 +23,36 @@
       errorList: [
         {
           text: errorMessage,
-          href: "#requirement1"
+          href: "#requirement2"
         }
       ]
     }) }}
 
-    <form class="form" action="eyq-293-requirement1-post" method="post">
+    <form class="form" action="eyq-293-requirement2-post" method="post">
       <div class="govuk-form-group govuk-form-group--error">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-          Did the qualification lead to QTS, EYTS or EYPS?
+          Was the course fully consistent with the QAA subject benchmark statement for Early Childhood Studies? 
         </h1>
         <p class="govuk-hint">
-          Qualified Teacher Status (QTS), Early Years Teacher Status (EYTS) or Early Years Practitioner Status (EYPS) may be awarded either on completion of standalone qualifications or as part of completion of a level 6 or 7 qualification.
+          The university or training provider should be able to confirm if the course was consistent with the subject benchmark.  
         </p>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What is the QAA Subject Benchmark Statement? 
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>
+              The Quality Assurance Agency for Higher Education (QAA) <a href="https://www.qaa.ac.uk/the-quality-code/subject-benchmark-statements/early-childhood-studies" target="_blank">subject benchmark statement for Early Childhood studies (opens in new tab)</a> describes what graduates might reasonably be expected to know, do and understand at the end of their studies. 
+            </p>
+          </div>
+        </details>
 
         {{ govukRadios({
-            id: "ledToQTS",
-            name: "ledToQTS",
-            value: data['ledToQTS'],
+            id: "isQAAConsistent",
+            name: "isQAAConsistent",
+            value: data['isQAAConsistent'],
             fieldset: {
               legend: {
                 text: "",

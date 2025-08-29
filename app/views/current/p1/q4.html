@@ -7,7 +7,7 @@ Search results for 'NFCE' – {{ serviceName }} – GOV.UK Prototype Kit
 {% block beforeContent %}
 {{ govukBackLink({
 text: "Back to what level is the qualification",
-href: "/current/r16/q3"
+href: "/current/p1/q3"
 }) }}
 {% endblock %}
 
@@ -17,30 +17,23 @@ href: "/current/r16/q3"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    {% set errorMessage = "Select the awarding organisation or 'Not on the list'" %}
-
-    {{ govukErrorSummary({
-      titleText: "There is a problem",
-      errorList: [
-        {
-          text: errorMessage,
-          href: "#awarding-organisation"
-        }
-      ]
-    }) }}
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      What is the awarding organisation?
+    </h1>
 
     <form class="form" action="check-your-answers-post" method="post">
-      <div class="govuk-form-group govuk-form-group--error">
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-        What is the awarding organisation?
-      </h1>
-
+      {# Q1 #}
       <input type="hidden" name="awarding-location" value="{{data['awarding-location']}}" />
+      {# Q2 #}
       <input type="hidden" name="date-started-month" value="{{data['date-started-month']}}" />
       <input type="hidden" name="date-started-year" value="{{data['date-started-year']}}" />
+      <input type="hidden" name="date-awarded-month" value="{{data['date-awarded-month']}}" />
+      <input type="hidden" name="date-awarded-year" value="{{data['date-awarded-year']}}" />
+      {# Q3 #}
       <input type="hidden" name="qualification-level" value="{{data['qualification-level']}}" />
+
       <div class="govuk-radios" data-module="govuk-radios">
+
         <div class="govuk-form-group">
           {{ govukSelect({
             id: "awarding-organisation-select",
@@ -51,12 +44,11 @@ href: "/current/r16/q3"
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
             },
-            items: data['awarding-organisations'],
-            errorMessage: {
-              text: errorMessage
-            }
+            items: data['awarding-organisations']
           }) }}
         </div>
+
+
         <div class="govuk-form-group">
           {{ govukCheckboxes({
             id: "awarding-organisation",
@@ -71,8 +63,6 @@ href: "/current/r16/q3"
             ]
           }) }}
         </div>
-      </div>
-
       </div>
 
       {{ govukButton({
